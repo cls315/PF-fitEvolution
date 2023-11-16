@@ -1,0 +1,135 @@
+{
+  "ejercicios": [
+    {
+      "id": 1,
+      "nombre": "Sentadillas",
+      "descripcion": "Flexión y extensión de las rodillas y caderas. Fortalece cuádriceps, isquiotibiales y glúteos.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"]
+    },
+    {
+      "id": 2,
+      "nombre": "Prensa de piernas",
+      "descripcion": "Empujar una plataforma con las piernas. Trabaja cuádriceps, isquiotibiales y glúteos.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"]
+    },
+    {
+      "id": 3,
+      "nombre": "Peso muerto",
+      "descripcion": "Levantar una barra desde el suelo. Trabaja la cadena posterior: glúteos, isquiotibiales y espalda baja.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales", "Espalda Baja"]
+    },
+    {
+      "id": 4,
+      "nombre": "Extensiones de cuádriceps",
+      "descripcion": "Levantar peso con las piernas, trabajando cuádriceps.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Cuádriceps"]
+    },
+    {
+      "id": 5,
+      "nombre": "Zancadas",
+      "descripcion": "Pasos largos hacia adelante o hacia atrás, fortaleciendo piernas y glúteos.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Piernas", "Glúteos"]
+    },
+    {
+      "id": 6,
+      "nombre": "Curl de piernas",
+      "descripcion": "Flexión de rodillas con resistencia para trabajar isquiotibiales.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Isquiotibiales"]
+    },
+    {
+      "id": 7,
+      "nombre": "Hip Thrusts",
+      "descripcion": "Elevación de caderas en banco, focalizando glúteos e isquiotibiales.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"]
+    },
+    {
+      "id": 8,
+      "nombre": "Peso muerto sumo",
+      "descripcion": "Variante del peso muerto para trabajar glúteos e isquiotibiales.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"]
+    },
+    {
+      "id": 9,
+      "nombre": "Elevación de talones",
+      "descripcion": "Levantar talones para fortalecer gemelos.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Gemelos"]
+    },
+    {
+      "id": 10,
+      "nombre": "Peso muerto con una pierna",
+      "descripcion": "Peso muerto ejecutado con una pierna, trabajando el equilibrio y la cadena posterior.",
+      "categoria": "Tren Inferior",
+      "musculos_ejercitados": ["Equilibrio", "Cadena Posterior"]
+    },
+    {
+      "id": 11,
+      "nombre": "Press de banca",
+      "descripcion": "Empuje horizontal de la barra, fortaleciendo pectorales y tríceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Pectorales", "Tríceps"]
+    },
+    {
+      "id": 12,
+      "nombre": "Fondos en paralelas",
+      "descripcion": "Flexión y extensión de brazos en barras paralelas, trabajando tríceps y pecho.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Tríceps", "Pecho"]
+    },
+    {
+      "id": 13,
+      "nombre": "Pull-ups",
+      "descripcion": "Levantar el cuerpo hacia una barra, trabajando espalda y bíceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Espalda", "Bíceps"]
+    },
+    {
+      "id": 14,
+      "nombre": "Press militar",
+      "descripcion": "Levantar una barra sobre la cabeza, trabajando hombros y tríceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Hombros", "Tríceps"]
+    },
+    {
+      "id": 15,
+      "nombre": "Dominadas con agarre cerrado",
+      "descripcion": "Dominadas con manos más cercanas, enfocándose en bíceps y tríceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Bíceps", "Tríceps"]
+    },
+    {
+      "id": 16,
+      "nombre": "Curl de bíceps",
+      "descripcion": "Flexión de codos con pesas, trabajando bíceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Bíceps"]
+    },
+    {
+      "id": 17,
+      "nombre": "Tríceps en polea alta",
+      "descripcion": "Extensión de codos con polea alta, trabajando tríceps.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Tríceps"]
+    },
+    {
+      "id": 18,
+      "nombre": "Pull-over con mancuerna",
+      "descripcion": "Extensión de brazos con una mancuerna, focalizando espalda y pecho.",
+      "categoria": "Tren Superior",
+      "musculos_ejercitados": ["Espalda", "Pecho"]
+    },
+    {
+      "id": 19,
+      "nombre": "Press inclinado con mancuernas",
+      "descripcion": "Press de banca en banco inclinado, enfocándose en la parte superior del pecho."
+    }
+  ]
+}
