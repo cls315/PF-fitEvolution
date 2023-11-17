@@ -15,11 +15,20 @@ module.exports = (sequelize) => {
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
       },
     },
+    image:{
+      type: DataTypes.TEXT, 
+      allowNull: false,
+      validate: {
+        isUrl: {
+          msg: 'La URL de la imagen no es válida.',
+        },
+      },
+    },
     description:{
         type:DataTypes.TEXT,
         allowNull:true
     },
-    Category: {
+    category: {
         type: DataTypes.ENUM('TS','TI','CORE'),
         allowNull: false,
       },
