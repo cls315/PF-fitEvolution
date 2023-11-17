@@ -1,0 +1,64 @@
+{
+  "entrenadores": [
+    {
+      "ID": 1,
+      "Nombre": "Carolina",
+      "Apellido": "Sánchez",
+      "Imagen": "",
+      "E-mail": "carolina@example.com",
+      "Teléfono": "+1234567890",
+      "Nacionalidad": "Argentina",
+      "Fecha Nac.": "1985-07-20",
+      "DNI": "234567890",
+      "Genero": "Femenino",
+      "Enfoque": "Entrenamiento de fuerza",
+      "Descripción": "Especialista en entrenamiento de fuerza y acondicionamiento físico.",
+      "Puntuación": 4.8
+    },
+    {
+      "ID": 2,
+      "Nombre": "Roberto",
+      "Apellido": "López",
+      "Imagen": "",
+      "E-mail": "roberto@example.com",
+      "Teléfono": "+9876543210",
+      "Nacionalidad": "Mexicana",
+      "Fecha Nac.": "1980-04-15",
+      "DNI": "987654321",
+      "Genero": "Masculino",
+      "Enfoque": "Entrenamiento cardiovascular",
+      "Descripción": "Especialista en entrenamiento cardiovascular y pérdida de peso.",
+      "Puntuación": 4.5
+    },
+    {
+      "ID": 3,
+      "Nombre": "María",
+      "Apellido": "García",
+      "Imagen": "",
+      "E-mail": "maria@example.com",
+      "Teléfono": "+1122334455",
+      "Nacionalidad": "Española",
+      "Fecha Nac.": "1983-11-28",
+      "DNI": "112233445",
+      "Genero": "Femenino",
+      "Enfoque": "Entrenamiento funcional",
+      "Descripción": "Especialista en entrenamiento funcional para mejorar la movilidad y la resistencia.",
+      "Puntuación": 4.9
+    },
+    {
+      "ID": 4,
+      "Nombre": "Javier",
+      "Apellido": "Martínez",
+      "Imagen": "",
+      "E-mail": "javier@example.com",
+      "Teléfono": "+3344556677",
+      "Nacionalidad": "Chilena",
+      "Fecha Nac.": "1978-09-10",
+      "DNI": "334455667",
+      "Genero": "Masculino",
+      "Enfoque": "Entrenamiento deportivo",
+      "Descripción": "Especialista en entrenamiento para atletas y deportistas de alto rendimiento.",
+      "Puntuación": 4.7
+    }
+  ]
+}
