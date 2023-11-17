@@ -1,0 +1,110 @@
+
+@media only screen and (min-width: 200px) {
+
+  /* Estilos para el contenedor de la barra de búsqueda */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px; /* Espacio superior para separar de otros elementos */
+  padding-bottom: 10px;
+  background-image: linear-gradient(to left top, #160bb5, #1c0ba0, #1f0b8c, #1f0a79, #1e0a66);
+  width: 100%;
+}
+
+.logoBar{
+  display: flex;
+}
+
+.search-bar-None{
+  display: none;
+}
+
+/* Estilos para el campo de entrada de texto */
+.search-input {
+  width: 120px;
+  padding-left: 2px;
+  font-size: 16px;
+  height: 17px;
+  border: 3px ;
+  outline: 0;
+}
+
+/* Estilos para el botón de búsqueda */
+.search-button {
+  background-color: #01124985;
+  color: white; /* Color de texto blanco */
+  border: none;
+  padding: 6px 8px;
+  border: 3px;
+  border-left: 0px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilo para el botón cuando se coloca el cursor sobre él */
+.search-button:hover {
+  color:rgba(185, 184, 184, 0.699);
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.search-button:not(:hover){           /*PARA CUANDO EL BOTON SE ALEJA DEL MOUSE*/
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.formInput{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formInput input{
+  height: 25px;
+}
+
+  }
+  
+  @media only screen and (min-width: 600px) {
+
+    .search-input {
+      width: 200px;
+      padding-left: 3px;
+    }
+
+    .logoBar{
+      position: absolute;
+      left: 10px;
+      right: 0px;
+      height: 70px;
+      width: 70px;
+    }
+
+    .search-button {
+      padding:9px 16px;
+    }
+
+    .formInput input{
+      height: 30px;
+    }
+  }
+  
+  /*Extra large devices(large laptops and desktops, 1200px and up)*/
+  @media only screen and (min-width: 1200px) {
+     
+    .search-input {
+      width: 200px;
+      padding: 6.5px;
+    }
+
+    .search-button {
+ 
+      padding:9px 16px;
+    
+    }
+    
+  
+  }
+
+
+  
