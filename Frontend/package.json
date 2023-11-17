@@ -8,10 +8,11 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test":"jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
