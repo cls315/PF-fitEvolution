@@ -30,6 +30,7 @@ function Landing(props) {
       <h1>Proyecto Final</h1>
       <h1>FitRevolution</h1>
       <h2 className={style.subTitleLanding}>Ponganse las pilas que hay que aprobar!!!!</h2>
+      <h2 className={style.subTitleLanding}>segundo titulo</h2>
       <button className={style.buttonForm} onClick={() => {
       setLoading(true)
       navigate('/home')
