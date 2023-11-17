@@ -1,7 +1,8 @@
 @import url('../../varColours.css');
 .containerForm{
     max-width: 100vw;
-    height: 100vh;
+    height: 91vh;
+    background-color: rgb(202, 195, 195);
 }
 
 /*Extra small devices(phones, 600px and down)*/
