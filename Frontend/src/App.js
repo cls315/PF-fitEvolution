@@ -18,7 +18,7 @@ function App() {
               <Route exact path='/' element={<Landing/>}/>
               <Route path='/sesion' element={<FormSesion/>}/>
               <Route path='/home' element={<Home/>}/>
-
+ 
           </Routes>
 
       </div>
