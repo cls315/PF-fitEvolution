@@ -114,6 +114,11 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull:false,
     },
+    role:{
+        type: DataTypes.ENUM('Usuario', 'Admin'),
+        allowNull: false,
+        defaultValue: 'Usuario', 
+    }
   },{
     timestamps: true, //* en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
   });
