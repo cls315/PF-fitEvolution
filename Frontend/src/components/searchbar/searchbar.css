@@ -5,6 +5,10 @@
 }
 
 @media only screen and (min-width: 200px) {
+  body .navbar {
+    width: 100%;
+  }
+
   .navbar-expand-lg .navbar-collapse {
     justify-content: end;
   }
@@ -15,7 +19,6 @@
 
   .navbar .navbar-expand-lg .navbar-light .bg-light {
     flex-direction: row-reverse !important;
-
 
   }
 
@@ -38,6 +41,7 @@
   body .navbar {
     flex-direction: row;
     --bs-navbar-padding-y: 1.75rem !important;
+    width: 100%;
   }
 
   .navbar-brand img {
