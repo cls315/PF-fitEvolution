@@ -1,5 +1,6 @@
 //Components
 import Loading from '../../components/loading/loading.component'
+import SearchBar from '../../components/searchbar/searchbar.component';
 //Commons imports
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +26,7 @@ function Landing(props) {
   }, []);
 
   return (<div className={style.containerForm}>
-
+    <SearchBar/>
     <div className={style.Title}>    
       <h2 className={style.subTitle1Landing}>Asociate a una de nuestras membresias</h2>
       <h1 className={style.title1Landing}>COMIENZA AHORA GRATIS!</h1>
