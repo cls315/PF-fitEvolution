@@ -1,0 +1,42 @@
+Flujo de trabajo con Git (Git Flow)
+Paso a paso para hacer un pull request
+y subir un cambio a nuestra rama principal (main).
+● git checkout main: nos posicionamos en la rama main.
+● git branch: vemos todas las ramas creadas (opcional) de manera local.
+● git branch -a: vemos todas las ramas creadas de manera tanto local como remota.
+● git commit - m "agregar cambios" 
+● git pull: nos traemos todos los últimos cambios que hayan sido
+mergeados y aprobados en main. Sobre este comando, también tenemos
+la posibilidad de usar git pull origin nombreRama para traernos los
+cambios de la rama especificada.
+● git checkout -b nombreRama: estando posicionados en main, creamos
+una nueva rama. Es importante crear una nueva rama para cada nueva
+feature/fix así nos evitamos conflictos.
+● Realizamos los cambios estando posicionados en la rama previamente
+creada.
+● git status: vemos que archivos fueron modificados y están listos para ser
+agregados a un nuevo commit.
+● git add nombreDeArchivoModificado: añadimos el archivo indicado al
+nuevo commit. En este caso, si tenemos más de un archivo modificado y
+queremos añadir a todos, podemos hacer git add . con el punto al final
+para poder añadirlos todos juntos y no ir archivo por archivo.
+● git push -u origin nombreRamaDeTrabajo: subimos los cambios a la
+rama remota del repositorio. Por ejemplo, si mi rama creada en el paso 4
+de esta lista se llamaba feature/login en este paso el comando debería
+ser git push -u origin feature/login.
+● Una vez realizados los pasos anteriores, se abre la posibilidad de hacer
+un pull request. Para ésto, debemos ir al repositorio en GitHub y hacer
+click en el botón de color verde que dice “CREATE PULL REQUEST”.
+● Uno (o varios) de los colaboradores del repositorio debe aceptar los
+cambios.
+● Una vez que los cambios son aceptados, hacer click en el botón
+“CONFIRM SQUASH AND MERGE”. Ésto genera que nuestros cambios
+ahora se vean reflejados en la rama main.
+● Si queremos, ahora podemos borrar la rama creada para ésta tarea en
+particular.
+● Para realizar una nueva tarea, el ciclo se repite.
+Aclaración: tener en cuenta que el orden de los comandos puede verse
+afectado dependiendo de lo que se quiera realizar.
+git fetch origin: se trae la ultima version del repositorio
+git checkout nombre_Rama: te posiciona en la rama especifica
+git pull origin nombre_Rama: se traen los cambios de la rama remota solamente y combina los cambios de la remota con la local  

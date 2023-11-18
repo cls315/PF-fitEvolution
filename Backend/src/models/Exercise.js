@@ -35,6 +35,10 @@ module.exports = (sequelize) => {
     muscle_trained:{
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false,
+    },
+    estimatedDuration: {
+      type: DataTypes.INTEGER, // en segundos
+      allowNull: false 
     }
     }
   )}
