@@ -8,7 +8,10 @@ import './App.css'
 import About from './views/About/About';
 
 function App() {
-  const location=useLocation()
+  const location = useLocation();
+
+  return (
+    <>
       <Routes>
         <Route
           path='/'
