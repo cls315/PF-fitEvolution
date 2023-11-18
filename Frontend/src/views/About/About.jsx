@@ -6,6 +6,7 @@ import rutina from '../../images/rutina.jpeg';
 // import imgWoman from '../../images';
 import styles from './About.module.css';
 import AboutCard from '../../components/aboutCard/AboutCard';
+import SearchBar from './../../components/searchbar/searchbar.component';
 
 const About = () => {
   const data = [
@@ -40,20 +41,23 @@ const About = () => {
   ];
 
   return (
-    <div className={styles.container}>
-      {data.map(({ subtitle, title, text, img, reverse }, i) => {
-        return (
-          <AboutCard
-            key={i}
-            subtitle={subtitle}
-            title={title}
-            text={text}
-            reverse={reverse}
-            img={img}
-          />
-        );
-      })}
-    </div>
+    <>
+      <SearchBar className={styles.navbar} />
+      <div className={styles.container}>
+        {data.map(({ subtitle, title, text, img, reverse }, i) => {
+          return (
+            <AboutCard
+              key={i}
+              subtitle={subtitle}
+              title={title}
+              text={text}
+              reverse={reverse}
+              img={img}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
