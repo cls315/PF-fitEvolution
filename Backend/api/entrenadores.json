@@ -13,7 +13,7 @@
       "Genero": "Femenino",
       "Enfoque": "Entrenamiento de fuerza",
       "Descripción": "Especialista en entrenamiento de fuerza y acondicionamiento físico.",
-      "Puntuación": 4.8
+      "Puntuación": ""
     },
     {
       "ID": 2,
@@ -28,7 +28,7 @@
       "Genero": "Masculino",
       "Enfoque": "Entrenamiento cardiovascular",
       "Descripción": "Especialista en entrenamiento cardiovascular y pérdida de peso.",
-      "Puntuación": 4.5
+      "Puntuación": ""
     },
     {
       "ID": 3,
@@ -43,7 +43,7 @@
       "Genero": "Femenino",
       "Enfoque": "Entrenamiento funcional",
       "Descripción": "Especialista en entrenamiento funcional para mejorar la movilidad y la resistencia.",
-      "Puntuación": 4.9
+      "Puntuación": ""
     },
     {
       "ID": 4,
@@ -58,7 +58,7 @@
       "Genero": "Masculino",
       "Enfoque": "Entrenamiento deportivo",
       "Descripción": "Especialista en entrenamiento para atletas y deportistas de alto rendimiento.",
-      "Puntuación": 4.7
+      "Puntuación": ""
     }
   ]
 }
