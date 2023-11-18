@@ -2,7 +2,7 @@
 import Alert from '../alert/alert.component'
 //Common imports
 import { URLSERVER } from '../../../configURL.js';
-import imagelogo from '../../images/imagelogo.jpg'
+import imagelogo from '../../images/imageLogo.jpg'
 //Styles
 import './searchbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
