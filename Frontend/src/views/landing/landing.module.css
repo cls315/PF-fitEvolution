@@ -10,8 +10,8 @@
     .containerForm {
         display: flex;
         flex-direction: column;
-        max-width: 100vw;
-        height: 81.5vh;
+        width: 100vw;
+        height: 100%;
         background-color: rgb(202, 195, 195);
         justify-content: flex-start;
         align-items: flex-start;
@@ -38,7 +38,6 @@
 @media only screen and (min-width: 992px) {
     .containerForm {
         background-image: url('../../images/fondoLanding.png');
-        ;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-attachment: fixed;
