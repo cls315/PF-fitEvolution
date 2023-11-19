@@ -32,7 +32,8 @@
         width: 125px;
         height: 100px;
         z-index: 1;
-        margin:5px
+        margin:5px;
+        border-radius: 8px;
       }
       .section p{
         font-size: 15px;
