@@ -27,7 +27,7 @@ export class sliderLanding extends Component {
 
     prevSlide = () => {
         this.setState({
-            ...this.state, prevSlide: this.state.prevSlide === 0 ? this.state.sliderDb.length - 1 : this.state.prevSlide - 1
+           ...this.state, prevSlide: this.state.prevSlide === 0 ? this.state.sliderDb.length - 1 : this.state.prevSlide - 1
         });
     };
 
