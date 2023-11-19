@@ -1,0 +1,21 @@
+Cliente
+
+GET allClient
+ruta que va a traer 
+
+POST client
+PUT dataClient
+
+Entrenador
+
+GET typeRutineClient
+GET allTrainer
+
+Rutina
+
+GET rutine
+POST rutine
+
+Ejercicio
+
+GET ejercicio
