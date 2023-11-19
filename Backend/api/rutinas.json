@@ -1,0 +1,144 @@
+{
+  "rutinas": [
+    {
+      "id": 1,
+      "listado_ejercicios": [2, 5, 7, 12, 20],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 30,
+      "enfoque": "Entrenamiento deportivo"
+    },
+    {
+      "id": 2,
+      "listado_ejercicios": [1, 4, 9, 15, 22],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 35,
+      "enfoque": "Entrenamiento funcional"
+    },
+    {
+      "id": 3,
+      "listado_ejercicios": [3, 6, 10, 16, 25],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 40,
+      "enfoque": "Entrenamiento cardiovascular"
+    },
+    {
+      "id": 4,
+      "listado_ejercicios": [8, 11, 14, 19, 27],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 45,
+      "enfoque": "Entrenamiento de fuerza"
+    },
+    {
+      "id": 5,
+      "listado_ejercicios": [13, 17, 21, 26, 33],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 32,
+      "enfoque": "Entrenamiento deportivo"
+    },
+    {
+      "id": 6,
+      "listado_ejercicios": [18, 23, 28, 31, 37],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 38,
+      "enfoque": "Entrenamiento funcional"
+    },
+    {
+      "id": 7,
+      "listado_ejercicios": [24, 29, 34, 39, 42],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 42,
+      "enfoque": "Entrenamiento cardiovascular"
+    },
+    {
+      "id": 8,
+      "listado_ejercicios": [30, 35, 40, 45],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 28,
+      "enfoque": "Entrenamiento de fuerza"
+    },
+    {
+      "id": 9,
+      "listado_ejercicios": [36, 41, 43, 46],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 36,
+      "enfoque": "Entrenamiento deportivo"
+    },
+    {
+      "id": 10,
+      "listado_ejercicios": [38, 44, 47],
+      "cantidad_total_ejercicios": 3,
+      "total_duracion": 25,
+      "enfoque": "Entrenamiento funcional"
+    },
+    {
+      "id": 11,
+      "listado_ejercicios": [3, 8, 13, 18, 23],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 39,
+      "enfoque": "Entrenamiento cardiovascular"
+    },
+    {
+      "id": 12,
+      "listado_ejercicios": [4, 9, 14, 19, 24],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 41,
+      "enfoque": "Entrenamiento de fuerza"
+    },
+    {
+      "id": 13,
+      "listado_ejercicios": [1, 6, 11, 16, 21],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 37,
+      "enfoque": "Entrenamiento deportivo"
+    },
+    {
+      "id": 14,
+      "listado_ejercicios": [5, 10, 15, 20, 25],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 33,
+      "enfoque": "Entrenamiento funcional"
+    },
+    {
+      "id": 15,
+      "listado_ejercicios": [2, 7, 12, 17, 22],
+      "cantidad_total_ejercicios": 5,
+      "total_duracion": 34,
+      "enfoque": "Entrenamiento cardiovascular"
+    },
+    {
+      "id": 16,
+      "listado_ejercicios": [26, 31, 36, 41],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 29,
+      "enfoque": "Entrenamiento de fuerza"
+    },
+    {
+      "id": 17,
+      "listado_ejercicios": [28, 33, 38, 43],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 30,
+      "enfoque": "Entrenamiento deportivo"
+    },
+    {
+      "id": 18,
+      "listado_ejercicios": [30, 35, 40, 45],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 28,
+      "enfoque": "Entrenamiento funcional"
+    },
+    {
+      "id": 19,
+      "listado_ejercicios": [32, 37, 42, 46],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 31,
+      "enfoque": "Entrenamiento cardiovascular"
+    },
+    {
+      "id": 20,
+      "listado_ejercicios": [34, 39, 44, 47],
+      "cantidad_total_ejercicios": 4,
+      "total_duracion": 27,
+      "enfoque": "Entrenamiento de fuerza"
+    }
+  ]
+}
