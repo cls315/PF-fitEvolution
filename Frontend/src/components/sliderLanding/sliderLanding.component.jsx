@@ -27,7 +27,7 @@ export class sliderLanding extends Component {
 
     prevSlide = () => {
         this.setState({
-            ...this.state, prevSlide: this.state.prevSlide === 0 ? this.state.sliderDb.length - 1 : this.state.prevSlide - 1
+           ...this.state, prevSlide: this.state.prevSlide === 0 ? this.state.sliderDb.length - 1 : this.state.prevSlide - 1
         });
     };
 
@@ -52,19 +52,17 @@ export class sliderLanding extends Component {
       };
 
       handleNextButtonClick = () => {
-        this.nextSlide()
+       
         this.stopInterval(); // Detener el intervalo
-        setTimeout(() => {
-          this.startInterval(); // Reanudar el intervalo después de 6 segundos
-        }, 6000);
+        this.nextSlide()
+        this.startInterval()  // reanudar el intervalo
       };
 
       handlePrevButtonClick = () => {
-        this.prevSlide()
+        
         this.stopInterval(); // Detener el intervalo
-        setTimeout(() => {
-          this.startInterval(); // Reanudar el intervalo después de 6 segundos
-        }, 6000);
+        this.prevSlide()
+        this.startInterval()  // reanudar el intervalo
       };
 
     render() {
