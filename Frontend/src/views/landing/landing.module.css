@@ -26,6 +26,16 @@
         margin-top: 75px;
     }
 
+    .conteinerTitle{
+        display: flex ;
+        flex-direction: row-reverse;
+    }
+
+    .sliderLandingClass{
+      margin-top: 142px;
+      margin-left: 129px;
+    }
+
     .Title h1 {
         color: white;
     }
@@ -85,8 +95,8 @@
       }
 
     .iconosLanding{
-      width: 470px;
-      height: 109px;
+      width: 490px;
+      height: 129px;
     }
 
 }
