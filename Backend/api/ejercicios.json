@@ -3,133 +3,362 @@
     {
       "id": 1,
       "nombre": "Sentadillas",
-      "descripcion": "Flexión y extensión de las rodillas y caderas. Fortalece cuádriceps, isquiotibiales y glúteos.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 2,
       "nombre": "Prensa de piernas",
-      "descripcion": "Empujar una plataforma con las piernas. Trabaja cuádriceps, isquiotibiales y glúteos.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Cuádriceps", "Isquiotibiales", "Glúteos"],
+      "duracion_estimada": 6,
+      "series": 4,
+      "repeticiones_por_serie": 8
     },
     {
       "id": 3,
       "nombre": "Peso muerto",
-      "descripcion": "Levantar una barra desde el suelo. Trabaja la cadena posterior: glúteos, isquiotibiales y espalda baja.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Glúteos", "Isquiotibiales", "Espalda Baja"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales", "Espalda Baja"],
+      "duracion_estimada": 8,
+      "series": 3,
+      "repeticiones_por_serie": 12
     },
     {
       "id": 4,
       "nombre": "Extensiones de cuádriceps",
-      "descripcion": "Levantar peso con las piernas, trabajando cuádriceps.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Cuádriceps"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Cuádriceps"],
+      "duracion_estimada": 4,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 5,
       "nombre": "Zancadas",
-      "descripcion": "Pasos largos hacia adelante o hacia atrás, fortaleciendo piernas y glúteos.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Piernas", "Glúteos"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Piernas", "Glúteos"],
+      "duracion_estimada": 7,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 6,
       "nombre": "Curl de piernas",
-      "descripcion": "Flexión de rodillas con resistencia para trabajar isquiotibiales.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Isquiotibiales"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Isquiotibiales"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 12
     },
     {
       "id": 7,
       "nombre": "Hip Thrusts",
-      "descripcion": "Elevación de caderas en banco, focalizando glúteos e isquiotibiales.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"],
+      "duracion_estimada": 6,
+      "series": 4,
+      "repeticiones_por_serie": 8
     },
     {
       "id": 8,
       "nombre": "Peso muerto sumo",
-      "descripcion": "Variante del peso muerto para trabajar glúteos e isquiotibiales.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Glúteos", "Isquiotibiales"],
+      "duracion_estimada": 8,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 9,
       "nombre": "Elevación de talones",
-      "descripcion": "Levantar talones para fortalecer gemelos.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Gemelos"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Gemelos"],
+      "duracion_estimada": 3,
+      "series": 4,
+      "repeticiones_por_serie": 12
     },
     {
       "id": 10,
       "nombre": "Peso muerto con una pierna",
-      "descripcion": "Peso muerto ejecutado con una pierna, trabajando el equilibrio y la cadena posterior.",
-      "categoria": "Tren Inferior",
-      "musculos_ejercitados": ["Equilibrio", "Cadena Posterior"]
+      "image": "",
+      "categoria": "ti",
+      "musculos_ejercitados": ["Equilibrio", "Cadena Posterior"],
+      "duracion_estimada": 7,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 11,
       "nombre": "Press de banca",
-      "descripcion": "Empuje horizontal de la barra, fortaleciendo pectorales y tríceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Pectorales", "Tríceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Pectorales", "Tríceps"],
+      "duracion_estimada": 6,
+      "series": 4,
+      "repeticiones_por_serie": 8
     },
     {
       "id": 12,
       "nombre": "Fondos en paralelas",
-      "descripcion": "Flexión y extensión de brazos en barras paralelas, trabajando tríceps y pecho.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Tríceps", "Pecho"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Tríceps", "Pecho"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 12
     },
     {
       "id": 13,
       "nombre": "Pull-ups",
-      "descripcion": "Levantar el cuerpo hacia una barra, trabajando espalda y bíceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Espalda", "Bíceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Espalda", "Bíceps"],
+      "duracion_estimada": 7,
+      "series": 4,
+      "repeticiones_por_serie": 8
     },
     {
       "id": 14,
       "nombre": "Press militar",
-      "descripcion": "Levantar una barra sobre la cabeza, trabajando hombros y tríceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Hombros", "Tríceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Hombros", "Tríceps"],
+      "duracion_estimada": 6,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 15,
       "nombre": "Dominadas con agarre cerrado",
-      "descripcion": "Dominadas con manos más cercanas, enfocándose en bíceps y tríceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Bíceps", "Tríceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Bíceps", "Tríceps"],
+      "duracion_estimada": 7,
+      "series": 4,
+      "repeticiones_por_serie": 8
     },
     {
       "id": 16,
       "nombre": "Curl de bíceps",
-      "descripcion": "Flexión de codos con pesas, trabajando bíceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Bíceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Bíceps"],
+      "duracion_estimada": 4,
+      "series": 3,
+      "repeticiones_por_serie": 12
     },
     {
       "id": 17,
       "nombre": "Tríceps en polea alta",
-      "descripcion": "Extensión de codos con polea alta, trabajando tríceps.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Tríceps"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Tríceps"],
+      "duracion_estimada": 5,
+      "series": 4,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 18,
       "nombre": "Pull-over con mancuerna",
-      "descripcion": "Extensión de brazos con una mancuerna, focalizando espalda y pecho.",
-      "categoria": "Tren Superior",
-      "musculos_ejercitados": ["Espalda", "Pecho"]
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Espalda", "Pecho"],
+      "duracion_estimada": 6,
+      "series": 3,
+      "repeticiones_por_serie": 10
     },
     {
       "id": 19,
       "nombre": "Press inclinado con mancuernas",
-      "descripcion": "Press de banca en banco inclinado, enfocándose en la parte superior del pecho."
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Pecho"],
+      "duracion_estimada": 7,
+      "series": 4,
+      "repeticiones_por_serie": 8
+    },
+    {
+      "id": 20,
+      "nombre": "Plancha",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Lumbares"],
+      "duracion_estimada": 3,
+      "series": 3,
+      "repeticiones_por_serie": 12
+    },
+    {
+      "id": 21,
+      "nombre": "Crunch",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales"],
+      "duracion_estimada": 4,
+      "series": 4,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 22,
+      "nombre": "Mountain Climbers",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Cardio"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 23,
+      "nombre": "Russian Twist",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Oblicuos"],
+      "duracion_estimada": 4,
+      "series": 4,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 24,
+      "nombre": "Superman",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Espalda baja"],
+      "duracion_estimada": 3,
+      "series": 3,
+      "repeticiones_por_serie": 12
+    },
+    {
+      "id": 25,
+      "nombre": "Elevación de piernas",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Cadera"],
+      "duracion_estimada": 5,
+      "series": 4,
+      "repeticiones_por_serie": 8
+    },
+    {
+      "id": 26,
+      "nombre": "Hollow Body",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales"],
+      "duracion_estimada": 4,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 27,
+      "nombre": "Leg Raises",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Cadera"],
+      "duracion_estimada": 5,
+      "series": 4,
+      "repeticiones_por_serie": 8
+    },
+    {
+      "id": 28,
+      "nombre": "Oblique Crunch",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Oblicuos"],
+      "duracion_estimada": 4,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 29,
+      "nombre": "Plank with Arm Raise",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Hombros"],
+      "duracion_estimada": 6,
+      "series": 4,
+      "repeticiones_por_serie": 8
+    },
+    {
+      "id": 30,
+      "nombre": "Tijeras",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Abdominales", "Cardio"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 31,
+      "nombre": "Push-up",
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Pectorales", "Tríceps"],
+      "duracion_estimada": 4,
+      "series": 4,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 32,
+      "nombre": "Tríceps Dips",
+      "image": "",
+      "categoria": "ts",
+      "musculos_ejercitados": ["Tríceps"],
+      "duracion_estimada": 3,
+      "series": 3,
+      "repeticiones_por_serie": 12
+    },
+    {
+      "id": 33,
+      "nombre": "Burpees",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Todo el cuerpo"],
+      "duracion_estimada": 7,
+      "series": 4,
+      "repeticiones_por_serie": 8
+    },
+    {
+      "id": 34,
+      "nombre": "Jumping Jacks",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Piernas", "Cardio"],
+      "duracion_estimada": 5,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 35,
+      "nombre": "Sprints",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Piernas", "Cardio"],
+      "duracion_estimada": 8,
+      "series": 3,
+      "repeticiones_por_serie": 10
+    },
+    {
+      "id": 36,
+      "nombre": "Box Jumps",
+      "image": "",
+      "categoria": "core",
+      "musculos_ejercitados": ["Piernas", "Cardio"],
+      "duracion_estimada": 6,
+      "series": 4,
+      "repeticiones_por_serie": 8
     }
   ]
 }
