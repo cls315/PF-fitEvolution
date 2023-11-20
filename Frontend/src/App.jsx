@@ -6,6 +6,7 @@ import { useState } from 'react'
 //Styles
 import './App.css'
 import About from './views/About/About';
+import Dashboard from './views/Dashboard/Dashboard';
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,10 @@ function App() {
         <Route
           path='/about'
           element={<About />}
+        />
+        <Route
+          path='/dashboard'
+          element={<Dashboard />}
         />
       </Routes>
     </>
