@@ -1,0 +1,65 @@
+.FormSesion{
+    
+    background-image: url(../../images/fondoLanding.png);
+    padding: 20%;
+ 
+
+}
+
+.Form{
+    padding: 10px;
+    margin: 0 auto;
+    background-color: rgba(252, 248, 248, 0.733);
+    border: 2px solid rgba(143, 142, 142, 0.726);
+    border-radius: 10px;
+    width:80% ;
+    height: 600px;
+    align-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -30%;
+    justify-content: center;
+    
+}
+.button{
+    background-color: rgba(255, 211, 0, 1);
+    margin-top: 8%;
+    width: 60%;
+}
+.input{
+margin-top: 10%;
+width: 60%;
+border-radius: 4px;
+}
+
+.input1{
+margin-top: 5%;
+width: 60%;
+border-radius: 4px;
+}
+
+.Face{
+    background-color: rgba(128, 128, 128, 0.678);
+    width:28%;
+    height: 12%;
+    margin-right: 35px;
+    font-size:12px ;
+    writing-mode: horizontal-tb;
+
+ 
+}
+.google{
+    background-color:rgba(128, 128, 128, 0.678);
+    width: 28%;
+    height: 12%;
+    font-size:12px ;
+   
+
+}
+.iconFace{
+  color: blue;
+ 
+}
+.parr{
+    margin-top:5% ;
+}
