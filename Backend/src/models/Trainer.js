@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
     },
     image:{
       type: DataTypes.TEXT, 
-      allowNull: false,
+      allowNull: true,
       validate: {
         isUrl: {
           msg: 'La URL de la imagen no es válida.',
@@ -58,12 +58,12 @@ module.exports = (sequelize) => {
     phoneN:{
       type: DataTypes.STRING,
       allowNull: false, 
-      validate: {
-        is: {
-          args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
-          msg: 'Ingresa un número de teléfono válido.',
-        },
-      },
+      // validate: {
+      //   is: {
+      //     args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
+      //     msg: 'Ingresa un número de teléfono válido.',
+      //   },
+      // },
     },
     nationality:{
       type: DataTypes.STRING,
@@ -80,7 +80,7 @@ module.exports = (sequelize) => {
       } 
     },
     dateOfBirth: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       validate: {
         isDate: {
@@ -89,7 +89,7 @@ module.exports = (sequelize) => {
       },
     },
     dni:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
     allowNull: false, 
     validate: {
       isInt: {
@@ -115,12 +115,23 @@ module.exports = (sequelize) => {
       allowNull:false,
     },
     score: {
-      type: DataTypes.DECIMAL(3, 1), 
+      type: DataTypes.DECIMAL(1, 1), 
       validate: {
         isDecimal: true,
         min: 0,
         max: 5,
       },
+      set(value) {
+    if (value < 0 || value > 5) return value;
+
+    const floored = Math.floor(value);
+
+    if (value - floored >= 0.5) {
+      return Math.ceil(value); 
+    }
+
+    return floored; 
+  },
       defaultValue: 0,
       },
   },{
