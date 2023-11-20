@@ -11,7 +11,6 @@ import { useState } from 'react'
 //Styles
 import './App.css'
 
-
 function App() {
   const location = useLocation();
 

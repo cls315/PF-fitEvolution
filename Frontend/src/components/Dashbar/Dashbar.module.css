@@ -1,0 +1,21 @@
+.dashBar{
+    color: rgb(252, 252, 252);
+    background-color: white;
+    display: flex;
+    padding:5px ;
+}
+
+
+.button{
+    background-color: yellow;
+    margin-left: 5%;
+}
+.pagos{
+    margin-left: 30%;
+}
+.entreno{
+    margin-left: 3%;
+}
+.depor{
+    margin-left: 3%;
+}
