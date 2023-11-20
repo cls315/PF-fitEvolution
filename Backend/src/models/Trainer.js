@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       }
@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       }
@@ -58,12 +58,12 @@ module.exports = (sequelize) => {
     phoneN:{
       type: DataTypes.STRING,
       allowNull: false, 
-      // validate: {
-      //   is: {
-      //     args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
-      //     msg: 'Ingresa un número de teléfono válido.',
-      //   },
-      // },
+      validate: {
+        is: {
+          args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
+          msg: 'Ingresa un número de teléfono válido.',
+        },
+      },
     },
     nationality:{
       type: DataTypes.STRING,
@@ -74,7 +74,7 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       } 
@@ -115,25 +115,10 @@ module.exports = (sequelize) => {
       allowNull:false,
     },
     score: {
-      type: DataTypes.DECIMAL(1, 1), 
-      validate: {
-        isDecimal: true,
-        min: 0,
-        max: 5,
-      },
-      set(value) {
-    if (value < 0 || value > 5) return value;
-
-    const floored = Math.floor(value);
-
-    if (value - floored >= 0.5) {
-      return Math.ceil(value); 
-    }
-
-    return floored; 
-  },
-      defaultValue: 0,
-      },
+      type: DataTypes.ENUM('0', '0.5', '1', '1.5', '2', '2.5', '3', '3.5', '4', '4.5', '5'), 
+      allowNull:false,
+    },
+    
   },{
     timestamps: true, //* en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
   });
