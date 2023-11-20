@@ -105,7 +105,7 @@ module.exports = (sequelize) => {
       type: DataTypes.ENUM('Masculino', 'Femenino', 'Otro'),
       allowNull: false,
     }, 
-    //?momentaneamente el campo backup y el campo bloqueos están armados con un type text cosa que se pueda escribir, se puede readaptar
+   
     focusTr:{
       type: DataTypes.TEXT,
       allowNull:false,
@@ -115,8 +115,13 @@ module.exports = (sequelize) => {
       allowNull:false,
     },
     score: {
-        type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
-        allowNull: false,
+      type: DataTypes.DECIMAL(3, 1), 
+      validate: {
+        isDecimal: true,
+        min: 0,
+        max: 5,
+      },
+      defaultValue: 0,
       },
   },{
     timestamps: true, //* en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
