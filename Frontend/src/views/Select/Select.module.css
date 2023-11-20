@@ -1,0 +1,23 @@
+.select{
+border-radius: 4px;
+background-color: rgba(252, 251, 251, 0.486);
+width: 70%;
+height: 50%;
+margin: 0 auto;
+margin-top: 10%;
+}
+.button1{
+    margin-top: 1%;
+    margin-right: 15%;
+}
+.button2{
+    margin-left: 15%;
+}
+.text{
+    margin-top:4%;
+    display:flex;
+    margin-left: 60% ;
+    margin-left: 25%;
+    gap: 43%;
+    
+}
