@@ -11,21 +11,24 @@ const FormSesion = () => {
 
 
     const [form, setForm] = useState({ email: "", password: "" })
-    const navigate = useNavigate()
-    const handlerChange = (event) => {
 
+    const navigate = useNavigate()
+
+
+    const handlerChange = (event) => {
         event.preventDefault()
 
-        const { value, name } = event.target
-
+        const { value, name} = event.target
+          console.log(form)
         setForm({
             ...form, [name]: value
         })
     }
 
     const validate = (form) => {
+        console.log("form")
         if (!form.email)
-            return alert("debe ingresar un nombre")
+            return alert("debe ingresar un email")
 
         if (form.email.length > 25) {
             return alert(" el nombre de la actividad no debe superar 25 caracteres")
@@ -33,14 +36,18 @@ const FormSesion = () => {
 
     }
 
-    const validateEmail = (email) => {
-        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-        var esValido = expReg.test(email)
-        if (esValido == false)
-            alert("email no valido")
+   const handlerButton =(event)=>{
 
-    }
-    0
+    validate(form)
+
+    event.preventDefault()
+
+    navigate('/dashboardtr')
+
+   }
+
+    
+    
     const volverinicio = () => {
         navigate('/')
     }
@@ -55,11 +62,13 @@ const FormSesion = () => {
                 </div>
                 <h1>Iniciar sesion</h1>
 
-                <input type="text" value={form.name} name="email" className={style.input} onChange={handlerChange} placeholder="EMAIL" />
-
+                <input type="text" value={form.email} name="email" className={style.input} onChange={handlerChange} placeholder="EMAIL" />
+                <div className={style.checkbox}>
+                <input type="checkbox"/><p>Recordar email</p>
+                </div>
                 <input type="password" value={form.password} name="password" className={style.input1} onChange={handlerChange} placeholder="PASSWORD" />
 
-                <button onClick={()=>{navigate('/dashboardtr')}} className={style.button}>Iniciar Sesion</button>
+                <button onClick={handlerButton} className={style.button}>Iniciar Sesion</button>
                 <hr />
                 <div className={style.faceGoole}>
                     <button className={style.Face}>
