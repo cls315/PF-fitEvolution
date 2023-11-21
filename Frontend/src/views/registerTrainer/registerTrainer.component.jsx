@@ -17,8 +17,8 @@ function RegisterTrainer() {
     
     const handleSubmit = (e) => {}
 
-    const volverHome = () => {
-        navigate('/select');
+    const volverInicio = () => {
+        navigate('/login');
      };
     const changeAccount=()=>{
         navigate('/select');
@@ -94,7 +94,7 @@ function RegisterTrainer() {
             </div>
             <div className={style.titleInf}>
                 <button className={style.btCreateAccount}>Crear cuenta</button>
-            <span >¿Ya tienes cuenta?  <button onClick={volverHome} className={style.spanButton}> inicio de sesion</button></span>
+            <span >¿Ya tienes cuenta?  <button onClick={volverInicio} className={style.spanButton}> inicio de sesion</button></span>
             </div>
         </div>
     </div>)
