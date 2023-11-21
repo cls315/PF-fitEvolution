@@ -4,9 +4,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('trainer', {
     id:{
-      type:DataTypes.UUID,
+      type:DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue:DataTypes.UUIDV4
+      autoIncrement:true
     },
     forename:{
       type: DataTypes.STRING,
