@@ -45,11 +45,16 @@ const FormSesion = () => {
         navigate('/')
     }
 
+    const handleSubmit=(e)=>{
+        if (form.email==="usuario@gmail.com") navigate('/homeusuario')
+        if (form.email==="entrenador@gmail.com") navigate('/dashboardtr')
+    }
+
 
     return (
         <div className={style.FormSesion}>
 
-            <div className={style.Form}>
+            <form className={style.Form} onSubmit={handleSubmit}>
                 <div className={style.btconteiner}>
                     <button onClick={volverinicio} className={style.btLogin}>{'< volver al inicio'}</button>
                 </div>
@@ -59,7 +64,7 @@ const FormSesion = () => {
 
                 <input type="password" value={form.password} name="password" className={style.input1} onChange={handlerChange} placeholder="PASSWORD" />
 
-                <button onClick={()=>{navigate('/dashboardtr')}} className={style.button}>Iniciar Sesion</button>
+                <button type="submit" className={style.button}>Iniciar Sesion</button>
                 <hr />
                 <div className={style.faceGoole}>
                     <button className={style.Face}>
@@ -77,7 +82,7 @@ const FormSesion = () => {
                 <p>¿No tienes una cuenta?<Link to={'/select'}>Haz click aqui</Link></p>
 
 
-            </div>
+            </form>
 
 
 
