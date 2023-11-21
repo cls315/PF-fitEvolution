@@ -1,3 +1,3 @@
 export const ejemplo="ejemplo";
-export const menuTrainer="menuTrainer"
+export const GET_TRAINERS = "GET_TRAINERS"
 
