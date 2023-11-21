@@ -1,0 +1,20 @@
+.nav{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    background-color: #fff;
+    width: 100%;
+    min-width: 98.7vw;
+    margin: 0px;
+}
+
+.logo {
+    width: 92px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 30px;
+  }
