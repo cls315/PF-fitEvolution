@@ -6,7 +6,6 @@ const filteredTrHandl = require ('../handlers/TrainersHndls/filteredTrHandl')
 const trainersRoutes = Router();
 
 trainersRoutes.get("/allTrainer", allTrainerHndls);
-trainersRoutes.get("/filteredTrainers", filteredTrHandl)
 trainersRoutes.post("/", postTrainerHdnls);
 
 module.exports = trainersRoutes;
