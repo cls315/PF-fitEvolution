@@ -4,9 +4,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('trainer', {
     id:{
-      type:DataTypes.UUID,
+      type:DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue:DataTypes.UUIDV4
+      autoIncrement:true
     },
     forename:{
       type: DataTypes.STRING,
@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       }
@@ -31,14 +31,14 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       }
     },
     image:{
       type: DataTypes.TEXT, 
-      allowNull: false,
+      allowNull: true,
       validate: {
         isUrl: {
           msg: 'La URL de la imagen no es válida.',
@@ -74,13 +74,13 @@ module.exports = (sequelize) => {
       },
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u,
           msg: 'Solo se permiten letras en este campo.'
         }
       } 
     },
     dateOfBirth: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       validate: {
         isDate: {
@@ -89,7 +89,7 @@ module.exports = (sequelize) => {
       },
     },
     dni:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
     allowNull: false, 
     validate: {
       isInt: {
@@ -115,14 +115,10 @@ module.exports = (sequelize) => {
       allowNull:false,
     },
     score: {
-      type: DataTypes.DECIMAL(3, 1), 
-      validate: {
-        isDecimal: true,
-        min: 0,
-        max: 5,
-      },
-      defaultValue: 0,
-      },
+      type: DataTypes.ENUM('0', '0.5', '1', '1.5', '2', '2.5', '3', '3.5', '4', '4.5', '5'), 
+      allowNull:false,
+    },
+    
   },{
     timestamps: true, //* en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
   });
