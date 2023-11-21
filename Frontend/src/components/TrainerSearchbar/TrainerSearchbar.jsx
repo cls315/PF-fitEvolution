@@ -1,5 +1,6 @@
 import React from 'react';
 import './TrainerSearchbar.css';
+import { useNavigate } from 'react-router-dom';
 
 const TrainerSearchbar = () => {
   return (

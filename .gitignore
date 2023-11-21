@@ -11,6 +11,10 @@ logs
 node_modules
 bower_components
 
+# dotenv environment variables file
+.env
+.env.test
+
 *.sublime*
 
 psd
