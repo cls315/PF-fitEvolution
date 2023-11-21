@@ -11,14 +11,13 @@ import { useDispatch } from 'react-redux';
 import { cambiarMenuTrainer } from "../redux/actions/actions";
 
 
-const DashBar = () => {
+const DashBar = (props) => {
+    const {handleMenu}=props
     const dispatch = useDispatch()
    
+   
 
-    const handleMenu =(e)=>{
-        const eventomenu=e.target.name
-      dispatch(cambiarMenuTrainer(eventomenu))
-    }
+   
 
     return (
         <div className={style.dashBar}>
@@ -30,7 +29,7 @@ const DashBar = () => {
                     <li><Link to={'/'}>Salir</Link></li>
                 </ul>
             </div>
-            <img name='search' onClick={handleMenu} className={style.iconsDashbar} src={iconsearch} alt='icon'></img>
+            <img name='search' onClick={(e)=>handleMenu(e)} className={style.iconsDashbar} src={iconsearch} alt='icon'></img>
             <img name='bell'onClick={handleMenu} className={style.iconsDashbar} src={iconbell} alt='icon'></img>
             <img name='message' onClick={handleMenu} className={style.iconsDashbar} src={iconMessage} alt='icon'></img>
             <button name='entrenamientos' onClick={handleMenu} className={style.entreno}><CgGym />Entrenamientos</button>
