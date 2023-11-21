@@ -37,8 +37,8 @@ function Landing(props) {
         <h2 className={style.subTitle1Landing}>Disfruta de todos los beneficios de FitRevolution</h2>
         <img className={style.iconosLanding} src={iconos} alt="iconos"></img>
         <button className={style.buttonConteinerForm} onClick={() => {
-          navigate('/register')
-        }}>Asociarse</button>
+          navigate('/login')
+        }}>Comenzar</button>
       </div>
     </div>
 
