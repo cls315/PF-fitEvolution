@@ -3,30 +3,28 @@ import style from './Select.module.css'
 
 
 
-const Select =()=>{
+const Select = () => {
 
-const navigate= useNavigate()
+    const navigate = useNavigate()
 
-    return (
+    return (<div className={style.conteinerSelect}>
         <div className={style.select}>
-
-
-            <h2>Elije un rol</h2>
             <div className={style.text}>
-
-
-            <p>Estudiante </p><p>Entrenador</p>
-            
-
+                <h2>Elije un rol</h2>
             </div>
-           
-             <button  className={style.button1} onClick={()=>{navigate("/sesion")}}>Ingresar</button>
-             <button  className={style.button2}onClick={()=>{navigate("/sesion")}}>Ingresar</button>
-
-            
-
+            <div className={style.rolesSelect}>
+                <div className={style.selectRol}>
+                    <h1>Estudiante </h1>
+                    <button className={style.buttonSelect} onClick={() => { navigate("/registeruser") }}>Registrarse</button>
+                </div>
+                <div className={style.selectRol}>
+                    <h1>Entrenador</h1>
+                    <button className={style.buttonSelect} onClick={() => { navigate("/registertrainer") }}>Registrarse</button>
+                </div>
+            </div>
         </div>
+    </div>
     )
-} 
+}
 
 export default Select;

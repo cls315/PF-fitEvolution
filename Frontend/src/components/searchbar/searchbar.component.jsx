@@ -14,6 +14,10 @@ function SearchBar(props) {
 
   const isActiveAbout = useMatch('/about');
 
+  const isActiveRegister = useMatch('/register');
+
+  const isActiveLogin = useMatch('/login');
+
   return (
     <>
       <nav class='navbar navbar-expand-lg navbar-light bg-light '>
@@ -63,21 +67,21 @@ function SearchBar(props) {
 
             <li class='nav-item active'>
               <button className='bt-nav-landing'>
-                <a
-                  class='nav-link'
-                  href='#'>
-                  Iniciar sesion <span class='sr-only'>*</span>
-                </a>
+              <Link
+                  className={`nav-link  ${isActiveLogin ? 'text-warning' : ''}`}
+                  to={'/login'}>
+                  Iniciar sesion
+                </Link>
               </button>
             </li>
 
             <li class='nav-item'>
               <button className='bt-nav-landing-register'>
-                <a
-                  class='nav-link '
-                  href='#'>
+              <Link
+                  className={`nav-link  ${isActiveRegister ? 'text-warning' : ''}`}
+                  to={'/select'}>
                   Registrarse gratis
-                </a>
+                </Link>
               </button>
             </li>
           </ul>
