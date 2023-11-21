@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import PERFIL from "../../assets/PERFIL.jpg"
 import mplogo from "../../images/mplogo.png"
 import StarRating from "../../components/starRating/starRating";
 
@@ -12,6 +12,17 @@ import styles from "./detail.module.css"
 const Detail = ()=>{
 
     const {id} = useParams();
+
+    console.log(id);
+
+    const allTrainers = useSelector((state) => state.allTrainers)
+
+    console.log(allTrainers);
+
+    const trainer = allTrainers.find((teacher) => teacher.id == id)
+
+    console.log(trainer);
+
 
     let [page, setPage] = useState(1);
 
@@ -35,11 +46,11 @@ const Detail = ()=>{
             {page == 1 ? (
             <div className={styles.info}>
                 <div className={styles.details}>
-                    <h2>Nombre: nombre</h2>
-                    <h2>Nacionalidad: argentino papa</h2>
-                    <h2>E-mail: email</h2>
-                    <h2>Enfoque: juerza</h2>
-                    <h2>Descripcion: Alto profe</h2>
+                    <h2>Nombre: {trainer.forename} {trainer.surname}</h2>
+                    <h2>Nacionalidad: {trainer.nationality}</h2>
+                    <h2>E-mail: {trainer.email}</h2>
+                    <h2>Enfoque: {trainer.focusTr}</h2>
+                    <h2>Descripcion: {trainer.description}</h2>
                 </div>
                 <button className={styles.btn} onClick={()=>{sumPage()}}>Selecciona tu plan</button>
             </div>
@@ -82,8 +93,8 @@ const Detail = ()=>{
             </div>
             ) : (<div></div>)}
             <div className={styles.perfil}>
-                <img src={PERFIL} className={styles.img}/>
-                <StarRating rating={5} className={styles.stars}/>
+                <img src={trainer.image} className={styles.img}/>
+                <StarRating rating={trainer.score} className={styles.stars}/>
             </div>
         </div>
             {/* )} */}

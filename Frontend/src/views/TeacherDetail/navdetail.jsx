@@ -7,7 +7,7 @@ const Navdetail = ()=>{
     return(
         <div className={styles.nav}>
             <img src={imageLogo} className={styles.logo}/>
-            <Link to="/teachers">
+            <Link to="/homeusuario">
             <button className={styles.btn}>Volver a seleccionar</button>
             </Link>
         </div>
