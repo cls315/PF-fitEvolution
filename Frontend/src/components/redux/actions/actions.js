@@ -1,7 +1,7 @@
 import { ejemplo, GET_TRAINERS } from "./types";
 import axios from 'axios';
 import { URLSERVER } from '../../../../configURL';
-import { menuTrainer } from '../actions/types'
+import { MENU_TRAINERS } from '../actions/types'
 
 export const getTrainers = () => {
   return async function (dispatch) {
@@ -24,7 +24,7 @@ export const cambiarMenuTrainer = (data) => {
     return function (dispatch) {
         return dispatch(
             {
-                type: menuTrainer,
+                type: MENU_TRAINERS,
                 payload: [data]
             }
         )
