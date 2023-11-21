@@ -1,4 +1,4 @@
-import { ejemplo , GET_TRAINERS,menuTrainer} from "../actions/types"
+import { ejemplo , GET_TRAINERS,MENU_TRAINERS} from "../actions/types"
 
 const initialState = {
     allTrainers: [],
@@ -9,7 +9,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case GET_TRAINERS:
             return {...state, allTrainers: payload}
-        case menuTrainer:
+        case MENU_TRAINERS:
             return {
                 ...state,
                 menuTrainer: payload
