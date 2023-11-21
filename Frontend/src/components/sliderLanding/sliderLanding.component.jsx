@@ -3,6 +3,7 @@
 //Common imports
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import pngegg from '../../images/pngegg.png'
 //Styles
 import './sliderLanding.css';
 
@@ -77,7 +78,7 @@ export class sliderLanding extends Component {
                     </button>
                     <div className="imgSlider">
                         <img className="imgSlideLanding1" src={this.state.sliderDb[this.state.prevSlide][0]} />
-                        <img className="imgSlideLanding2" src={this.state.sliderDb[this.state.prevSlide][3]} />
+                        <img className="imgSlideLanding2" src={pngegg} />
                     </div>
                     <div className="commentsSLider">
                     <h1>{this.state.sliderDb[this.state.prevSlide][1]}</h1>
