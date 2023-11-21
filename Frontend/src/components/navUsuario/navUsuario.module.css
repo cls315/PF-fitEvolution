@@ -18,3 +18,20 @@
     margin-right: 5px;
     margin-left: 30px;
   }
+
+  .btn {
+    max-width: 172px;
+    width: auto;
+    max-height: 35px;
+    height: auto;
+    margin-right: 46px;
+    border-radius: 13px;
+    background: var(--amarillo, #ffd300);
+    color: var(--black, #202128);
+    font-family: Raleway;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
