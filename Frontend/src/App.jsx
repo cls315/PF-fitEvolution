@@ -5,6 +5,7 @@ import Select from './views/Select/Select';
 import RegisterUser from './views/registerUser/registerUser.component';
 import RegisterTrainer from './views/registerTrainer/registerTrainer.component';
 import FormSesion from './views/Sesion/Sesion';
+import DashboardTrainer from './views/DashboardTrainer/DashboardTrainer';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react'
@@ -40,6 +41,10 @@ function App() {
          <Route
           path='/login'
           element={<FormSesion />}
+        />
+         <Route
+          path='/dashboardtr'
+          element={<DashboardTrainer />}
         />
       </Routes>
     </>
