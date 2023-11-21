@@ -1,5 +1,4 @@
 
-// const { Trainer } = require("../../db");
 const getAllTrainer = require("./getAllTrainer");
 
 const filterFocusScore = async (req, res) => {
@@ -15,6 +14,8 @@ const filterFocusScore = async (req, res) => {
     if (score) {
       trainers = trainers.filter(trainer => trainer.score === score);
     }
+
+
 
     res.json(trainers);
   } catch (error) {
