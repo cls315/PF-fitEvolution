@@ -1,5 +1,7 @@
 //Components
 import Landing from './views/landing/landing.component'
+import Card from "./components/card/card"
+import Detail from "./views/TeacherDetail/detail"
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react'
@@ -21,6 +23,8 @@ function App() {
           path='/about'
           element={<About />}
         />
+        <Route path='/teachers' element={<Card/>}/>
+        <Route path='/teacher/:id' element={<Detail/>} />
       </Routes>
     </>
   );
