@@ -51,7 +51,7 @@ const FormSesion = () => {
 
             <div className={style.Form}>
                 <div className={style.btconteiner}>
-                    <button onClick={volverinicio} className={style.btLogin}>{'< volver'}</button>
+                    <button onClick={volverinicio} className={style.btLogin}>{'< volver al inicio'}</button>
                 </div>
                 <h1>Iniciar sesion</h1>
 
@@ -59,7 +59,7 @@ const FormSesion = () => {
 
                 <input type="password" value={form.password} name="password" className={style.input1} onChange={handlerChange} placeholder="PASSWORD" />
 
-                <button className={style.button}>Iniciar Sesion</button>
+                <button onClick={()=>{navigate('/dashboardtr')}} className={style.button}>Iniciar Sesion</button>
                 <hr />
                 <div className={style.faceGoole}>
                     <button className={style.Face}>
