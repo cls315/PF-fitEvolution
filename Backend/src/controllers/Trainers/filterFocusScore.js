@@ -7,7 +7,7 @@ const filterFocusScore = async (req, res) => {
     const { focus, score , sortByFocus, sortByScore } = req.query;
     let trainers = await getAllTrainer();
 
-    // Aplicar filtros si se proporcionan
+    //filtro por score y focus
     if (focus) {
       trainers = trainers.filter(trainer => trainer.focusTr === focus);
     }
@@ -18,7 +18,7 @@ const filterFocusScore = async (req, res) => {
 
       
   
-    // Ordenar por ambos filtros si se proporcionan
+    // ordenamiento asc y desc por focus y score
     if (sortByFocus) {
       trainers.sort((a, b) => {
 
@@ -35,7 +35,7 @@ const filterFocusScore = async (req, res) => {
         } else if (sortByFocus.toUpperCase() === 'DESC') {
           return focusB.localeCompare(focusA);
         }
-        // Agrega manejo para otros casos si es necesario
+        
       });
     }
     
@@ -46,7 +46,7 @@ const filterFocusScore = async (req, res) => {
         } else if (sortByScore.toUpperCase() === 'DESC') {
           return b.score - a.score;
         }
-        // Agrega manejo para otros casos si es necesario
+       
       });
     }
     
