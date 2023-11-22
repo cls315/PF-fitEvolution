@@ -27,6 +27,7 @@ const DashboardTrainer = (props) => {
       {menu==="deportes" && <MenuprincipalTrainer />}
       {menu==="pagos" && <PagosprincipalTrainer/>}
       {menu==="entrenamientos" && <EntrePrincipalTrainer/>}
+      
       <footer className='footerUser'><p>© 2023 FitRevolution </p></footer>
     </div>
   );

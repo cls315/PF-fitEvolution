@@ -7,17 +7,36 @@ import iconsearch from '../SVG/iconsearch.svg'
 import iconbell from '../SVG/iconbell.svg'
 import iconMessage from '../SVG/iconMessage.svg'
 import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cambiarMenuTrainer } from "../redux/actions/actions";
+import {getTrainers} from "../redux/actions/actions"
 
 
 const DashBar = (props) => {
-    const {handleMenu}=props
-    const dispatch = useDispatch()
-   
-   
 
+    const {handleMenu}=props
+
+    // const trainer = useSelector((state)=>state.trainers) 
+    //    console.log(trainer)
+    const dispatch = useDispatch()
+
+    // const [input, setInput] = useState("");
    
+    // const handlerInput=(event)=>{
+
+    //     const value = event.target.value
+    //     // console.log(value)
+    //     setInput(value)
+
+    // }
+//     const searchHandler=(event)=>{
+
+//     event.preventDefault
+//     dispatch(getTrainers(input))
+    
+//  }
+
+   //la ruta que traje getTrainers conslogueada me tira undefined (en cuanto se encuentre la ruta se deberia descomentar las funciones y pasarlas por onChange y unSubmit)
 
     return (
         <div className={style.dashBar}>
@@ -28,6 +47,9 @@ const DashBar = (props) => {
                     <li><a href="#">Ajustes</a></li>
                     <li><Link to={'/'}>Salir</Link></li>
                 </ul>
+            </div>
+            <div className={style.input}>
+               <input type="text"/>
             </div>
             <img name='search' onClick={(e)=>handleMenu(e)} className={style.iconsDashbar} src={iconsearch} alt='icon'></img>
             <img name='bell'onClick={handleMenu} className={style.iconsDashbar} src={iconbell} alt='icon'></img>
@@ -43,3 +65,4 @@ const DashBar = (props) => {
 
 
 export default DashBar
+
