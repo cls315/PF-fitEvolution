@@ -21,10 +21,19 @@ const filterFocusScore = async (req, res) => {
     // Ordenar por ambos filtros si se proporcionan
     if (sortByFocus) {
       trainers.sort((a, b) => {
+
+        const secondString = (str) => str.replace(/^Entrenamiento de /, '');
+
+        const focusA = secondString(a.focusTr);
+        const focusB = secondString(b.focusTr);
+
+
+
+
         if (sortByFocus.toUpperCase() === 'ASC') {
-          return a.focusTr.localeCompare(b.focusTr);
+          return focusA.localeCompare(focusB);
         } else if (sortByFocus.toUpperCase() === 'DESC') {
-          return b.focusTr.localeCompare(a.focusTr);
+          return focusB.localeCompare(focusA);
         }
         // Agrega manejo para otros casos si es necesario
       });
