@@ -69,11 +69,11 @@ const FormSesion = () => {
 
                 <input type="text" value={form.email} name="email" className={style.input} onChange={handlerChange} placeholder="EMAIL" />
                 <div className={style.checkbox}>
-                <input type="checkbox"/><p>Recordar email</p>
+               
                 </div>
                 <input type="password" value={form.password} name="password" className={style.input1} onChange={handlerChange} placeholder="PASSWORD" />
 
-                <button onClick={()=>{navigate('/dashboardtr')}} className={style.button}>Iniciar Sesion</button>
+                <button onClick={handlerButton} className={style.button}>Iniciar Sesion</button>
                 <hr />
                 <div className={style.faceGoole}>
                     <button className={style.Face}>
