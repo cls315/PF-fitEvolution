@@ -6,6 +6,8 @@ import RegisterUser from './views/registerUser/registerUser.component';
 import RegisterTrainer from './views/registerTrainer/registerTrainer.component';
 import FormSesion from './views/Sesion/Sesion';
 import DashboardTrainer from './views/DashboardTrainer/DashboardTrainer';
+import Homeusuario from './views/HomeUsuario/homeusuario';
+import Detail from './views/TeacherDetail/detail';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react'
@@ -46,6 +48,12 @@ function App() {
           path='/dashboardtr'
           element={<DashboardTrainer />}
         />
+        <Route
+         path='/homeusuario'
+          element={<Homeusuario />}/>
+        <Route 
+        path='/teacher/:id'
+        element={<Detail/>}/>
       </Routes>
     </>
   );
