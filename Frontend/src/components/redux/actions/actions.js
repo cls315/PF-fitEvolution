@@ -1,4 +1,4 @@
-import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS } from "./types";
+import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE, SOBRE_FOCUS } from "./types";
 import axios from 'axios';
 import { URLSERVER } from '../../../../configURL';
 import { MENU_TRAINERS } from '../actions/types'
@@ -57,6 +57,24 @@ export const filterScore = (option)=>{
     } catch (error) {
       throw new Error(error.message)
     }
+  }
+}
+
+export const sobreScore = (option)=>{
+  return function (dispatch){
+    return dispatch({
+      type: SOBRE_SCORE,
+      payload: option
+    })
+  }
+}
+
+export const sobreFocus = (option)=>{
+  return function (dispatch){
+    return dispatch({
+      type: SOBRE_FOCUS,
+      payload: option
+    })
   }
 }
 
