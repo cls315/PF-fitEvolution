@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { Trainer } = require("../../db");
+
 const { API_TRAINERS } = require("./urls");
 
 const allTrainer = async () => {

@@ -1,24 +1,35 @@
-import React from 'react';
-import TrainerSearchbar from '../../components/TrainerSearchbar/TrainerSearchbar';
+//Commons imports
+import { useEffect, useState} from 'react';
+
+//components imports
+import MenuprincipalTrainer from '../../components/menuprincipalTainer/menuprincipalTrainer';
 import DashBar from '../../components/Dashbar/Dashbar';
+import PagosprincipalTrainer from '../../components/pagosprincipalTrainer/pagosprincipalTrainer';
+import EntrePrincipalTrainer from '../../components/entreprincipalTRainer/entreprincipalTrainer';
+//styles
+import React from 'react';
 import './DashboardTrainer.css';
 
-const Dashboard = () => {
+
+
+const DashboardTrainer = (props) => {
+ const [menu,setmenu]=useState('')
+
+ const handleMenu =(e)=>{
+  const nom=e.target.name
+  console.log(e.target.name)
+  setmenu(nom)
+}
+
   return (
     <div className='bg-trainer-board'>
-      <DashBar />
-      <div className='d-flex flex-column text-right'>
-        <h3>Deportistas activos{' (1)'}</h3>
-        <span>
-          Bienvenido a tu cuenta de entrenador, aqui puedes ver todos los
-          deportistas
-        </span>
-      </div>
-      <TrainerSearchbar />
-      <div className='conteinerUsersDash'></div>
+      <DashBar handleMenu={handleMenu}/>
+      {menu==="deportes" && <MenuprincipalTrainer />}
+      {menu==="pagos" && <PagosprincipalTrainer/>}
+      {menu==="entrenamientos" && <EntrePrincipalTrainer/>}
       <footer className='footerUser'><p>© 2023 FitRevolution </p></footer>
     </div>
   );
 };
 
-export default Dashboard;
+export default DashboardTrainer;
