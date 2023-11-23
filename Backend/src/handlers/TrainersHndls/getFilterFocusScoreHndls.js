@@ -2,7 +2,6 @@ const filterFocusScore = require("../../controllers/Trainers/getFilterFocusScore
 
 const filterFocusScoreHndls = async (req, res) => {
   try {
-  
     const filter = await filterFocusScore(req);
 
     return res.status(200).json(filter);
