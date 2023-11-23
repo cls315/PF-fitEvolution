@@ -3,12 +3,15 @@ import { ejemplo , GET_TRAINERS,MENU_TRAINERS} from "../actions/types"
 const initialState = {
     allTrainers: [],
     menusTrainer:[],
+    rutinas:[],
 }
 
 const rootReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
+    switch (type) 
+    {
         case GET_TRAINERS:
             return {...state, allTrainers: payload}
+
         case MENU_TRAINERS:
             return {
                 ...state,
@@ -16,6 +19,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
             }
         default:
             return { ...state }
+        
+    
     }
 }
 

@@ -19,6 +19,8 @@ export const getTrainers = () => {
   };
 };
 
+
+
 //cambiar menus en el panel del entrenador
 export const cambiarMenuTrainer = (data) => {
     return function (dispatch) {
