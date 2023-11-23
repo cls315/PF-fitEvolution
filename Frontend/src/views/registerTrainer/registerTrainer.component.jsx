@@ -5,17 +5,39 @@ import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 //Styles
 import style from "./registerTrainer.module.css";
+//import firebase
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../components/firebase/firebase';
 
-
-
-function RegisterTrainer() {
-    const navigate = useNavigate();
-    const handleChange = (e) => {
-    }
+const RegisterTrainer=()=> {
     
+    const navigate = useNavigate();
+    //registro con firebase
+    const [user,setUser]=useState({
+        forename:"",
+        password:""
+    })
+
+    const handleChange = (e) => {
+        const property=e.target.name
+        const value=e.target.value
+        setUser({...user,[property]:value })
+        console.log({...user,[property]:value })
+    }
+    const handleSubmit =async (e) => {
+        e.preventDefault()
+        console.log(user.forename)
+        console.log(user.password)
+        try{
+            const userCredentials=await createUserWithEmailAndPassword(auth,"user.forename", "user.password") //esto se envia a firebase y puede llevar tiempo por ello usamos async y await
+            console.log(userCredentials)
+            }catch(error){console.log(error)}
+    }
+   
+    //------------------------
     const [errors, setErrors] = useState({})
     
-    const handleSubmit = (e) => {}
+  
 
     const volverInicio = () => {
         navigate('/login');
@@ -93,7 +115,7 @@ function RegisterTrainer() {
 
             </div>
             <div className={style.titleInf}>
-                <button className={style.btCreateAccount}>Crear cuenta</button>
+                <button onClick={handleSubmit} className={style.btCreateAccount}>Crear cuenta</button>
             <span >¿Ya tienes cuenta?  <button onClick={volverInicio} className={style.spanButton}> inicio de sesion</button></span>
             </div>
         </div>

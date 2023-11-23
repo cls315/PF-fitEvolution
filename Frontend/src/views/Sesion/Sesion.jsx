@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 //FIREBASE
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-const provider = new GoogleAuthProvider();
+import { signInWithPopup} from "firebase/auth";
+import { auth,provider } from "../../components/firebase/firebase";
+
 
 //--------
 
@@ -16,23 +15,7 @@ const provider = new GoogleAuthProvider();
 
 const FormSesion = () => {
     //FIREBASE
-    const firebaseConfig = {
-        apiKey: "AIzaSyBFyGLc7ayGtqpU6rWQ3-zUK7bnlqc2uts",
-        authDomain: "pf-final-henry.firebaseapp.com",
-        projectId: "pf-final-henry",
-        storageBucket: "pf-final-henry.appspot.com",
-        messagingSenderId: "1056250886265",
-        appId: "1:1056250886265:web:de0e1b9865821c2a19fca8",
-        measurementId: "G-HRF4L9VW4C"
-    };
-
-    
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-
         //Para acceder con una ventana emergente, llamada signInWithPopup
-        const auth = getAuth();
         const call_login_google=(e)=>{
             e.preventDefault()
             signInWithPopup(auth, provider)
