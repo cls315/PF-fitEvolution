@@ -4,11 +4,60 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+//FIREBASE
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+const provider = new GoogleAuthProvider();
+
+//--------
 
 
 
 const FormSesion = () => {
+    //FIREBASE
+    const firebaseConfig = {
+        apiKey: "AIzaSyBFyGLc7ayGtqpU6rWQ3-zUK7bnlqc2uts",
+        authDomain: "pf-final-henry.firebaseapp.com",
+        projectId: "pf-final-henry",
+        storageBucket: "pf-final-henry.appspot.com",
+        messagingSenderId: "1056250886265",
+        appId: "1:1056250886265:web:de0e1b9865821c2a19fca8",
+        measurementId: "G-HRF4L9VW4C"
+    };
 
+    
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+        //Para acceder con una ventana emergente, llamada signInWithPopup
+        const auth = getAuth();
+        const call_login_google=(e)=>{
+            e.preventDefault()
+            signInWithPopup(auth, provider)
+            .then((result) => {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              const credential = GoogleAuthProvider.credentialFromResult(result);
+              const token = credential.accessToken;
+              // The signed-in user info.
+              const user = result.user;
+              console.log(user.email)
+              // IdP data available using getAdditionalUserInfo(result)
+              // ...
+            }).catch((error) => {
+              // Handle Errors here.
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // The email of the user's account used.
+              const email = error.customData.email;
+              // The AuthCredential type that was used.
+              const credential = GoogleAuthProvider.credentialFromError(error);
+              // ...
+            });
+        }
+        //--------------------------------------------------------------
+    //-------
 
     const [form, setForm] = useState({ email: "", password: "" })
     const navigate = useNavigate()
@@ -45,9 +94,9 @@ const FormSesion = () => {
         navigate('/')
     }
 
-    const handleSubmit=(e)=>{
-        if (form.email==="usuario@gmail.com") navigate('/homeusuario')
-        if (form.email==="entrenador@gmail.com") navigate('/dashboardtr')
+    const handleSubmit = (e) => {
+        if (form.email === "usuario@gmail.com") navigate('/homeusuario')
+        if (form.email === "entrenador@gmail.com") navigate('/dashboardtr')
     }
 
 
@@ -72,7 +121,7 @@ const FormSesion = () => {
                         <p className={style.pfg}>Continuar con Facebook</p>
                     </button>
 
-                    <button className={style.google}>
+                    <button onClick={call_login_google} className={style.google}>
                         <FcGoogle size={40} className={style.iconFace} />
                         <p className={style.pfg}>Continuar con Google</p>
                     </button>
