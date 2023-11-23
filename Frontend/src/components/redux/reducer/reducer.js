@@ -1,9 +1,10 @@
-import { ejemplo , GET_TRAINERS,MENU_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS} from "../actions/types"
+import { ejemplo , GET_TRAINERS,MENU_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE, SOBRE_FOCUS} from "../actions/types"
 
 const initialState = {
     allTrainers: [],
     menusTrainer:[],
     filterTrainers: [],
+    status: "",
 }
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -18,11 +19,26 @@ const rootReducer = (state = initialState, { type, payload }) => {
         case FILTER_FOCUS:
             return {
                 ...state,
-                filterTrainers: payload
+                filterTrainers: payload,
+                status: "focus"
             }
         case FILTER_SCORE:
             return {
-                ...state, filterTrainers: payload
+                ...state, filterTrainers: payload,
+                status: "score"
+            }
+        case SOBRE_SCORE:
+            const newFilter = state.filterTrainers.filter((trainer) => trainer.focusTr === payload)
+            return {
+                ...state, filterTrainers: newFilter,
+                status: "focus"
+            }
+        case SOBRE_FOCUS:
+            const byStars = state.filterTrainers.filter((trainer) => trainer.score === payload)
+            return{
+                ...state,
+                filterTrainers: byStars,
+                status: "score"
             }
         case QUITAR_FILTROS:
             return {

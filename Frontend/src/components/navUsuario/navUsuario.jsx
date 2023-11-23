@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTrainers, filterFocus, filterScore, quitarFiltros } from "../../components/redux/actions/actions"
+import { getTrainers, filterFocus, filterScore, quitarFiltros,sobreScore, sobreFocus } from "../../components/redux/actions/actions"
 import {Link} from "react-router-dom"
 import imageLogo from "../../images/imageLogo.jpg"
 import styles from "./navUsuario.module.css"
@@ -13,6 +13,8 @@ const NavUsuario = ()=>{
     }, [dispatch])
 
     const trainers = useSelector((state) => state.allTrainers)
+    const filtrados = useSelector((state)=> state.filterTrainers)
+    const status = useSelector((state)=> state.status)
 
     let focus = trainers.map((trainer) => trainer.focusTr)
     focus = focus.filter((item, index) => {
@@ -26,8 +28,13 @@ const NavUsuario = ()=>{
 
     const filterByFocus = (e)=>{
         const option = e.target.value
-        if(option === "todos"){
+        if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        } 
+        else if(filtrados.lenght !== 0 && status === "focus") {
+            dispatch(filterFocus(option))
+        } else if(filtrados.lenght !== 0 && status === "score"){
+            dispatch(sobreScore(option))
         } else {
             dispatch(filterFocus(option))
         }
@@ -35,8 +42,13 @@ const NavUsuario = ()=>{
 
     const filterByScore = (e)=>{
         const option = e.target.value
-        if(option === "todos"){
+        console.log(option);
+        if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        } else if (filtrados.lenght !== 0 && status === "score"){
+            dispatch(filterScore(option))
+        } else if (filtrados.lenght !== 0 && status === "focus"){
+            dispatch(sobreFocus(option))
         } else {
             dispatch(filterScore(option))
         }
