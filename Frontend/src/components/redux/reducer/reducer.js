@@ -1,8 +1,9 @@
-import { ejemplo , GET_TRAINERS,MENU_TRAINERS} from "../actions/types"
+import { ejemplo , GET_TRAINERS,MENU_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS} from "../actions/types"
 
 const initialState = {
     allTrainers: [],
     menusTrainer:[],
+    filterTrainers: [],
 }
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -13,6 +14,19 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 menuTrainer: payload
+            }
+        case FILTER_FOCUS:
+            return {
+                ...state,
+                filterTrainers: payload
+            }
+        case FILTER_SCORE:
+            return {
+                ...state, filterTrainers: payload
+            }
+        case QUITAR_FILTROS:
+            return {
+                ...state, filterTrainers: []
             }
         default:
             return { ...state }
