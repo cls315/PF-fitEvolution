@@ -1,5 +1,4 @@
-import './menuprincipalTrainer.css'
-import TrainerSearchbar from '../../components/TrainerSearchbar/TrainerSearchbar';
+import './menuprincipalTrainer.css';
 import ClientsTable from '../clientsTable/clientsTable';
 
 export default function menuprincipalTrainer() {
@@ -12,7 +11,6 @@ export default function menuprincipalTrainer() {
           deportistas
         </span>
       </div>
-      <TrainerSearchbar />
       <ClientsTable />
       <div className='conteinerUsersDash'></div>
     </div>
