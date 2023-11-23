@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const { Routine } = require("../../db");
-const { API_RUTINAS } = require("../Trainers/urls");
+const { API_RUTINAS } = require("../urls");
 
 const getRoutines = async () => {
   // Verificar si hay rutinas cargadas en la base de datos

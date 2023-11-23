@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { Trainer } = require("../../db");
 
-const { API_TRAINERS } = require("./urls");
+const { API_TRAINERS } = require("../urls");
 
 const allTrainer = async () => {
   const trainer = await Trainer.findAll();
