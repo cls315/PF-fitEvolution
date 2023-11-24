@@ -19,7 +19,7 @@
 
 @media only screen and (min-width: 992px) {
     .menuregister {
-        width: 1011px;
+        width: auto;
         max-height: 550px;
         background-color: rgba(217, 217, 217, 0.80);
         filter: drop-shadow(8px 3px 10px rgba(0, 0, 0, 0.25));
@@ -51,7 +51,7 @@
 
     .RegForms {
         display: flex;
-        width: 942px;
+        width: 720px;
         max-height: 350px;
         flex-wrap:wrap;
         margin-left: 25px;

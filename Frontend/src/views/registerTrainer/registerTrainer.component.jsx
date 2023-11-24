@@ -10,12 +10,11 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../components/firebase/firebase';
 
 const RegisterTrainer=()=> {
-    
+ 
     const navigate = useNavigate();
     //registro con firebase
     const [user,setUser]=useState({
-        forename:"",
-        password:""
+       
     })
 
     const handleChange = (e) => {
@@ -29,9 +28,18 @@ const RegisterTrainer=()=> {
         console.log(user.forename)
         console.log(user.password)
         try{
-            const userCredentials=await createUserWithEmailAndPassword(auth,"user.forename", "user.password") //esto se envia a firebase y puede llevar tiempo por ello usamos async y await
+            const userCredentials=await createUserWithEmailAndPassword(auth,user.email,user.password) //esto se envia a firebase y puede llevar tiempo por ello usamos async y await
             console.log(userCredentials)
-            }catch(error){console.log(error)}
+            if (userCredentials.operationType){
+            window.alert("Usuario registrado con exito")
+            navigate('/login')} else { throw Error("Error al registrar el usuario")}
+            }catch(error){
+                //window.alert(error.code)    //error.name "firebase error(tipo de error)", error.code "nombre del error", error.message "descripcion del error"
+                if (error.code==="auth/email-already-in-use") window.alert("Email ya esta registrado")
+                else if(error.code==="auth/invalid-email") window.alert("Email invalido")
+                else if(error.code==="auth/weak-password") window.alert("La contraseña debe tener un minimo de 6 caracteres")
+                else if(error.code) window.alert("Algo salio mal")
+            }
     }
    
     //------------------------
@@ -60,11 +68,6 @@ const RegisterTrainer=()=> {
                         <p className={style.p1}>{errors.forename}</p>
                     </div>
                     <div className={style.labelform1}>
-                        <label className={style.label1}> Apellido</label>
-                        <input placeholder=" Apellido" className={style.inputNom} name="surname" onChange={handleChange} />
-                        <p className={style.p1}>{errors.surname}</p>
-                    </div>
-                    <div className={style.labelform1}>
                         <label className={style.label1}> Contraseña</label>
                         <input placeholder=" Contraseña" className={style.inputNom} name="password" onChange={handleChange} />
                         <p className={style.p1}>{errors.password}</p>
@@ -80,34 +83,12 @@ const RegisterTrainer=()=> {
                         <p className={style.p1}>{errors.email}</p>
                     </div>
                     <div className={style.labelform1}>
-                        <label className={style.label1}> Nacionalidad</label>
-                        <input placeholder=" Nacionalidad" className={style.inputNom} name="nacionalidad" onChange={handleChange} />
-                        <p className={style.p1}>{errors.repeatpassword}</p>
-                    </div>
-                    <div className={style.labelform1}>
-                        <label className={style.label1}> DNI</label>
-                        <input placeholder=" DNI" className={style.inputNom} name="dni" onChange={handleChange} />
-                        <p className={style.p1}>{errors.repeatpassword}</p>
-                    </div>
-                    
-                    <div className={style.labelform1}>
-                        <label className={style.label1}> Imagen</label>
-                        <input placeholder=" Imagen" className={style.inputNom} name="image" onChange={handleChange} />
-                        <p className={style.p1}>{errors.image}</p>
-                    </div>
-                    <div className={style.labelform1}>
-                        <label className={style.label1}> Genero</label>
-                        <input placeholder=" Genero" className={style.inputNom} name="genero" onChange={handleChange} />
-                        <p className={style.p1}>{errors.genero}</p>
-                    </div>
-                   
-                    <div className={style.labelform1}>
-                        <label className={style.label1}> Fecha de Nacimiento</label>
-                        <input placeholder=" Fecha de Nacimiento" className={style.inputNom} name="dateofbird" onChange={handleChange} />
-                        <p className={style.p1}>{errors.dateofbird}</p>
+                        <label className={style.label1}> Certificaciones</label>
+                        <input placeholder=" Arrastrar aqui(pdf,jpg)" className={style.inputNom} name="certifications" onChange={handleChange} />
+                        <p className={style.p1}>{errors.certifications}</p>
                     </div>
                     <div className={style.labelDescription}>
-                        <label className={style.label1}> Descripcion</label>
+                        <label className={style.label1}> Antecedentes</label>
                         <textarea placeholder=" Agrega una descripcion" type='string' className={style.inputDescription} name="description" onChange={handleChange}/>
                         <p className={style.p1}>{errors.description}</p>
                     </div>
