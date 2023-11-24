@@ -1,3 +1,4 @@
+
 const axios = require("axios")
 const {Client} = require("../../db")
 const {API_CLIENTES} = require('../urls')
@@ -28,3 +29,4 @@ const allClient= async(req, res) =>{
 
 
 module.exports = allClient;
+

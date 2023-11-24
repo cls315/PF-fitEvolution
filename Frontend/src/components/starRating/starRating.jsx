@@ -41,6 +41,7 @@ const Star = ({ filled }) => (
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
+    stroke="currentColor"
     fill={filled ? "#FFD300" : "none"}
     class="bi bi-star-fill"
     viewBox="0 0 16 16"
