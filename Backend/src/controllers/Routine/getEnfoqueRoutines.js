@@ -2,23 +2,12 @@
 
 // Importa tu modelo o método de obtención de rutinas
 const { Routine } = require("../../db");
-const getRoutines = require("./getRoutines"); // Importa la función para cargar rutinas desde la API
+const getRoutines = require("./getRoutines");
 
 async function getEnfoqueRoutines(enfoque) {
+  const rutinasEnDB = await Routine.findAll();
+  if (rutinasEnDB.length === 0) await getRoutines();
   try {
-    // Obtener las rutinas desde la base de datos filtrando por enfoque
-    const rutinasEnDB = await Routine.findAll({
-      where: {
-        enfoque: enfoque,
-      },
-    });
-
-    if (rutinasEnDB.length === 0) {
-      // No hay rutinas en la base de datos, cargar desde la API
-      await getRoutines();
-    }
-
-    // Volver a intentar obtener las rutinas después de la carga (puede ser las recién cargadas o las que ya estaban)
     const rutinasActualizadas = await Routine.findAll({
       where: {
         enfoque: enfoque,

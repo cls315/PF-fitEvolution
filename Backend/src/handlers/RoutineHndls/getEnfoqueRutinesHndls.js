@@ -1,7 +1,7 @@
 const getEnfoqueRoutines = require("../../controllers/Routine/getEnfoqueRoutines");
 
 async function getEnfoqueRutinesHndls(req, res) {
-  const enfoque = req.query.enfoque ? req.query.enfoque : "";
+  const enfoque = req.params.enfoque;
   try {
     // const pokemonsDB = await getPokemonsFromDB(name);
 
@@ -11,6 +11,7 @@ async function getEnfoqueRutinesHndls(req, res) {
     // });
 
     const rutinesByEnfoque = await getEnfoqueRoutines(enfoque);
+    console.log(rutinesByEnfoque);
 
     res.json(rutinesByEnfoque); // res.json(pokemonsAPI.concat(jsonPokemons));
   } catch (err) {
@@ -19,6 +20,4 @@ async function getEnfoqueRutinesHndls(req, res) {
   }
 }
 
-module.exports = {
-  getEnfoqueRutinesHndls,
-};
+module.exports = getEnfoqueRutinesHndls;
