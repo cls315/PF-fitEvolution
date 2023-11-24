@@ -1,5 +1,5 @@
 import './menuprincipalTrainer.css';
-import ClientsTable from '../clientsTable/clientsTable';
+import ClientsTable from '../clientsTable/ClientsTable';
 
 export default function menuprincipalTrainer() {
   return (

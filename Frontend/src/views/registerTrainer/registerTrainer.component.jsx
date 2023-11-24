@@ -20,8 +20,8 @@ function RegisterTrainer() {
     const [form,setForm]= useState({
             forename:"",
             surname:"",
-            password:"",
-            repeatpassword:"",
+            // password:"",
+            // repeatpassword:"",
             image:"",
             email:"",
             phoneN:"",
@@ -37,16 +37,16 @@ function RegisterTrainer() {
                 const  value  = e.target.value;
         
                 setForm((previo) => {
-                    const newS = {
+                    const nuevoS = {
                          ...previo,
                     [property]: value
                 };
-                    setErrors(validate(newS));
-                    return newS;  
+                    setErrors(validate(nuevoS));
+                    return nuevoS;  
                 });
               
             };
-        const handleSubmit = async (e) => {
+        const handleSubmit =  (e) => {
             e.preventDefault();
             const checkErr = validate(form)
             if (Object.values(checkErr).some(error => error)) {
@@ -56,7 +56,7 @@ function RegisterTrainer() {
     alert(`seguro quiere crear el Entrenador ${form.forename} ${""} ${form.surname}?`)
     try {
         
-        await axios.post("http://localhost:3001/fitevolution/trainers", form)
+        axios.post("http://localhost:3001/fitevolution/trainers", form)
     } catch (error) {
         console.error("Error al enviar el formulario:", error)
     }
@@ -83,12 +83,12 @@ function RegisterTrainer() {
                         </div>
                         <div className={style.labelform1}>
                             <label className={style.label1}> Contraseña</label>
-                            <input placeholder="Contraseña" className={style.inputNom} name="password" type="password" onChange={handleChange} />
+                            <input placeholder="Contraseña" className={style.inputNom} name="password" type="password" />
                             {errors.password && <p className={style.p1}>{errors.password}</p>}
                         </div>
                         <div className={style.labelform1}>
                             <label className={style.label1}> Repetir contraseña</label>
-                            <input placeholder="Contraseña" className={style.inputNom} name="repeatpassword" type="password" onChange={handleChange} />
+                            <input placeholder="Contraseña" className={style.inputNom} name="repeatpassword" type="password"  />
                             {errors.repeatpassword &&<p className={style.p1}>{errors.repeatpassword}</p>}
                         </div>
                         <div className={style.labelCorreo}>
