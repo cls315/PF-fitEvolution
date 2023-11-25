@@ -48,11 +48,14 @@ function RegisterTrainer() {
 
     };
     const handleSubmit = async (e) => {
-        console.log("dsdsdsd")
         e.preventDefault();
         const checkErr = validate(form)
-        if (Object.values(checkErr).some(error => error)) {
+        if (Object.values(form).some(inp => inp==="")) {  //some comprueba si algun elemento del array es "", si hay un "" quiere decir que hay un input vacio
             alert("DEBÉS COMPLETAR TODOS LOS CAMPOS!");
+            return;
+        }
+        if (Object.values(checkErr).some(error => error)) {
+            alert("EL FORMULARIO CONTIENE ERRORES!");
             return;
         }
         alert(`seguro quiere crear el Entrenador ${form.forename} ${""}?`)
