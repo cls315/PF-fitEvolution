@@ -1,6 +1,7 @@
 //Commons imports
-import { useEffect, useState} from 'react';
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { URLfrontend } from '../../../configURL';
 //components imports
 import MenuprincipalTrainer from '../../components/menuprincipalTainer/menuprincipalTrainer';
 import DashBar from '../../components/Dashbar/Dashbar';
@@ -12,24 +13,46 @@ import './DashboardTrainer.css';
 
 
 
+
+
 const DashboardTrainer = (props) => {
- const [menu,setmenu]=useState('')
+  const [menu, setmenu] = useState('deportes')
+  const {userSession}=props
+  const navigate=useNavigate()
+ 
+ // const [userSession, setUserSession] = useState(false)
 
- const handleMenu =(e)=>{
-  const nom=e.target.name
-  console.log(e.target.name)
-  setmenu(nom)
-}
+   /* //modo escucha de firebase
+    onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+      if(user){
+        console.log(user)
+        setUserSession(true)
+      } else{
+        setUserSession(false)
+        console.log(user)
+      }
+      })
+      //-------------------------*/
 
-  return (
-    <div className='bg-trainer-board'>
-      <DashBar handleMenu={handleMenu}/>
-      {menu==="deportes" && <MenuprincipalTrainer />}
-      {menu==="pagos" && <PagosprincipalTrainer/>}
-      {menu==="entrenamientos" && <EntrePrincipalTrainer/>}
-      <footer className='footerUser'><p>© 2023 FitRevolution </p></footer>
-    </div>
-  );
+  const handleMenu = (e) => {
+    const nom = e.target.name
+    console.log(e.target.name)
+    setmenu(nom)
+  }
+
+  return (<>
+    {
+      userSession ?
+        <div className='bg-trainer-board'>
+          <DashBar handleMenu={handleMenu} />
+          {menu === "deportes" && <MenuprincipalTrainer />}
+          {menu === "pagos" && <PagosprincipalTrainer />}
+          {menu === "entrenamientos" && <EntrePrincipalTrainer />}
+          <footer className='footerUser'><p>© 2023 FitRevolution </p></footer>
+        </div> :
+       <a href={`${URLfrontend}/login`}>Su sesion finalzo, haz click aqui.</a>
+    }
+  </>);
 };
 
 export default DashboardTrainer;
