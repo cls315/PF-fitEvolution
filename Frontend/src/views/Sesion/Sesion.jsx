@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import validate from "./validate.js";
 //FIREBASE
-import { auth, provider } from "../../components/firebase/firebase";
+import { auth, providerGoogle,providerFacebook } from "../../components/firebase/firebase";
 
-import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, FacebookAuthProvider } from "firebase/auth";
 
 //--------
 
@@ -21,7 +21,7 @@ const FormSesion = (props) => {
     //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
     const call_login_google = (e) => {
         e.preventDefault()
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, providerGoogle)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -47,7 +47,7 @@ const FormSesion = (props) => {
      //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
      const call_login_facebook = (e) => {
         e.preventDefault()
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, providerFacebook)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -150,7 +150,7 @@ const FormSesion = (props) => {
                 <button type="submit" className={style.button}>Iniciar Sesion</button>
                 <hr />
                 <div className={style.faceGoole}>
-                    <button className={style.Face}>
+                    <button onClick={call_login_facebook} className={style.Face}>
                         <IoLogoFacebook size={42} className={style.iconFace} />
                         <p className={style.pfg}>Continuar con Facebook</p>
                     </button>
