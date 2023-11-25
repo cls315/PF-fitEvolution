@@ -8,6 +8,7 @@ import FormSesion from './views/Sesion/Sesion';
 import DashboardTrainer from './views/DashboardTrainer/DashboardTrainer';
 import Homeusuario from './views/HomeUsuario/homeusuario';
 import Detail from './views/TeacherDetail/detail';
+import ForgotPassword from './views/ForgotPassword/forgotPassword';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
 
@@ -57,6 +58,10 @@ function App() {
         <Route 
         path='/teacher/:id'
         element={<Detail/>}/>
+        <Route
+        path='/forgot_Password'
+        element={<ForgotPassword/>}
+        />
       </Routes>
     </>
   );
