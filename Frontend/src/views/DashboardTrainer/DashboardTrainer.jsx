@@ -21,19 +21,21 @@ const DashboardTrainer = (props) => {
   const [menu, setmenu] = useState('deportes')
   const navigate=useNavigate()
  
- const [userSession, setUserSession] = useState(false)
-
-    //modo escucha de firebase
-    onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
-      if(user){
-        console.log(user)
-        setUserSession(true)
-      } else{
-        setUserSession(false)
-        console.log(user)
-      }
-      })
+  
+    //firebase
+    const [userSession, setUserSession] = useState(false)
+      //modo escucha de firebase
+      onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+        if(user){
+          console.log(user)
+          setUserSession(true)
+        } else{
+          setUserSession(false)
+          console.log(user)
+        }
+        })
       //-------------------------*/
+    //---------  
 
   const handleMenu = (e) => {
     const nom = e.target.name
