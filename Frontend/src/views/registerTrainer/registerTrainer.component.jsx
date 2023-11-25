@@ -24,105 +24,6 @@ function RegisterTrainer() {
 
 
     const [errors, setErrors] = useState({})
-<<<<<<< HEAD
-    const [form,setForm]= useState({
-            forename:"",
-            surname:"",
-            // password:"",
-            // repeatpassword:"",
-            image:"",
-            email:"",
-            phoneN:"",
-            nationality:"",
-            dateOfBirth:null,
-            dni:"",
-            gender:"",
-            description:""
-        })
-      console.log(form)
-            const handleChange = (e) => {
-                const  property = e.target.name
-                const  value  = e.target.value;
-        
-                setForm((previo) => {
-                    const nuevoS = {
-                         ...previo,
-                    [property]: value
-                };
-                    setErrors(validate(nuevoS));
-                    return nuevoS;  
-                });
-              
-            };
-        const handleSubmit =  (e) => {
-            e.preventDefault();
-            const checkErr = validate(form)
-            if (Object.values(checkErr).some(error => error)) {
-                alert("DEBÉS COMPLETAR TODOS LOS CAMPOS!");
-                return;
-            }
-    alert(`seguro quiere crear el Entrenador ${form.forename} ${""} ${form.surname}?`)
-    try {
-        
-        axios.post("http://localhost:3001/fitevolution/trainers", form)
-    } catch (error) {
-        console.error("Error al enviar el formulario:", error)
-    }
-    }
-
-
-        return (<div className={style.conteinerRegister}>
-            <div className={style.menuregister}>
-                <div className={style.titleSup}>
-                    <button onClick={changeAccount} className={style.btregister}>{'< Cambiar tipo de cuenta'}</button>
-                    <h1 className={style.titleregister}>Crea una cuenta de entrenador</h1>
-                </div>
-                <div className={style.inputsRegister}>
-                    <form className={style.RegForms} onSubmit={handleSubmit}>
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Nombre</label>
-                            <input placeholder=" Nombre" className={style.inputNom} name="forename" onChange={handleChange}  />
-                            {errors.forename &&<p className={style.p1}>{errors.forename}</p>}
-                        </div>
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Apellido</label>
-                            <input placeholder=" Apellido" className={style.inputNom} name="surname" onChange={handleChange} />
-                            {errors.surname &&<p className={style.p1}>{errors.surname}</p>}
-                        </div>
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Contraseña</label>
-                            <input placeholder="Contraseña" className={style.inputNom} name="password" type="password" />
-                            {errors.password && <p className={style.p1}>{errors.password}</p>}
-                        </div>
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Repetir contraseña</label>
-                            <input placeholder="Contraseña" className={style.inputNom} name="repeatpassword" type="password"  />
-                            {errors.repeatpassword &&<p className={style.p1}>{errors.repeatpassword}</p>}
-                        </div>
-                        <div className={style.labelCorreo}>
-                            <label className={style.label1}> Correo electronico</label>
-                            <input placeholder=" Correo electronico" className={style.inputCorreo} name="email" onChange={handleChange} />
-                        { errors.email &&<p className={style.p1}>{errors.email}</p>}
-                        </div>
-                        
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Nacionalidad</label>
-                            <input  placeholder=" Nacionalidad" className={style.inputNom} name="nationality" onChange={handleChange} />
-                            {errors.nationality && <p className={style.p1}>{errors.nationality}</p>}
-                        </div>
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> DNI</label>
-                            <input placeholder=" DNI" className={style.inputNom} name="dni" onChange={handleChange} />
-                            {errors.dni && <p className={style.p1}>{errors.dni}</p>}
-                        </div>
-                        
-                        <div className={style.labelform1}>
-                            <label className={style.label1}> Imagen</label>
-                            <input placeholder=" Imagen" className={style.inputNom} name="image" onChange={handleChange} />
-                            {errors.image && <p className={style.p1}>{errors.image}</p>}
-                        </div>
-                        <div className={style.labelform1}>
-=======
     const [form, setForm] = useState({
         forename: "",
         password: "",
@@ -213,7 +114,6 @@ function RegisterTrainer() {
                         {errors.image && <p className={style.p1}>{errors.image}</p>}
                     </div>
                     { /* <div className={style.labelform1}>
->>>>>>> 423cdb35823a7c88197e5ce51249de3f82ae4e0c
                             <label className={style.label1}> Genero</label>
                           <select placeholder="Genero" className={style.inputNom} name="gender" onChange={handleChange}>
                             <option value="">Selecciona...</option>
