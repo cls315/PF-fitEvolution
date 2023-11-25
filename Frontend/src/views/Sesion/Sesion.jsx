@@ -2,20 +2,22 @@ import style from "./Sesion.module.css"
 import { IoLogoFacebook } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 //FIREBASE
 import { auth,provider } from "../../components/firebase/firebase";
 
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword} from "firebase/auth";
 
 //--------
 
 
 
 const FormSesion = (props) => {
+
+
     //FIREBASE
-        //Para acceder con una ventana emergente, llamada signInWithPopup
+        //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
         const call_login_google=(e)=>{
             e.preventDefault()
             signInWithPopup(auth, provider)
@@ -41,6 +43,20 @@ const FormSesion = (props) => {
             });
         }
         //--------------------------------------------------------------
+        //inicio de sesion con email,valida si existe el usuario pero no crea ninguno
+
+        const handleSubmit = async(e) => {
+        e.preventDefault()
+           //  navigate('/homeusuario')
+           //  navigate('/dashboardtr')
+         try{
+            const credentials=await signInWithEmailAndPassword(auth, form.email,form.password)
+         }catch(error){
+          //  window.alert(error.code)
+        if(error.code==="auth/invalid-login-credentials" || error.code==="auth/invalid-login-credentials") window.alert("Usuario y/o contraseña invalidos")
+    }
+        }
+        
     //-------
 
     const [form, setForm] = useState({ email: "", password: "" })
@@ -82,11 +98,6 @@ const FormSesion = (props) => {
         navigate('/')
     }
 
-    const handleSubmit = (e) => {
-        if (form.email === "usuario@gmail.com") navigate('/homeusuario')
-        if (form.email === "entrenador@gmail.com") navigate('/dashboardtr')
-    }
-
 
     return (
         <div className={style.FormSesion}>
@@ -114,12 +125,9 @@ const FormSesion = (props) => {
                         <p className={style.pfg}>Continuar con Google</p>
                     </button>
                 </div>
-
-                <p className={style.parr}>¿Olvidaste tu contraseña?<Link>Haz click aqui</Link></p>
-                <p>¿No tienes una cuenta?<Link to={'/select'}>Haz click aqui</Link></p>
-
-
             </form>
+            <p className={style.parr}>¿Olvidaste tu contraseña?<Link>Haz click aqui</Link></p>
+                <p>¿No tienes una cuenta?<Link to={'/select'}>Haz click aqui</Link></p>
 
 
 

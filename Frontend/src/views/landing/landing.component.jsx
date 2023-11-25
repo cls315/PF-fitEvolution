@@ -15,14 +15,10 @@ function Landing(props) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Esta función se ejecutará cuando la ruta cambie (después de la navegación)
-    setLoading(false);
-    //simulo una demora antes de mostrar los elementos
-    const timer = setTimeout(() => {
-      setShowElements(true);
-    }, 1000);
 
-    return () => clearTimeout(timer);  //desmonto la funcion timer para que no se siga ejecutando
+    return () =>{
+      
+    } 
   }, []);
 
   return (<div className={style.containerForm}>
