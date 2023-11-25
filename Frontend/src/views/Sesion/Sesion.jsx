@@ -51,6 +51,9 @@ const FormSesion = (props) => {
            //  navigate('/dashboardtr')
          try{
             const credentials=await signInWithEmailAndPassword(auth, form.email,form.password)
+            window.alert(`Bienvenido: ${credentials.user.email}`)
+            navigate('/dashboardtr')
+            console.log(credentials.user.email)
          }catch(error){
           //  window.alert(error.code)
         if(error.code==="auth/invalid-login-credentials" || error.code==="auth/invalid-login-credentials") window.alert("Usuario y/o contraseña invalidos")
@@ -125,9 +128,10 @@ const FormSesion = (props) => {
                         <p className={style.pfg}>Continuar con Google</p>
                     </button>
                 </div>
-            </form>
-            <p className={style.parr}>¿Olvidaste tu contraseña?<Link>Haz click aqui</Link></p>
+                <p className={style.parr}>¿Olvidaste tu contraseña?<Link>Haz click aqui</Link></p>
                 <p>¿No tienes una cuenta?<Link to={'/select'}>Haz click aqui</Link></p>
+            </form>
+           
 
 
 
