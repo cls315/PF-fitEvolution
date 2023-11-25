@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const logout= async()=>{
     await signOut(auth)              //cierra la sesion y vuelve al user==null  
     console.log('user signed out')
-
 }
 
 export default logout
