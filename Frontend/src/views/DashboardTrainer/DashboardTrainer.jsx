@@ -1,5 +1,5 @@
 //Commons imports
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { URLfrontend } from '../../../configURL';
 import { auth  } from '../../components/firebase/firebase';
@@ -25,7 +25,8 @@ const DashboardTrainer = (props) => {
     //firebase
     const [userSession, setUserSession] = useState(false)
       //modo escucha de firebase
-      onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+     useEffect(()=>{
+       onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
         if(user){
           console.log(user)
           setUserSession(true)
@@ -34,6 +35,7 @@ const DashboardTrainer = (props) => {
           console.log(user)
         }
         })
+      },[])
       //-------------------------*/
     //---------  
 

@@ -19,6 +19,7 @@ const Homeusuario = () => {
   //firebase
   const [userSession, setUserSession] = useState(false)
   //modo escucha de firebase
+  useEffect(()=>{
   onAuthStateChanged(auth, async (user) => {    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion, user contiene la informacion del usuario.
     if (user) {
       console.log(user)
@@ -28,6 +29,7 @@ const Homeusuario = () => {
       console.log(user)
     }
   })
+},[])
   //-------------------------*/
   //--------
 
