@@ -10,12 +10,12 @@ export default function validate(state){
         errors.forename = 'Solo se permiten letras en este campo';
       
     
-    if(!state.surname) 
+  /*  if(!state.surname) 
         errors.surname='El campo es requerido';
     if(state.surname.length < 2 || state.surname.length > 50) 
         errors.surname= 'La longitud del campo debe estar entre 2 y 50 caracteres';  
     if(!/^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u.test(state.surname)) 
-        errors.surname = 'Solo se permiten letras en este campo';
+        errors.surname = 'Solo se permiten letras en este campo';*/
 
     if(!state.image){
         errors.image= 'El campo imagen debe ser completado.';
@@ -28,7 +28,7 @@ export default function validate(state){
         const regEx = /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/;
     if(!regEx.test(state.email)) 
       errors.email='Ingresa una dirección de correo electrónico válida';
-    
+  /*  
       if(!state.phoneN) { 
         errors.phoneN = 'El número de teléfono es obligatorio';
       }
@@ -69,9 +69,9 @@ export default function validate(state){
               }
               if(dni.length < 7 || dni.length > 9) {
                 errors.dni='El DNI debe tener entre 7 y 9 dígitos';
-              }
+              }*/
           
-        if(!state.gender) errors.gender="debes seleccionar una opción"
+       // if(!state.gender) errors.gender="debes seleccionar una opción"
               const description = state.description
         if(!description) errors.description="debes completar este campo"
         if(description.length >200) errors.description="200 carácteres máximo"

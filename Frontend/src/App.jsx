@@ -10,13 +10,16 @@ import Homeusuario from './views/HomeUsuario/homeusuario';
 import Detail from './views/TeacherDetail/detail';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { useState } from 'react'
+import { useState,onAuthStateChanged } from 'react'
+import { auth } from './components/firebase/firebase';
 //Styles
 import './App.css'
 
 function App() {
   const location = useLocation();
-
+  onAuthStateChanged(auth, async()=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+    console.log(user)
+  })
   return (
     <>
       <Routes>

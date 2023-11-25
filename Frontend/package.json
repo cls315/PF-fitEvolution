@@ -16,17 +16,15 @@
     "axios": "^1.4.0",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.3.2",
-<<<<<<< HEAD
-    "firebase": "^10.6.0",
-=======
     "dayjs": "^1.11.10",
->>>>>>> b565b8b9241618e808b11eb071e300bd2e5ce098
+    "firebase": "^10.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
     "react-icons": "^4.12.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
+    "react-spring": "^9.7.3",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2"
   },
