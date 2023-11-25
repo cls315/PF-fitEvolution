@@ -4,14 +4,51 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+//FIREBASE
+import { auth,provider } from "../../components/firebase/firebase";
+
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+//--------
 
 
 
-const FormSesion = () => {
-
+const FormSesion = (props) => {
+    //FIREBASE
+        //Para acceder con una ventana emergente, llamada signInWithPopup
+        const call_login_google=(e)=>{
+            e.preventDefault()
+            signInWithPopup(auth, provider)
+            .then((result) => {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              const credential = GoogleAuthProvider.credentialFromResult(result);
+              const token = credential.accessToken;
+              // The signed-in user info.
+              const user = result.user;
+              console.log(auth)
+              navigate('/dashboardtr')
+              // IdP data available using getAdditionalUserInfo(result)
+              // ...
+            }).catch((error) => {
+              // Handle Errors here.
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // The email of the user's account used.
+              const email = error.customData.email;
+              // The AuthCredential type that was used.
+              const credential = GoogleAuthProvider.credentialFromError(error);
+              // ...
+            });
+        }
+        //--------------------------------------------------------------
+    //-------
 
     const [form, setForm] = useState({ email: "", password: "" })
     const navigate = useNavigate()
+
+
+
+
     const handlerChange = (event) => {
 
         event.preventDefault()
@@ -45,9 +82,9 @@ const FormSesion = () => {
         navigate('/')
     }
 
-    const handleSubmit=(e)=>{
-        if (form.email==="usuario@gmail.com") navigate('/homeusuario')
-        if (form.email==="entrenador@gmail.com") navigate('/dashboardtr')
+    const handleSubmit = (e) => {
+        if (form.email === "usuario@gmail.com") navigate('/homeusuario')
+        if (form.email === "entrenador@gmail.com") navigate('/dashboardtr')
     }
 
 
@@ -72,7 +109,7 @@ const FormSesion = () => {
                         <p className={style.pfg}>Continuar con Facebook</p>
                     </button>
 
-                    <button className={style.google}>
+                    <button onClick={call_login_google} className={style.google}>
                         <FcGoogle size={40} className={style.iconFace} />
                         <p className={style.pfg}>Continuar con Google</p>
                     </button>
