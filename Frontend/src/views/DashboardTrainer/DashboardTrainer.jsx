@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { URLfrontend } from '../../../configURL';
+import { auth  } from '../../components/firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 //components imports
 import MenuprincipalTrainer from '../../components/menuprincipalTainer/menuprincipalTrainer';
 import DashBar from '../../components/Dashbar/Dashbar';
@@ -17,12 +19,11 @@ import './DashboardTrainer.css';
 
 const DashboardTrainer = (props) => {
   const [menu, setmenu] = useState('deportes')
-  const {userSession}=props
   const navigate=useNavigate()
  
- // const [userSession, setUserSession] = useState(false)
+ const [userSession, setUserSession] = useState(false)
 
-   /* //modo escucha de firebase
+    //modo escucha de firebase
     onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
       if(user){
         console.log(user)
