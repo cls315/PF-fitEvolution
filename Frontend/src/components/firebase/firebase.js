@@ -1,7 +1,7 @@
 //FIREBASE
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,FacebookAuthProvider } from "firebase/auth";
 
 
 
@@ -18,7 +18,8 @@ export const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+const providerGoogle = new GoogleAuthProvider();
+const providerFacebook = new FacebookAuthProvider();
 
-export { auth, provider };
+export { auth, providerGoogle, providerFacebook };
 //--------
