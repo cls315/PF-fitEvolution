@@ -10,16 +10,29 @@ import Homeusuario from './views/HomeUsuario/homeusuario';
 import Detail from './views/TeacherDetail/detail';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { useState,onAuthStateChanged } from 'react'
 import { auth } from './components/firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useState } from 'react';
+
 //Styles
 import './App.css'
 
+
 function App() {
   const location = useLocation();
-  onAuthStateChanged(auth, async()=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
-    console.log(user)
-  })
+  const [userSession, setUserSession] = useState(false)
+      //modo escucha de firebase
+      onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+        if(user){
+          console.log(user)
+          setUserSession(true)
+        } else{
+          setUserSession(false)
+          console.log(user)
+        }
+        })
+        //-------------------------
+
   return (
     <>
       <Routes>
@@ -49,7 +62,7 @@ function App() {
         />
          <Route
           path='/dashboardtr'
-          element={<DashboardTrainer />}
+          element={<DashboardTrainer userSession={userSession}/>}
         />
         <Route
          path='/homeusuario'

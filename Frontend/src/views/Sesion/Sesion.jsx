@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 //FIREBASE
-import { signInWithPopup} from "firebase/auth";
 import { auth,provider } from "../../components/firebase/firebase";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 //--------
 
 
 
-const FormSesion = () => {
+const FormSesion = (props) => {
     //FIREBASE
         //Para acceder con una ventana emergente, llamada signInWithPopup
         const call_login_google=(e)=>{
@@ -26,7 +25,8 @@ const FormSesion = () => {
               const token = credential.accessToken;
               // The signed-in user info.
               const user = result.user;
-              console.log(user.email)
+              console.log(auth)
+              navigate('/dashboardtr')
               // IdP data available using getAdditionalUserInfo(result)
               // ...
             }).catch((error) => {

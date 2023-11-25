@@ -5,9 +5,9 @@ export default function validate(state){
     if(!state.forename) 
         errors.forename='El campo es requerido';
     if(state.forename.length < 2 || state.forename.length > 50) 
-        errors.forename= 'La longitud del campo debe estar entre 2 y 50 caracteres';  
+        errors.forename= 'Entre 2 y 50 caracteres';  
     if(!/^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/u.test(state.forename)) 
-        errors.forename = 'Solo se permiten letras en este campo';
+        errors.forename = 'Solo letras en este campo';
       
     
   /*  if(!state.surname) 
@@ -73,21 +73,21 @@ export default function validate(state){
           
        // if(!state.gender) errors.gender="debes seleccionar una opción"
               const description = state.description
-        if(!description) errors.description="debes completar este campo"
+        if(!description) errors.description=" Debes completar este campo"
         if(description.length >200) errors.description="200 carácteres máximo"
-        //     const passw = state.password
-        //     console.log(passw)
-        // if(!passw) {
-        //     errors.password = 'La contraseña es obligatoria';
-        //   } else if(passw.length < 6 || passw.search(/[A-Z]/) < 0 || passw.search(/[$&+,:;=?@#|'<>.^*()%!-]/) < 0) {
-        //     errors.password = 'La contraseña debe tener al menos 6 caracteres, una mayúscula y un símbolo';
-        //   }
-        // console.log(errors.password)
-        //   if (!state.repeatpassword) {
-        //     errors.repeatpassword = 'Por favor confirma tu contraseña';  
-        //   } else if (state.repeatpassword !== state.password) {
-        //     errors.repeatpassword = 'Las contraseñas no coinciden';
-        //   }
+             const passw = state.password
+             console.log(passw)
+         if(!passw) {
+             errors.password = 'La contraseña es obligatoria';
+           } else if(passw.length < 6 || passw.search(/[A-Z]/) < 0 || passw.search(/[$&+,:;=?@#|'<>.^*()%!-]/) < 0) {
+             errors.password = 'Debe tener al menos 6 caracteres, una mayúscula y un símbolo';
+           }
+         console.log(errors.password)
+           if (!state.repeatpassword) {
+             errors.repeatpassword = 'Por favor confirma tu contraseña';  
+           } else if (state.repeatpassword !== state.password) {
+             errors.repeatpassword = 'Las contraseñas no coinciden';
+           }
     return errors;
         }
 

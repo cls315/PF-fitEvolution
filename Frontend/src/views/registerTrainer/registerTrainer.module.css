@@ -52,7 +52,6 @@
     .RegForms {
         display: flex;
         width: 720px;
-        max-height: 350px;
         flex-wrap:wrap;
         margin-left: 25px;
         position: relative;
