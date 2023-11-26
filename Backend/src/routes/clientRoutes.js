@@ -1,16 +1,13 @@
 const { Router } = require("express");
 
-
 const postClient = require("../controllers/Clients/postClient");
 
 const allClientHndls = require("../handlers/ClientsHndls/getAllClientsHndls");
 
+const clientRoutes = Router();
 
-const clientRoutes= Router();
+clientRoutes.post("/", postClient);
 
-clientRoutes.post ("/", postClient)
+clientRoutes.get("/", allClientHndls);
 
-clientRoutes.get("/", allClientHndls)     
-
-
-module.exports= clientRoutes;
+module.exports = clientRoutes;
