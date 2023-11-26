@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
     },
     surname:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: {
         args: [2, 50],
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
@@ -57,7 +57,7 @@ module.exports = (sequelize) => {
     },
     phoneN:{
       type: DataTypes.STRING,
-      allowNull: false, 
+      allowNull: true, 
       validate: {
         is: {
           args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
@@ -67,7 +67,7 @@ module.exports = (sequelize) => {
     },
     nationality:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: {
         args: [2, 50],
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
@@ -81,7 +81,7 @@ module.exports = (sequelize) => {
     },
     dateOfBirth: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
       validate: {
         isDate: {
           msg: 'Por favor, introduce una fecha de nacimiento válida.',
@@ -90,7 +90,7 @@ module.exports = (sequelize) => {
     },
     dni:{
       type: DataTypes.BIGINT,
-    allowNull: false, 
+    allowNull: true, 
     validate: {
       isInt: {
         msg: 'Ingresa un número de DNI válido.',
@@ -103,7 +103,7 @@ module.exports = (sequelize) => {
     },
     gender:{
       type: DataTypes.ENUM('Masculino', 'Femenino', 'Otro'),
-      allowNull: false,
+      allowNull: true,
     }, 
    
     focusTr:{
