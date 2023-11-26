@@ -20,11 +20,13 @@
   }
 
   .btn {
+    margin-left: 10px;
     max-width: 172px;
     width: auto;
     max-height: 35px;
     height: auto;
     margin-right: 46px;
+    border: 0.5px solid black;
     border-radius: 13px;
     background: var(--amarillo, #ffd300);
     color: var(--black, #202128);
@@ -34,4 +36,26 @@
     font-weight: 700;
     line-height: normal;
   }
-  
+
+  .nav select {
+    cursor: pointer;
+    margin-left: 20px;
+    padding-right: 30px;
+    max-width: 172px;
+    width: auto;
+    max-height: 26px;
+    height: 100vh;
+    border-radius: 13px;
+    background: var(--amarillo, #ffd300);
+    color: var(--black, #202128);
+    font-family: Raleway;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal
+  }
+
+
+  .ubibtn{
+    justify-content: end;
+  }
