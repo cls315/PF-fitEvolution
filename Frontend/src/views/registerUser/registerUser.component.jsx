@@ -15,11 +15,11 @@ function RegisterUser() {
     const navigate = useNavigate();
 
     const volverInicio = () => {
-        navigate('/login');
+        navigate('/login/Deportistas');
     };
 
     const changeAccount = () => {
-        navigate('/select');
+        navigate('/select/');
     }
 
 
@@ -84,7 +84,7 @@ function RegisterUser() {
         <div className={style.menuregister}>
             <div className={style.titleSup}>
                 <button onClick={changeAccount} className={style.btregister}>{'< Cambiar tipo de cuenta'}</button>
-                <h1 className={style.titleregister}>Crea una cuenta de entrenador</h1>
+                <h1 className={style.titleregister}>Crea una cuenta de usuario</h1>
             </div>
             <div className={style.inputsRegister}>
                 <form className={style.RegForms} onSubmit={handleSubmit}>
@@ -111,7 +111,7 @@ function RegisterUser() {
 
                     <div className={style.titleInfUser}>
                         <button type="submit" className={style.btCreateAccount}>Crear cuenta</button>
-                        <span >¿Ya tienes cuenta?  <button onClick={volverInicio} className={style.spanButton}> inicio de sesion</button></span>
+                        <span className={style.btspanUser}>¿Ya tienes cuenta?  <button onClick={volverInicio} className={style.spanButton}> inicio de sesion</button></span>
                     </div>
                 </form >
 

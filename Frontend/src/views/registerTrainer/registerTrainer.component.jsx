@@ -15,11 +15,11 @@ function RegisterTrainer() {
     const navigate = useNavigate();
 
     const volverInicio = () => {
-        navigate('/login');
+        navigate('/login/Entrenadores');
     };
 
     const changeAccount = () => {
-        navigate('/select');
+        navigate('/select/');
     }
 
 
