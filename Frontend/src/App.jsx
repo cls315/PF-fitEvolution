@@ -33,7 +33,7 @@ function App() {
           element={<About />}
         />
         <Route
-          path='/select'
+          path='/select/'
           element={<Select />}
         />
         <Route
@@ -45,7 +45,7 @@ function App() {
           element={<RegisterTrainer />}
         />
          <Route
-          path='/login'
+          path='/login/:typeSession'
           element={<FormSesion />}
         />
          <Route

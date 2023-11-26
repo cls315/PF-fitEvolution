@@ -44,7 +44,7 @@ align-items: start;
 
 .Form h1{
 font-size: 30px;
-margin-bottom: 20px;
+margin-bottom: 0px;
 }
 
 .button{
@@ -145,4 +145,19 @@ height: 60px;
 .parr{
     margin-top:2% ;
     margin-bottom: 3px;
+}
+
+.parr a{
+    color:blue
+}
+
+.btSessionInf{
+    background-color: transparent;
+    color: blue;
+    padding: 2px;
+    border:0px
+}
+
+.btSessionInf:hover{
+    color: rgb(98, 98, 243);
 }

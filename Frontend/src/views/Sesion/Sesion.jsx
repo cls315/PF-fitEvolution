@@ -1,7 +1,7 @@
 import style from "./Sesion.module.css"
 import { IoLogoFacebook } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import validate from "./validate.js";
@@ -15,7 +15,7 @@ import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, Facebo
 
 
 const FormSesion = (props) => {
-
+const {typeSession}=useParams()
 
     //FIREBASE
     //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
@@ -125,6 +125,11 @@ const FormSesion = (props) => {
         navigate('/')
     }
 
+    const typeAccount=()=>{
+        if(typeSession==="Deportistas") navigate(`/registeruser/`)
+        if(typeSession==="Entrenadores") navigate(`/registertrainer/`)
+    }
+
 
     return (
         <div className={style.FormSesion}>
@@ -133,7 +138,7 @@ const FormSesion = (props) => {
                 <div className={style.btconteiner}>
                     <button onClick={volverinicio} className={style.btLogin}>{'< volver al inicio'}</button>
                 </div>
-                <h1>Iniciar sesion</h1>
+                <h1>{typeSession}</h1>
 
                 <div className={style.formSession}>
                     <div className={style.labelform1}>
@@ -161,7 +166,7 @@ const FormSesion = (props) => {
                     </button>
                 </div>
                 <p className={style.parr}>¿Olvidaste tu contraseña?<Link to={'/forgot_Password'}> Haz click aqui</Link></p>
-                <p>¿No tienes una cuenta?<Link to={'/select'}> Haz click aqui</Link></p>
+                <p>¿No tienes una cuenta?<button className={style.btSessionInf} onClick={typeAccount}> Haz click aqui</button></p>
             </form>
 
 
