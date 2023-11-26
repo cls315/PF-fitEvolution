@@ -14,7 +14,7 @@ const ForgotPassword = (props) => {
     const handleSubmit=()=>{}
 
     const volverlogin = () => {
-        navigate('/login')
+        navigate('/')
     }
 
     const handleChange=()=>{}
@@ -25,7 +25,7 @@ const ForgotPassword = (props) => {
 
             <form className={style.Form} onSubmit={handleSubmit}>
                 <div className={style.btconteinerps}>
-                    <button onClick={volverlogin} className={style.btLoginps}>{'< volver'}</button>
+                    <button onClick={volverlogin} className={style.btLoginps}>{'< volver al inicio'}</button>
                 </div>
                 <h1>¿Olvidaste tu contraseña?</h1>
                 <p>Ingresa tu dirección de correo electrónico y te enviaremos instrucciones sobre cómo restablecer tu contraseña.</p>
