@@ -31,7 +31,7 @@ function RegisterTrainer() {
         image: "",
         email: "",
         description: "",
-        surname:null,    //les puse null porque en la db no pueden estar  vacios
+        surname:null,    //les  puse null porque en la db no pueden estar  vacios
         phoneN:null,
         nationality:null,
         dateOfBirth:null,
