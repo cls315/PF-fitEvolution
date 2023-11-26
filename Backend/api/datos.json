@@ -901,125 +901,350 @@
       "score": "0"
     }
   ],
+
   "rutinas": [
     {
       "id": 1,
-      "exerc": [2, 5, 7, 12, 20],
+      "exerc": [
+        {
+          "id": 5,
+          "name": "Zancadas",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Piernas", "Glúteos"],
+          "estimatedDuration": 7
+        },
+        {
+          "id": 7,
+          "name": "Hip Thrusts",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Glúteos", "Isquiotibiales"],
+          "estimatedDuration": 6
+        },
+        {
+          "id": 12,
+          "name": "Extensiones de cuádriceps",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Cuádriceps"],
+          "estimatedDuration": 4
+        },
+        {
+          "id": 20,
+          "name": "Plancha",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales", "Lumbares"],
+          "estimatedDuration": 3
+        }
+      ],
       "totalDuration": "30m 0s",
       "enfoque": "Entrenamiento deportivo"
     },
     {
       "id": 2,
-      "exerc": [1, 4, 9, 15, 22],
+      "exerc": [
+        {
+          "id": 1,
+          "name": "Sentadillas",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Cuádriceps", "Isquiotibiales", "Glúteos"],
+          "estimatedDuration": 5
+        },
+        {
+          "id": 4,
+          "name": "Extensiones de cuádriceps",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Cuádriceps"],
+          "estimatedDuration": 4
+        },
+        {
+          "id": 9,
+          "name": "Elevación de talones",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Gemelos"],
+          "estimatedDuration": 3
+        },
+        {
+          "id": 15,
+          "name": "Dominadas con agarre cerrado",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Bíceps", "Tríceps"],
+          "estimatedDuration": 7
+        }
+      ],
       "totalDuration": "35m 0s",
       "enfoque": "Entrenamiento funcional"
     },
     {
       "id": 3,
-      "exerc": [3, 6, 10, 16, 25],
+      "exerc": [
+        {
+          "id": 3,
+          "name": "Peso muerto",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Glúteos", "Isquiotibiales", "Espalda Baja"],
+          "estimatedDuration": 8
+        },
+        {
+          "id": 6,
+          "name": "Curl de piernas",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Isquiotibiales"],
+          "estimatedDuration": 5
+        },
+        {
+          "id": 10,
+          "name": "Peso muerto con una pierna",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Equilibrio", "Cadena Posterior"],
+          "estimatedDuration": 7
+        },
+        {
+          "id": 16,
+          "name": "Curl de bíceps",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Bíceps"],
+          "estimatedDuration": 4
+        }
+      ],
       "totalDuration": "40m 0s",
       "enfoque": "Entrenamiento cardiovascular"
     },
     {
       "id": 4,
-      "exerc": [8, 11, 14, 19, 27],
+      "exerc": [
+        {
+          "id": 8,
+          "name": "Peso muerto sumo",
+          "image": "",
+          "description": "",
+          "category": "TI",
+          "muscle_trained": ["Glúteos", "Isquiotibiales"],
+          "estimatedDuration": 8
+        },
+        {
+          "id": 11,
+          "name": "Press de banca",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Pectorales", "Tríceps"],
+          "estimatedDuration": 6
+        },
+        {
+          "id": 14,
+          "name": "Press militar",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Hombros", "Tríceps"],
+          "estimatedDuration": 6
+        },
+        {
+          "id": 19,
+          "name": "Press inclinado con mancuernas",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Pecho"],
+          "estimatedDuration": 7
+        }
+      ],
       "totalDuration": "45m 0s",
       "enfoque": "Entrenamiento de fuerza"
     },
     {
       "id": 5,
-      "exerc": [13, 17, 21, 26, 33],
+      "exerc": [
+        {
+          "id": 13,
+          "name": "Pull-ups",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Espalda", "Bíceps"],
+          "estimatedDuration": 7
+        },
+        {
+          "id": 17,
+          "name": "Tríceps en polea alta",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Tríceps"],
+          "estimatedDuration": 5
+        },
+        {
+          "id": 21,
+          "name": "Crunch",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales"],
+          "estimatedDuration": 4
+        },
+        {
+          "id": 26,
+          "name": "Hollow Body",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales"],
+          "estimatedDuration": 4
+        }
+      ],
       "totalDuration": "32m 0s",
       "enfoque": "Entrenamiento deportivo"
     },
     {
       "id": 6,
-      "exerc": [18, 23, 28, 31, 37],
+      "exerc": [
+        {
+          "id": 18,
+          "name": "Pull-over con mancuerna",
+          "image": "",
+          "description": "",
+          "category": "TS",
+          "muscle_trained": ["Espalda", "Pecho"],
+          "estimatedDuration": 6
+        },
+        {
+          "id": 23,
+          "name": "Russian Twist",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Oblicuos"],
+          "estimatedDuration": 4
+        },
+        {
+          "id": 28,
+          "name": "Oblique Crunch",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Oblicuos"],
+          "estimatedDuration": 4
+        },
+        {
+          "id": 30,
+          "name": "Tijeras",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales", "Cardio"],
+          "estimatedDuration": 5
+        }
+      ],
       "totalDuration": "38m 0s",
       "enfoque": "Entrenamiento funcional"
     },
     {
       "id": 7,
-      "exerc": [24, 29, 34, 39, 42],
+      "exerc": [
+        {
+          "id": 24,
+          "name": "Superman",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Espalda baja"],
+          "estimatedDuration": 3
+        },
+        {
+          "id": 29,
+          "name": "Plank with Arm Raise",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales", "Hombros"],
+          "estimatedDuration": 6
+        },
+        {
+          "id": 34,
+          "name": "Jumping Jacks",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Piernas", "Cardio"],
+          "estimatedDuration": 5
+        },
+        {
+          "id": 36,
+          "name": "Box Jumps",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Piernas", "Cardio"],
+          "estimatedDuration": 6
+        }
+      ],
       "totalDuration": "42m 0s",
       "enfoque": "Entrenamiento cardiovascular"
     },
     {
       "id": 8,
-      "exerc": [30, 35, 40, 45],
+      "exerc": [
+        {
+          "id": 30,
+          "name": "Tijeras",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales", "Cardio"],
+          "estimatedDuration": 5
+        },
+        {
+          "id": 35,
+          "name": "Sprints",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Piernas", "Cardio"],
+          "estimatedDuration": 8
+        },
+        {
+          "id": 40,
+          "name": "Burpees",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Todo el cuerpo"],
+          "estimatedDuration": 7
+        },
+        {
+          "id": 45,
+          "name": "Leg Raises",
+          "image": "",
+          "description": "",
+          "category": "CORE",
+          "muscle_trained": ["Abdominales", "Cadera"],
+          "estimatedDuration": 5
+        }
+      ],
       "totalDuration": "28m 0s",
-      "enfoque": "Entrenamiento de fuerza"
-    },
-    {
-      "id": 9,
-      "exerc": [36, 41, 43, 46],
-      "totalDuration": "36m 0s",
-      "enfoque": "Entrenamiento deportivo"
-    },
-    {
-      "id": 10,
-      "exerc": [38, 44, 47],
-      "totalDuration": "25m 0s",
-      "enfoque": "Entrenamiento funcional"
-    },
-    {
-      "id": 11,
-      "exerc": [3, 8, 13, 18, 23],
-      "totalDuration": "39m 0s",
-      "enfoque": "Entrenamiento cardiovascular"
-    },
-    {
-      "id": 12,
-      "exerc": [4, 9, 14, 19, 24],
-      "totalDuration": "41m 0s",
-      "enfoque": "Entrenamiento de fuerza"
-    },
-    {
-      "id": 13,
-      "exerc": [1, 6, 11, 16, 21],
-      "totalDuration": "37m 0s",
-      "enfoque": "Entrenamiento deportivo"
-    },
-    {
-      "id": 14,
-      "exerc": [5, 10, 15, 20, 25],
-      "totalDuration": "33m 0s",
-      "enfoque": "Entrenamiento funcional"
-    },
-    {
-      "id": 15,
-      "exerc": [2, 7, 12, 17, 22],
-      "totalDuration": "34m 0s",
-      "enfoque": "Entrenamiento cardiovascular"
-    },
-    {
-      "id": 16,
-      "exerc": [26, 31, 36, 41],
-      "totalDuration": "29m 0s",
-      "enfoque": "Entrenamiento de fuerza"
-    },
-    {
-      "id": 17,
-      "exerc": [28, 33, 38, 43],
-      "totalDuration": "30m 0s",
-      "enfoque": "Entrenamiento deportivo"
-    },
-    {
-      "id": 18,
-      "exerc": [30, 35, 40, 45],
-      "totalDuration": "28m 0s",
-      "enfoque": "Entrenamiento funcional"
-    },
-    {
-      "id": 19,
-      "exerc": [32, 37, 42, 46],
-      "totalDuration": "31m 0s",
-      "enfoque": "Entrenamiento cardiovascular"
-    },
-    {
-      "id": 20,
-      "exerc": [34, 39, 44, 47],
-      "totalDuration": "27m 0s",
       "enfoque": "Entrenamiento de fuerza"
     }
   ]
