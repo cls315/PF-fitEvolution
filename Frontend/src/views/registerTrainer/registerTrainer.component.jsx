@@ -30,7 +30,15 @@ function RegisterTrainer() {
         repeatpassword: "",
         image: "",
         email: "",
-        description: ""
+        description: "",
+        surname:null,    //les  puse null porque en la db no pueden estar  vacios
+        phoneN:null,
+        nationality:null,
+        dateOfBirth:null,
+        dni:null,
+        gender:null,
+        focusTr:null,
+        score:null,
     })
     console.log(form)
     const handleChange = (e) => {
@@ -65,12 +73,12 @@ function RegisterTrainer() {
             console.log(userCredentials)
             if (userCredentials.operationType) {
                 window.alert("Usuario registrado con exito")
-                navigate('/login')
+                navigate('/login/Entrenadores')
             } else { throw Error("Error al registrar el usuario") }
             //----------------------------
 
             //envio de formulario al servidor
-            // await axios.post("http://localhost:3001/fitevolution/trainers", form)
+            await axios.post("http://localhost:3001/fitevolution/trainers", form)
             //-------------------------------
         } catch (error) {
             //window.alert(error.code)    //error.name "firebase error(tipo de error)", error.code "nombre del error", error.message "descripcion del error"
