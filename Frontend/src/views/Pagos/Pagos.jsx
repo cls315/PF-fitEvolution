@@ -50,12 +50,6 @@ const CheckoutForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="card card-body">
-      <img
-        src="https://www.xtremepc.com.mx/cdn/shop/files/51136ca4-14b8-4252-9fee-91a606bdaf65_800x.png?v=1699469524"
-        alt="PC Gamer"
-        className="img-fluid"
-      ></img>
-
       <h3 className="text-center my-2">Price: 100$</h3>
 
       <div className="form-group">
