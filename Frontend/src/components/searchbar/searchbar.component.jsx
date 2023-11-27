@@ -69,8 +69,8 @@ function SearchBar(props) {
               <button className='bt-nav-landing'>
               <Link
                   className={`nav-link  ${isActiveLogin ? 'text-warning' : ''}`}
-                  to={'/login'}>
-                  Iniciar sesion
+                  to={'/login/Entrenadores'}>
+                  Sos entrenador?
                 </Link>
               </button>
             </li>
@@ -79,8 +79,8 @@ function SearchBar(props) {
               <button className='bt-nav-landing-register'>
               <Link
                   className={`nav-link  ${isActiveRegister ? 'text-warning' : ''}`}
-                  to={'/select'}>
-                  Registrarse gratis
+                  to={'/login/Deportistas'}>
+                  Iniciar sesion
                 </Link>
               </button>
             </li>

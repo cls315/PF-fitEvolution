@@ -6,15 +6,18 @@ import imagelogo from '../../images/imageLogo.jpg';
 import iconsearch from '../SVG/iconsearch.svg'
 import iconbell from '../SVG/iconbell.svg'
 import iconMessage from '../SVG/iconMessage.svg'
-import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { cambiarMenuTrainer } from "../redux/actions/actions";
+import logout from "../../utils/logout";
+import { useNavigate } from "react-router-dom";
 
 
 const DashBar = (props) => {
     const {handleMenu}=props
-    const dispatch = useDispatch()
-   
+    const navigate=useNavigate()
+
+    const exitSession= async()=>{
+        await logout()  //cierra la instancia de auth
+       navigate('/login')
+    }
    
 
    
@@ -22,11 +25,11 @@ const DashBar = (props) => {
     return (
         <div className={style.dashBar}>
             <div class={style.dropdown}>
-                <button className={style.buttonPerfil}>CH&#9660;</button>
+                <button  className={style.buttonPerfil}>CH&#9660;</button>
                 <ul class={style.dropdowncontent}>
                     <li><a href="#">Mi cuenta</a></li>
                     <li><a href="#">Ajustes</a></li>
-                    <li><Link to={'/'}>Salir</Link></li>
+                    <li><button onClick={exitSession} className={style.exitDashTRainer}>Salir</button></li>
                 </ul>
             </div>
             <img name='search' onClick={(e)=>handleMenu(e)} className={style.iconsDashbar} src={iconsearch} alt='icon'></img>

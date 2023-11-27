@@ -8,14 +8,18 @@ import FormSesion from './views/Sesion/Sesion';
 import DashboardTrainer from './views/DashboardTrainer/DashboardTrainer';
 import Homeusuario from './views/HomeUsuario/homeusuario';
 import Detail from './views/TeacherDetail/detail';
+import ForgotPassword from './views/ForgotPassword/forgotPassword';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { useState } from 'react'
+
 //Styles
 import './App.css'
 
+
 function App() {
   const location = useLocation();
+
+    
 
   return (
     <>
@@ -29,7 +33,7 @@ function App() {
           element={<About />}
         />
         <Route
-          path='/select'
+          path='/select/'
           element={<Select />}
         />
         <Route
@@ -41,7 +45,7 @@ function App() {
           element={<RegisterTrainer />}
         />
          <Route
-          path='/login'
+          path='/login/:typeSession'
           element={<FormSesion />}
         />
          <Route
@@ -54,6 +58,10 @@ function App() {
         <Route 
         path='/teacher/:id'
         element={<Detail/>}/>
+        <Route
+        path='/forgot_Password'
+        element={<ForgotPassword/>}
+        />
       </Routes>
     </>
   );

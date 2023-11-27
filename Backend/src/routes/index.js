@@ -9,5 +9,7 @@ router.use("/trainers", trainersRoutes);
 router.use("/routines", routinesRoutes);
 router.use("/clients" , clientRoutes );
 router.use("/nodemailer", nodemailerRoutes)
+router.use("/clients", clientRoutes);
+router.use("/exercises", exercisesRoutes);
 
 module.exports = router;

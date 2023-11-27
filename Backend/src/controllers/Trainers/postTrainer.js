@@ -16,17 +16,10 @@ const postTrainer = async (
 ) => {
   const newTrainer = await Trainer.create({
     forename,
-    surname,
     image,
     email,
-    phoneN,
-    nationality,
-    dateOfBirth,
-    dni,
-    gender,
-    focusTr,
     description,
-    score,
+   
   });
 
   return newTrainer;

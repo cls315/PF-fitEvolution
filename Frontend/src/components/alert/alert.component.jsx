@@ -2,19 +2,16 @@ import styles from './alert.module.css'
 import { useState } from 'react';
 import React from 'react';
 
-export default function Alert(props) {
-    const { message, onClose } = props
+export default function Alert(message) {
     const [showAlert, setShowAlert] = useState(true);
 
     const closeAlert = () => {
-        setShowAlert(false);
-        if (onClose) {
-            onClose();
-        }
+        setShowAlert(false)
+       
     };
 
     return showAlert ? (
-        <div className={styles.DIvcontenedor}>
+        <div className={styles.DIvcontenedor }>
             <div className={styles.DivCard}>
                 <div className={styles.buttonAlert}>
                     <p>{message}</p>
