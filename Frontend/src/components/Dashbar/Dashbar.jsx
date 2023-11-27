@@ -16,7 +16,7 @@ const DashBar = (props) => {
 
     const exitSession= async()=>{
         await logout()  //cierra la instancia de auth
-       navigate('/login')
+       navigate('/')
     }
    
 
