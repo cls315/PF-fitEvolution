@@ -131,7 +131,7 @@ module.exports = (sequelize) => {
       },
       subscribers: {
         type: DataTypes.ARRAY(DataTypes.UUID), // Array de IDs de clientes
-        allowNull: false,
+        allowNull: true,
         defaultValue: [], // Valor predeterminado: array vacío
       },
     },
