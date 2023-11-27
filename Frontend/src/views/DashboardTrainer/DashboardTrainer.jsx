@@ -31,7 +31,7 @@ const DashboardTrainer = (props) => {
     const [userSession, setUserSession] = useState(false)
       //modo escucha de firebase
      useEffect(()=>{
-       onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
+       onAuthStateChanged(auth,async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
         if(user){
           console.log(user.email)
           
