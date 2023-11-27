@@ -5,69 +5,49 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import validate from "./validate.js";
+import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
 //FIREBASE
-import { auth, providerGoogle,providerFacebook } from "../../components/firebase/firebase";
+import { auth } from "../../components/firebase/firebase";
 
-import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, FacebookAuthProvider } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 //--------
 
 
 
 const FormSesion = (props) => {
-const {typeSession}=useParams()
+
+    const { typeSession } = useParams()
+    const navigate = useNavigate()
+    const [form, setForm] = useState({ email: "", password: "" })
+    const [errors, setErrors] = useState({})
+
+
 
     //FIREBASE
     //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
-    const call_login_google = (e) => {
-        e.preventDefault()
-        signInWithPopup(auth, providerGoogle)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                console.log(auth)
-                navigate('/dashboardtr')
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+    const call_login_google = async (e) => {
+        e.preventDefault();
+        try {
+            await callLoginGoogle();
+            if (typeSession === "Deportistas") navigate('/homeusuario')
+            if (typeSession === "Entrenadores") navigate('/dashboardtr')
+        } catch (error) {
+            console.log(error.message)
+        }
     }
+
     //--------------------------------------------------------------
-     //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
-     const call_login_facebook = (e) => {
-        e.preventDefault()
-        signInWithPopup(auth, providerFacebook)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                console.log(auth)
-                navigate('/dashboardtr')
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+    //Para acceder con una ventana emergente, llamada signInWithPopup,valida si existe el usuario y si no crea uno
+    const call_login_facebook = async (e) => {
+        e.preventDefault();
+        try {
+            await callLoginFacebook();
+            if (typeSession === "Deportistas") navigate('/homeusuario')
+            if (typeSession === "Entrenadores") navigate('/dashboardtr')
+        } catch (error) {
+            console.log(error.message)
+        }
     }
     //--------------------------------------------------------------
     //inicio de sesion con email,valida si existe el usuario pero no crea ninguno
@@ -77,11 +57,11 @@ const {typeSession}=useParams()
         //  navigate('/homeusuario')
         //  navigate('/dashboardtr')
         const checkErr = validate(form)
-        if (Object.values(form).some(inp => inp==="")) {  //some comprueba si algun elemento del array es "", si hay un "" quiere decir que hay un input vacio
+        if (Object.values(form).some(inp => inp === "")) {  //some comprueba si algun elemento del array es "", si hay un "" quiere decir que hay un input vacio
             alert("DEBÉS COMPLETAR TODOS LOS CAMPOS!");
             return;
         }
-        
+
         if (Object.values(checkErr).some(error => error)) {
             alert("LOS CAMPOS TIENEN ERRORES!");
             return;
@@ -99,11 +79,6 @@ const {typeSession}=useParams()
     }
 
     //-------
-
-    const [form, setForm] = useState({ email: "", password: "" })
-    const [errors, setErrors] = useState({})
-    const navigate = useNavigate()
-
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -125,9 +100,9 @@ const {typeSession}=useParams()
         navigate('/')
     }
 
-    const typeAccount=()=>{
-        if(typeSession==="Deportistas") navigate(`/registeruser/`)
-        if(typeSession==="Entrenadores") navigate(`/registertrainer/`)
+    const typeAccount = () => {
+        if (typeSession === "Deportistas") navigate(`/registeruser/`)
+        if (typeSession === "Entrenadores") navigate(`/registertrainer/`)
     }
 
 
