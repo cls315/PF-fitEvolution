@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { getTrainers } from "../../components/redux/actions/actions.js";
 import validate from "./validate.js";
 import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
 //FIREBASE
@@ -21,6 +23,7 @@ const FormSesion = (props) => {
     const navigate = useNavigate()
     const [form, setForm] = useState({ email: "", password: "" })
     const [errors, setErrors] = useState({})
+    const dispatch=useDispatch()
 
 
 
@@ -70,7 +73,8 @@ const FormSesion = (props) => {
         try {
             const credentials = await signInWithEmailAndPassword(auth, form.email, form.password)
             window.alert(`Bienvenido: ${credentials.user.email}`)
-            navigate('/dashboardtr')
+            if (typeSession === "Deportistas") navigate('/homeusuario')
+            if (typeSession === "Entrenadores") navigate('/dashboardtr')
             console.log(credentials.user.email)
         } catch (error) {
             //  window.alert(error.code)

@@ -7,7 +7,7 @@ export const getTrainers = () => {
   return async function (dispatch) {
     try {
       let json = await axios(
-        "http://localhost:3001/fitevolution/trainers/allTrainer"
+        `${URLSERVER}/fitevolution/trainers/allTrainer`
       );
       dispatch({
         type: GET_TRAINERS,
@@ -34,7 +34,7 @@ export const cambiarMenuTrainer = (data) => {
 export const filterFocus = (option)=>{
   return async function (dispatch) {
     try {
-      const json = await axios(`http://localhost:3001/fitevolution/trainers/filter?focus=${option}`)
+      const json = await axios(`${URLSERVER}/fitevolution/trainers/filter?focus=${option}`)
       return dispatch(
         {
         type: FILTER_FOCUS,
@@ -49,7 +49,7 @@ export const filterFocus = (option)=>{
 export const filterScore = (option)=>{
   return async function (dispatch) {
     try {
-      const json = await axios(`http://localhost:3001/fitevolution/trainers/filter?score=${option}`)
+      const json = await axios(`${URLSERVER}/fitevolution/trainers/filter?score=${option}`)
       return dispatch({
         type: FILTER_SCORE,
         payload: json.data
