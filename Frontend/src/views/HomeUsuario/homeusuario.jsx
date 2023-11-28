@@ -4,6 +4,7 @@ import { getTrainers } from "../../components/redux/actions/actions"
 import NavUsuario from "../../components/navUsuario/navUsuario";
 import Cards from "../../components/cards/cards"
 import styles from "./homeusuario.module.css"
+import { URLfrontend } from "../../../configURL";
 
 //firebase
 import { auth } from '../../components/firebase/firebase';
@@ -30,7 +31,7 @@ const Homeusuario = () => {
     }
   })
 },[])
-  //-------------------------*/
+  //-------------------------
   //--------
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const Homeusuario = () => {
           </div>
         </div>
       </div> :
-      <a href={`${URLfrontend}/login`}>Su sesion finalzo, haz click aqui.</a>
+      <a href={`${URLfrontend}`}>Su sesion finalzo, haz click aqui.</a>
     }
   </>);
 };

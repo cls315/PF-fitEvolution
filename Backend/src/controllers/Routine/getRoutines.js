@@ -1,7 +1,7 @@
 // getRoutines.js
 
 const axios = require("axios");
-const { Routine } = require("../../db");
+const { Routine, Trainer } = require("../../db");
 const { API_RUTINAS } = require("../urls");
 
 const getRoutines = async () => {
@@ -13,15 +13,21 @@ const getRoutines = async () => {
       exerc: r.exerc,
       totalDuration: r.totalDuration,
       enfoque: r.enfoque,
-    }));
-
+      trainerId:r.trainerId  }));
+    
     // Crear las rutinas en la base de datos
     await Routine.bulkCreate(mappedRoutines);
   }
 
-  // Obtener las rutinas después de cargarlas desde la API o desde la base de datos
   const updatedRoutines = await Routine.findAll();
-  return updatedRoutines;
+
+  return updatedRoutines.map((routine) => ({
+    id: routine.id,
+    exerc: routine.exerc,
+    totalDuration: routine.totalDuration,
+    enfoque: routine.enfoque,
+    trainerId: routine.trainerId, // asignar el TrainerId correspondiente
+  }));
 };
 
 module.exports = getRoutines;
