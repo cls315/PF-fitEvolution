@@ -24,6 +24,10 @@
   margin-left: 30px;
 }
 
+.conteiner{
+  display: flex;
+}
+
 .btn {
   max-width: 172px;
   width: auto;
