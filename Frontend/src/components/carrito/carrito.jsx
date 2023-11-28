@@ -15,7 +15,7 @@ const Carrito = () => {
   let total = 0;
 
   for (let i = 0; i < carrito.length; i++) {
-    total += carrito[i];
+    total += carrito[i].precio;
   }
 
   const seteo = () => {
@@ -39,12 +39,17 @@ const Carrito = () => {
       <div className={styles.menu}>
         {carrito.length > 0 ?
         <div>
+        <div className={styles.header}>
+          <h3>Tipo de entrenamiento</h3>
+          <h3>Dias</h3>
+          <h4>Precio</h4>
+          </div>
             {carrito.map((pack) => (
-            <div className={styles.packinfo}>
-            <h2>Tipo de rutina</h2>
-            <h3>Dias</h3>
-            <h4>${pack}</h4>
-            <h4>X</h4>
+            <div className={styles.packinfo} key={pack.id}>
+            <h2>{pack.enfoque}</h2>
+            <h3>{pack.totalDuration}</h3>
+            <h4>${pack.precio}</h4>
+            <h5>X</h5>
         </div>
             ))}
             <div className={styles.total}>
