@@ -44,8 +44,8 @@ const Carrito = () => {
           <h3>Dias</h3>
           <h4>Precio</h4>
           </div>
-            {carrito.map((pack) => (
-            <div className={styles.packinfo} key={pack.id}>
+            {carrito.map((pack, index) => (
+            <div className={styles.packinfo} key={index}>
             <h2>{pack.enfoque}</h2>
             <h3>{pack.totalDuration}</h3>
             <h4>${pack.precio}</h4>

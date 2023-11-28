@@ -39,6 +39,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #6b6868;
+    padding: 5px;
   }
 
   .packinfo{
