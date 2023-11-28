@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
 
       forename: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         len: {
           args: [2, 50],
           msg: "La longitud del campo debe estar entre 2 y 50 caracteres.",
@@ -50,7 +50,7 @@ module.exports = (sequelize) => {
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true,
         validate: {
           isEmail: {
@@ -60,7 +60,7 @@ module.exports = (sequelize) => {
       },
       phoneN: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           is: {
             args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/,
@@ -102,20 +102,20 @@ module.exports = (sequelize) => {
       },
       gender: {
         type: DataTypes.ENUM("Masculino", "Femenino", "Otro"),
-        allowNull: false,
+        allowNull: true,
       },
 
       focusTr: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       description: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       score: {
         type: DataTypes.ENUM(
-          "0",
+           "0",
           "0.5",
           "1",
           "1.5",
@@ -127,7 +127,7 @@ module.exports = (sequelize) => {
           "4.5",
           "5"
         ),
-        allowNull: false,
+        allowNull: true,
       },
       subscribers: {
         type: DataTypes.ARRAY(DataTypes.UUID), // Array de IDs de clientes

@@ -1,9 +1,9 @@
-import axios from "axios";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import mplogo from "../../images/mplogo.png"
 import StarRating from "../../components/starRating/starRating";
+
+import {agregarCarrito, getRoutines} from "../../components/redux/actions/actions"
 
 import Navdetail from "./navdetail";
 
@@ -11,18 +11,24 @@ import styles from "./detail.module.css"
 
 const Detail = ()=>{
 
+    const dispatch = useDispatch()
+
     const {id} = useParams();
 
-    console.log(id);
+    useEffect(()=>{
+        dispatch(getRoutines());
+    }, [dispatch])
+
 
     const allTrainers = useSelector((state) => state.allTrainers)
-
-    console.log(allTrainers);
+    const allroutines = useSelector((state)=> state.routines)
 
     const trainer = allTrainers.find((teacher) => teacher.id == id)
+    const routines = allroutines.filter((routine) => routine.trainerId == id)
 
-    console.log(trainer);
-
+    const sumPack = (option)=>{
+        dispatch(agregarCarrito(option))
+    }
 
     let [page, setPage] = useState(1);
 
@@ -57,39 +63,21 @@ const Detail = ()=>{
             ) : page == 2 ? (
             <div className={styles.info}>
                 <div className={styles.packs}>
+                {routines ? routines.map((routine) => (
                     <div className={styles.pack1}>
-                        <h2>PACK 3 DIAS</h2>
-                        <h3>$500</h3>
-                        <h4>Rutina diseñada en base a 3 dias de entrenamiento y adaptable a tu cuerpo y meta</h4>
-                        <h5>Duracion 1 mes</h5>
-                        <button className={styles.packbtn} onClick={()=>{sumPage()}}>Elegin plan</button>
-                    </div>
-                    <div className={styles.pack2}>
-                        <h2>PACK 5 DIAS</h2>
-                        <h3>$1000</h3>
-                        <h4>Rutina diseñada en base a 5 dias de entrenamiento y adaptable a tu cuerpo y meta</h4>
-                        <h5>Duracion 1 mes</h5>
-                        <button className={styles.packbtn} onClick={()=>{sumPage()}}>Elegin plan</button> 
-                    </div>
+                        <h2>PACK {routine.exerc.length} EJERCICIOS</h2>
+                        <h3>${routine.precio}</h3>
+                        <h4>{routine.enfoque}</h4>
+                        <h5>Duracion: {routine.totalDuration} dias</h5>
+                        <button className={styles.packbtn} onClick={()=>{sumPack(routine)}}>Sumar al carrito</button>
+                </div>
+                ))
+                : (<div className={styles.pack1}>
+                    <h3>No tiene rutinas creadas</h3>
+                </div>)
+                }
                 </div>
                 <button className={styles.btn} onClick={()=>{restPage()}}>Volver a detalles</button>
-            </div>
-            ) : page == 3 ? (
-             <div className={styles.info}>
-                <div className={styles.pagos}>
-                    <div className={styles.pagosizq}>
-                        <input placeholder="Numero de la tarjeta"/>
-                        <input placeholder="Nombre del titular"/>
-                        <p>O</p>
-                        <img src={mplogo} className={styles.mplogo}/>
-                    </div>
-                    <div className={styles.pagosder}>
-                        <input placeholder="Expiracion"/>
-                        <input placeholder="CCV"/>
-                        <button className={styles.pagarbtn}>Pagar</button>
-                    </div>
-                </div>
-                <button className={styles.btn} onClick={()=>{restPage()}}>Volver a planes</button>
             </div>
             ) : (<div></div>)}
             <div className={styles.perfil}>

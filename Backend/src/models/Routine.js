@@ -37,5 +37,10 @@ module.exports = (sequelize) => {
         },
       },
     },
+    precio: {
+      type: DataTypes.INTEGER, 
+      allowNull: true, 
+    },
+    
   });
 };

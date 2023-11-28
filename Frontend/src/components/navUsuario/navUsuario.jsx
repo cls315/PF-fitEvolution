@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 import imageLogo from "../../images/imageLogo.jpg"
 import styles from "./navUsuario.module.css"
 
-const NavUsuario = ()=>{
+const NavUsuario = ({setCurrentPage})=>{
 
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -27,6 +27,7 @@ const NavUsuario = ()=>{
     scores = scores.sort((a,b) => (a - b));
 
     const filterByFocus = (e)=>{
+        setCurrentPage(0)
         const option = e.target.value
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
@@ -42,7 +43,7 @@ const NavUsuario = ()=>{
 
     const filterByScore = (e)=>{
         const option = e.target.value
-        console.log(option);
+        setCurrentPage(0)
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
         } else if (filtrados.lenght !== 0 && status === "score"){
