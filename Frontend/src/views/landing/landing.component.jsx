@@ -8,23 +8,17 @@ import { useNavigate } from 'react-router-dom';
 import iconos from '../../images/iconos.png'
 //Styles
 import style from "./landing.module.css"
-import sliderLanding from '../../components/sliderLanding/sliderLanding.component';
 
 
 function Landing(props) {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const [showElements, setShowElements] = useState(false);
 
   useEffect(() => {
-    // Esta función se ejecutará cuando la ruta cambie (después de la navegación)
-    setLoading(false);
-    //simulo una demora antes de mostrar los elementos
-    const timer = setTimeout(() => {
-      setShowElements(true);
-    }, 1000);
 
-    return () => clearTimeout(timer);  //desmonto la funcion timer para que no se siga ejecutando
+    return () =>{
+      
+    } 
   }, []);
 
   return (<div className={style.containerForm}>
@@ -39,9 +33,8 @@ function Landing(props) {
         <h2 className={style.subTitle1Landing}>Disfruta de todos los beneficios de FitRevolution</h2>
         <img className={style.iconosLanding} src={iconos} alt="iconos"></img>
         <button className={style.buttonConteinerForm} onClick={() => {
-          setLoading(true)
-          navigate('/home')
-        }}>Asociarse</button>
+          navigate('/select/')
+        }}>Comenzar</button>
       </div>
     </div>
 
