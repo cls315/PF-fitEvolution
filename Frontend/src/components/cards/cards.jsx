@@ -3,11 +3,11 @@ import Card from "../card/card"
 import styles from "./cards.module.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Cards = ({profes})=>{
+const Cards = ({profes, currentPage, setCurrentPage})=>{
 
   const cardsPerPage = 5;
   const cardsPerRow = 5;
-  const [currentPage, setCurrentPage] = useState(0);
+
 
   const totalPages = Math.ceil(profes.length / cardsPerPage);
 
