@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
     },
     forename:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: {
         args: [2, 50],
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
     },
     surname:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: {
         args: [2, 50],
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
     },
     image:{
       type: DataTypes.TEXT, 
-      allowNull: false,
+      allowNull: true,
       validate: {
         isUrl: {
           msg: 'La URL de la imagen no es válida.',
@@ -47,7 +47,7 @@ module.exports = (sequelize) => {
     },
     email:{
       type: DataTypes.STRING,
-      allowNull: false, 
+      allowNull: true, 
       unique: true,
       validate: {
         isEmail: {
@@ -57,7 +57,7 @@ module.exports = (sequelize) => {
     },
     phoneN:{
       type: DataTypes.STRING,
-      allowNull: false, 
+      allowNull: true, 
       validate: {
         is: {
           args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/, 
@@ -67,7 +67,7 @@ module.exports = (sequelize) => {
     },
     nationality:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: {
         args: [2, 50],
         msg: 'La longitud del campo debe estar entre 2 y 50 caracteres.'
@@ -81,7 +81,7 @@ module.exports = (sequelize) => {
     },
     dateOfBirth: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       validate: {
         isDate: {
           msg: 'Por favor, introduce una fecha de nacimiento válida.',
@@ -90,7 +90,7 @@ module.exports = (sequelize) => {
     },
     dni:{
       type: DataTypes.INTEGER,
-    allowNull: false, 
+    allowNull: true, 
     validate: {
       isInt: {
         msg: 'Ingresa un número de DNI válido.',
@@ -103,22 +103,22 @@ module.exports = (sequelize) => {
     },
     gender:{
       type: DataTypes.ENUM('Masculino', 'Femenino', 'Otro'),
-      allowNull: false,
+      allowNull: true,
     }, 
     //?momentaneamente el campo backup y el campo bloqueos están armados con un type text cosa que se pueda escribir, se puede readaptar
     focusTr:{
       type: DataTypes.TEXT,
-      allowNull:false,
+      allowNull:true,
     },
     description:{
       type: DataTypes.TEXT,
-      allowNull:false,
+      allowNull:true,
     },
     score: {
         type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
-        allowNull: false,
+        allowNull: true,
       },
   },{
-    timestamps: true, //* en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
+    timestamps: true, //*  en el momento de creacion del usuario, podemos usar esa fecha que se genera para calcular el tiempo de periodo de prueba, y lo mismo con el tiempo de periodo de suscripcion, desde el momento de modificacion.  
   });
 };
