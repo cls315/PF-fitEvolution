@@ -60,7 +60,7 @@ module.exports = (sequelize) => {
       },
       phoneN: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           is: {
             args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/,
@@ -102,16 +102,16 @@ module.exports = (sequelize) => {
       },
       gender: {
         type: DataTypes.ENUM("Masculino", "Femenino", "Otro"),
-        allowNull: false,
+        allowNull: true,
       },
 
       focusTr: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       description: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       score: {
         type: DataTypes.ENUM(
@@ -127,11 +127,11 @@ module.exports = (sequelize) => {
           "4.5",
           "5"
         ),
-        allowNull: false,
+        allowNull: true,
       },
       subscribers: {
         type: DataTypes.ARRAY(DataTypes.UUID), // Array de IDs de clientes
-        allowNull: false,
+        allowNull: true,
         defaultValue: [], // Valor predeterminado: array vacío
       },
     },
