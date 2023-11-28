@@ -16,7 +16,12 @@ const postTrainerHdnls = async (req, res) => {
     score,
   } = req.body;
 
+  
+
   try {
+
+    if(forename==="" || email==="" || image==="" || description==="" ) throw Error("Faltan rellenar campos")
+
     const newTrainer = await postTrainer(
       forename,
       surname,
@@ -34,6 +39,7 @@ const postTrainerHdnls = async (req, res) => {
 
     res.status(200).json(newTrainer);
   } catch (error) {
+    console.log(error.message)
     res.status(500).json({ message: error.message });
   }
 };

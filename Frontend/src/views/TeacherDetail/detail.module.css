@@ -118,16 +118,6 @@
 .pack1 {
   padding: 10px;
   margin-left: 4%;
-  margin-bottom: 20px;
-  width: 40%;
-  height: 80%;
-  border-radius: 8px;
-  border: 3px solid var(--amarillo, #ffd300);
-  background: #d9d9d9;
-}
-
-.pack2 {
-  padding: 10px;
   margin-right: 4%;
   margin-bottom: 20px;
   width: 40%;
@@ -136,6 +126,7 @@
   border: 3px solid var(--amarillo, #ffd300);
   background: #d9d9d9;
 }
+
 
 .packbtn {
   margin-top: 20px;
