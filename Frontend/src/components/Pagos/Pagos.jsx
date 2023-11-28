@@ -69,7 +69,7 @@ const CheckoutForm = () => {
   );
 };
 
-function App() {
+function Pagos() {
   return (
     <Elements stripe={stripePromise}>
       <div className="container p-4">
@@ -83,4 +83,4 @@ function App() {
   );
 }
 
-export default App;
+export default Pagos;
