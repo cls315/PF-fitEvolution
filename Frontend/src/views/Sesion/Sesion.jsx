@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import validate from "./validate.js";
 import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
+import axios from "axios";
 //FIREBASE
 import { auth } from "../../components/firebase/firebase";
 
@@ -21,7 +22,7 @@ const FormSesion = (props) => {
     const navigate = useNavigate()
     const [form, setForm] = useState({ email: "", password: "" })
     const [errors, setErrors] = useState({})
-
+    
 
 
     //FIREBASE
@@ -30,8 +31,13 @@ const FormSesion = (props) => {
         e.preventDefault();
         try {
             await callLoginGoogle();
-            if (typeSession === "Deportistas") navigate('/homeusuario')
-            if (typeSession === "Entrenadores") navigate('/dashboardtr')
+            if (typeSession === "Deportistas") {
+                await axios.post("http://localhost:3001/fitevolution/trainers", {email:form.email,description:"dsdsd",image:"dsd.jpg",forename:"cesar"})
+                navigate('/homeusuario')}
+            if (typeSession === "Entrenadores") {
+                await axios.post("http://localhost:3001/fitevolution/trainers", {email:form.email,description:"dsdsd",image:"dsd.jpg",forename:"cesar"})
+                navigate('/dashboardtr')
+            }
         } catch (error) {
             console.log(error.message)
         }

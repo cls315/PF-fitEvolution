@@ -25,7 +25,7 @@ const DashboardTrainer = (props) => {
   const [trainer,setTrainer] =useState({})
   const allTrainers=useSelector((state) => state.allTrainers)
   const dispatch= useDispatch()
-  dispatch(getTrainers())
+  
   
     //firebase
     const [userSession, setUserSession] = useState(false)
@@ -34,8 +34,13 @@ const DashboardTrainer = (props) => {
        onAuthStateChanged(auth, async(user)=>{    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion.
         if(user){
           console.log(user.email)
+          if (allTrainers.length===0) {
+            dispatch(getTrainers())
+          }
+          const trainerr=allTrainers.filter(tre=>tre.email===user.email)
+         setTrainer(trainerr)
+         console.log(trainer)
           
-          console.log(allTrainers)
           setUserSession(true)
         } else{
           setUserSession(false)
