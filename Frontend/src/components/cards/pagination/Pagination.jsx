@@ -2,7 +2,6 @@ import {useEffect} from 'react'
 
 const Pagination = ({total, current,set}) => {
    
-  console.log(current)
   return (
     <div>
       
