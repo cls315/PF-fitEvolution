@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import StarRating from "../../components/starRating/starRating";
-import { Link } from "react-router-dom";
+
 import {agregarCarrito} from "../../components/redux/actions/actions"
 
 import Navdetail from "./navdetail";
