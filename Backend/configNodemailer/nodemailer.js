@@ -13,7 +13,7 @@ const transporter= nodemailer.createTransport({
 
 
 transporter.verify()
-.then(() => console.log("gmail enviado con exito!"))
+//.then(() => console.log("gmail enviado con exito!"))
 .catch((error) => console.error("Error al verificar el transporter:", error));
 
 module.exports= transporter;
