@@ -1,4 +1,3 @@
-import "./App.css";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
