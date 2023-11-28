@@ -115,7 +115,7 @@ module.exports = (sequelize) => {
       },
       score: {
         type: DataTypes.ENUM(
-          "0",
+           "0",
           "0.5",
           "1",
           "1.5",
