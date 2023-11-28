@@ -30,7 +30,15 @@ function RegisterTrainer() {
         repeatpassword: "",
         image: "",
         email: "",
-        description: ""
+        description: "",
+        surname:null,    //les  puse null porque en la db no pueden estar  vacios
+        phoneN:null,
+        nationality:null,
+        dateOfBirth:null,
+        dni:null,
+        gender:null,
+        focusTr:null,
+        score:null,
     })
     console.log(form)
     const handleChange = (e) => {
