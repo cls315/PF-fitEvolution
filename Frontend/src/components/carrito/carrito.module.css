@@ -53,6 +53,11 @@
     font-size: 14px;
   }
 
+  .packinfo h5{
+    font-size: 14px;
+    color: rgb(254, 100, 100);
+  }
+
   .total{
     padding: 5px;
     display: flex;

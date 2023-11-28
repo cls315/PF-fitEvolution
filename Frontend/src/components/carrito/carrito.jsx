@@ -2,13 +2,15 @@ import carritoimg from "../SVG/carrito.svg";
 import styles from "./carrito.module.css";
 import { useState } from "react";
 import {useSelector,useDispatch} from "react-redux"
-import { clearCart } from "../redux/actions/actions";
+import { clearCart, deleteCarrito } from "../redux/actions/actions";
+import {CheckoutForm} from "../Pagos/Pagos"
 
 const Carrito = () => {
     
     const dispatch = useDispatch()
 
   const [show, setShow] = useState(false);
+  const [verpagos, setVerPagos] = useState(false)
 
   const carrito = useSelector((state) => state.carrito)
 
@@ -22,8 +24,16 @@ const Carrito = () => {
     setShow(!show);
   };
 
+  const pagos = ()=>{
+    setVerPagos(!verpagos)
+  }
+
   const vaciarCarrito = ()=>{
     dispatch(clearCart())
+  }
+
+  const borarCarrito = (option)=>{
+    dispatch(deleteCarrito(option))
   }
 
   return (
@@ -49,7 +59,7 @@ const Carrito = () => {
             <h2>{pack.enfoque}</h2>
             <h3>{pack.totalDuration}</h3>
             <h4>${pack.precio}</h4>
-            <h5>X</h5>
+            <h5 onClick={()=>{borarCarrito(pack.id)}}>X</h5>
         </div>
             ))}
             <div className={styles.total}>
@@ -57,6 +67,12 @@ const Carrito = () => {
             <h6>${total}</h6>
             </div>
         <button onClick={()=>{vaciarCarrito()}} className={styles.btnvaciar}>Vaciar Carrito</button>
+        <button onClick={()=>{pagos()}} className={styles.btnvaciar}>Pagar</button>
+        {verpagos ?
+         (
+          <CheckoutForm/> 
+         )
+         : ""}
         </div>
         : 
         <div className={styles.packinfo}>
