@@ -945,7 +945,8 @@
       ],
       "totalDuration": "30m 0s",
       "enfoque": "Entrenamiento deportivo",
-      "trainerId":4
+      "trainerId":4,
+      "precio":4500
     },
     {
       "id": 2,
@@ -989,7 +990,9 @@
       ],
       "totalDuration": "35m 0s",
       "enfoque": "Entrenamiento funcional",
-      "trainerId":3
+      "trainerId":3,
+      "precio":3500
+
 
     },
     {
@@ -1034,7 +1037,8 @@
       ],
       "totalDuration": "40m 0s",
       "enfoque": "Entrenamiento cardiovascular",
-      "trainerId":5
+      "trainerId":5,
+      "precio":4400
 
     },
     {
@@ -1079,7 +1083,8 @@
       ],
       "totalDuration": "45m 0s",
       "enfoque": "Entrenamiento de fuerza",
-      "trainerId":1
+      "trainerId":1,
+      "precio":5000
 
     },
     {
@@ -1124,7 +1129,8 @@
       ],
       "totalDuration": "32m 0s",
       "enfoque": "Entrenamiento deportivo",
-      "trainerId":2
+      "trainerId":2,
+      "precio":2000
 
     },
     {
@@ -1169,7 +1175,8 @@
       ],
       "totalDuration": "38m 0s",
       "enfoque": "Entrenamiento funcional",
-      "trainerId":7
+      "trainerId":7,
+      "precio":5000
 
     },
     {
@@ -1214,7 +1221,8 @@
       ],
       "totalDuration": "42m 0s",
       "enfoque": "Entrenamiento cardiovascular",
-      "trainerId":4
+      "trainerId":4,
+      "precio":2500
 
     },
     {
@@ -1259,7 +1267,8 @@
       ],
       "totalDuration": "28m 0s",
       "enfoque": "Entrenamiento de fuerza",
-      "trainerId":2
+      "trainerId":2,
+      "precio":5100
 
     }
   ]
