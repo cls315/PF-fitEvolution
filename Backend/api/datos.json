@@ -944,7 +944,8 @@
         }
       ],
       "totalDuration": "30m 0s",
-      "enfoque": "Entrenamiento deportivo"
+      "enfoque": "Entrenamiento deportivo",
+      "trainerId":4
     },
     {
       "id": 2,
@@ -987,7 +988,9 @@
         }
       ],
       "totalDuration": "35m 0s",
-      "enfoque": "Entrenamiento funcional"
+      "enfoque": "Entrenamiento funcional",
+      "trainerId":3
+
     },
     {
       "id": 3,
@@ -1030,7 +1033,9 @@
         }
       ],
       "totalDuration": "40m 0s",
-      "enfoque": "Entrenamiento cardiovascular"
+      "enfoque": "Entrenamiento cardiovascular",
+      "trainerId":5
+
     },
     {
       "id": 4,
@@ -1073,7 +1078,9 @@
         }
       ],
       "totalDuration": "45m 0s",
-      "enfoque": "Entrenamiento de fuerza"
+      "enfoque": "Entrenamiento de fuerza",
+      "trainerId":1
+
     },
     {
       "id": 5,
@@ -1116,7 +1123,9 @@
         }
       ],
       "totalDuration": "32m 0s",
-      "enfoque": "Entrenamiento deportivo"
+      "enfoque": "Entrenamiento deportivo",
+      "trainerId":2
+
     },
     {
       "id": 6,
@@ -1159,7 +1168,9 @@
         }
       ],
       "totalDuration": "38m 0s",
-      "enfoque": "Entrenamiento funcional"
+      "enfoque": "Entrenamiento funcional",
+      "trainerId":7
+
     },
     {
       "id": 7,
@@ -1202,7 +1213,9 @@
         }
       ],
       "totalDuration": "42m 0s",
-      "enfoque": "Entrenamiento cardiovascular"
+      "enfoque": "Entrenamiento cardiovascular",
+      "trainerId":4
+
     },
     {
       "id": 8,
@@ -1245,7 +1258,9 @@
         }
       ],
       "totalDuration": "28m 0s",
-      "enfoque": "Entrenamiento de fuerza"
+      "enfoque": "Entrenamiento de fuerza",
+      "trainerId":2
+
     }
   ]
 }

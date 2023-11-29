@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const getAllExerciseHndls = require("../handlers/ExerciseHndls/getAllExcerciseHndls");
-// const postRoutinesHndls = require("../handlers/RoutineHndls/postRoutinesHndls");
+const postExerciseHndls = require("../handlers/ExerciseHndls/postExerciseHndls");
 
 const exerciseRoutes = Router();
 
 exerciseRoutes.get("/allExercises", getAllExerciseHndls);
-// exerciseRoutes.post("/", postRoutinesHndls);
+exerciseRoutes.post("/", postExerciseHndls);
 
 module.exports = exerciseRoutes;

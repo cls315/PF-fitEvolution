@@ -28,5 +28,19 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING, // Puedes ajustar el tipo de datos según sea necesario
       allowNull: true, // O false, dependiendo de si el enfoque debe ser obligatorio o no
     },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      validate: {
+        isUrl: {
+          msg: "La URL de la imagen no es válida.",
+        },
+      },
+    },
+    precio: {
+      type: DataTypes.INTEGER, 
+      allowNull: true, 
+    },
+    
   });
 };
