@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { getTrainers } from "../../components/redux/actions/actions.js";
 import validate from "./validate.js";
 import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
+import axios from "axios";
+import { URLSERVER } from "../../../configURL.js";
 //FIREBASE
 import { auth } from "../../components/firebase/firebase";
 
@@ -32,8 +34,10 @@ const FormSesion = (props) => {
     const call_login_google = async (e) => {
         e.preventDefault();
         try {
-            await callLoginGoogle();
+            const response=await callLoginGoogle();
             if (typeSession === "Deportistas") {
+                console.log(response)
+                await axios.post(`${URLSERVER}/fitevolution/clients`, {email:response})
                 navigate('/homeusuario')}
             if (typeSession === "Entrenadores") navigate('/dashboardtr')
         } catch (error) {

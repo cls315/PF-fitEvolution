@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
       },
       forename: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         len: {
           args: [2, 50],
           msg: "La longitud del campo debe estar entre 2 y 50 caracteres.",
@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
       },
       surname: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         len: {
           args: [2, 50],
           msg: "La longitud del campo debe estar entre 2 y 50 caracteres.",
@@ -40,7 +40,7 @@ module.exports = (sequelize) => {
       },
       image: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isUrl: {
             msg: "La URL de la imagen no es válida.",
@@ -49,7 +49,7 @@ module.exports = (sequelize) => {
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true,
         validate: {
           isEmail: {
@@ -59,7 +59,7 @@ module.exports = (sequelize) => {
       },
       phoneN: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           is: {
             args: /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/,
@@ -69,7 +69,7 @@ module.exports = (sequelize) => {
       },
       nationality: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         len: {
           args: [2, 50],
           msg: "La longitud del campo debe estar entre 2 y 50 caracteres.",
@@ -83,7 +83,7 @@ module.exports = (sequelize) => {
       },
       dateOfBirth: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isDate: {
             msg: "Por favor, introduce una fecha de nacimiento válida.",
@@ -92,7 +92,7 @@ module.exports = (sequelize) => {
       },
       dni: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isInt: {
             msg: "Ingresa un número de DNI válido.",
@@ -105,7 +105,7 @@ module.exports = (sequelize) => {
       },
       gender: {
         type: DataTypes.ENUM("Masculino", "Femenino", "Otro"),
-        allowNull: false,
+        allowNull: true,
       },
       //?momentaneamente el campo backup y el campo bloqueos están armados con un type text cosa que se pueda escribir, se puede readaptar
       backup: {
@@ -118,12 +118,12 @@ module.exports = (sequelize) => {
       },
       role: {
         type: DataTypes.ENUM("Usuario", "Admin"),
-        allowNull: false,
+        allowNull: true,
         defaultValue: "Usuario",
       },
       myTrainers: {
         type: DataTypes.ARRAY(DataTypes.INTEGER), // Array de IDs de entrenadores
-        allowNull: false,
+        allowNull: true,
         defaultValue: [], // Valor predeterminado: array vacío
       },
     },

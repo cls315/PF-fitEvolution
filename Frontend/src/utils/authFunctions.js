@@ -9,7 +9,7 @@ const callLoginGoogle = async () => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
-  
+      return user.email
       // Perform actions after successful login
       console.log(auth);
       // Add additional logic as needed based on the typeSession

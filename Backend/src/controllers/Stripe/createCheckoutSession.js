@@ -18,14 +18,12 @@ app.post("/api/checkout", async (req, res) => {
 
     const payment = await stripe.paymentIntents.create({
       amount,
-      currency: "USD",
-      description: "PC Gamer",
+      currency: "ARS",
       payment_method: id,
       confirm: true,
       return_url: "http://localhost:3000/success",
     });
-    console.log(payment);
-    res.send({ message: "Succesfull payment" });
+    res.send({ client_secret: payment.client_secret });
   } catch (error) {
     console.log(error);
     res.json({ message: error.raw.message });
