@@ -9,6 +9,7 @@ import axios from "axios";
 //import firebase
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../components/firebase/firebase';
+import { URLSERVER } from '../../../configURL';
 
 
 function RegisterTrainer() {
@@ -70,7 +71,7 @@ function RegisterTrainer() {
             //----------------------------
 
             //envio de formulario al servidor
-            await axios.post("http://localhost:3001/fitevolution/trainers", form)
+            await axios.post(`${URLSERVER}/fitevolution/trainers`, form)
             //-------------------------------
         } catch (error) {
             //window.alert(error.code)    //error.name "firebase error(tipo de error)", error.code "nombre del error", error.message "descripcion del error"
