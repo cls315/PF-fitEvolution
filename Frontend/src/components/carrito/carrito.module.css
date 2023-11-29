@@ -27,9 +27,19 @@
     top: 40px;
     right: 20px;
     background-color: #333;
-    width: 300px;
+    width: 1500px;
     border: 2px solid #ffd300;
     border-radius: 10px;
+  }
+
+  .header{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #6b6868;
+    padding: 5px;
   }
 
   .packinfo{
@@ -50,5 +60,7 @@
   }
   
   .btnvaciar{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     width: 100%;
   }

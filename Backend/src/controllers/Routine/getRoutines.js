@@ -13,7 +13,8 @@ const getRoutines = async () => {
       exerc: r.exerc,
       totalDuration: r.totalDuration,
       enfoque: r.enfoque,
-      trainerId:r.trainerId  }));
+      trainerId:r.trainerId,
+      precio:r.precio}));
     
     // Crear las rutinas en la base de datos
     await Routine.bulkCreate(mappedRoutines);
@@ -27,6 +28,7 @@ const getRoutines = async () => {
     totalDuration: routine.totalDuration,
     enfoque: routine.enfoque,
     trainerId: routine.trainerId, // asignar el TrainerId correspondiente
+    precio: routine.precio
   }));
 };
 

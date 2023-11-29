@@ -38,16 +38,19 @@ const Homeusuario = () => {
     dispatch(getTrainers());
   }, [dispatch])
 
+
+  const [currentPage, setCurrentPage] = useState(0);
+
   let profes = [];
   filterTrainer.length === 0 ? profes = allTrainers : profes = filterTrainer
 
   return (<>
     {userSession ?
       <div>
-        <NavUsuario />
+        <NavUsuario setCurrentPage={setCurrentPage}/>
         <div className={styles.conteiner}>
           <div className={styles.cardsconteiner}>
-            <Cards profes={profes} />
+            <Cards profes={profes} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
           </div>
         </div>
       </div> :

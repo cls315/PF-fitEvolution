@@ -1,4 +1,4 @@
-import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE, SOBRE_FOCUS, AGREGAR_CARRITO, CLEAR_CART } from "./types";
+import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE,GET_ROUTINES, SOBRE_FOCUS, AGREGAR_CARRITO, CLEAR_CART } from "./types";
 import axios from 'axios';
 import { URLSERVER } from '../../../../configURL';
 import { MENU_TRAINERS } from '../actions/types'
@@ -101,5 +101,19 @@ export const clearCart = ()=>{
     return dispatch({
       type: CLEAR_CART
     })
+  }
+}
+
+export const getRoutines = ()=>{
+  return async function (dispatch){
+    try {
+      const json = await axios(`${URLSERVER}/fitevolution/routines/allRoutines`)
+      return dispatch({
+        type: GET_ROUTINES,
+        payload: json.data
+      })
+    } catch (error) {
+      throw new Error(error.message)
+    }
   }
 }

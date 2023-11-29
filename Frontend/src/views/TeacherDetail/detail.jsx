@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import StarRating from "../../components/starRating/starRating";
-import { Link } from "react-router-dom";
-import {agregarCarrito} from "../../components/redux/actions/actions"
+
+import {agregarCarrito, getRoutines} from "../../components/redux/actions/actions"
 
 import Navdetail from "./navdetail";
 
@@ -15,11 +15,16 @@ const Detail = ()=>{
 
     const {id} = useParams();
 
+    useEffect(()=>{
+        dispatch(getRoutines());
+    }, [dispatch])
+
 
     const allTrainers = useSelector((state) => state.allTrainers)
-
+    const allroutines = useSelector((state)=> state.routines)
 
     const trainer = allTrainers.find((teacher) => teacher.id == id)
+    const routines = allroutines.filter((routine) => routine.trainerId == id)
 
     const sumPack = (option)=>{
         dispatch(agregarCarrito(option))
@@ -58,20 +63,19 @@ const Detail = ()=>{
             ) : page == 2 ? (
             <div className={styles.info}>
                 <div className={styles.packs}>
+                {routines ? routines.map((routine) => (
                     <div className={styles.pack1}>
-                        <h2>PACK 3 DIAS</h2>
-                        <h3>$500</h3>
-                        <h4>Rutina diseñada en base a 3 dias de entrenamiento y adaptable a tu cuerpo y meta</h4>
-                        <h5>Duracion 1 mes</h5>
-                        <button className={styles.packbtn} onClick={()=>{sumPack(500)}}>Sumar al carrito</button>
-                    </div>
-                    <div className={styles.pack2}>
-                        <h2>PACK 5 DIAS</h2>
-                        <h3>$1000</h3>
-                        <h4>Rutina diseñada en base a 5 dias de entrenamiento y adaptable a tu cuerpo y meta</h4>
-                        <h5>Duracion 1 mes</h5>
-                        <button className={styles.packbtn} onClick={()=>{sumPack(1000)}}>Sumar al carrito</button>
-                    </div>
+                        <h2>PACK {routine.exerc.length} EJERCICIOS</h2>
+                        <h3>${routine.precio}</h3>
+                        <h4>{routine.enfoque}</h4>
+                        <h5>Duracion: {routine.totalDuration} dias</h5>
+                        <button className={styles.packbtn} onClick={()=>{sumPack(routine)}}>Sumar al carrito</button>
+                </div>
+                ))
+                : (<div className={styles.pack1}>
+                    <h3>No tiene rutinas creadas</h3>
+                </div>)
+                }
                 </div>
                 <button className={styles.btn} onClick={()=>{restPage()}}>Volver a detalles</button>
             </div>

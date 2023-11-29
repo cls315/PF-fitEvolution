@@ -3,6 +3,7 @@ const server = express();
 const morgan = require('morgan');
 const router = require("./routes/index");
 
+
 server.use(morgan('dev'));
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
