@@ -9,6 +9,7 @@ import { getTrainers } from "../../components/redux/actions/actions.js";
 import validate from "./validate.js";
 import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
 import axios from "axios";
+import { URLSERVER } from "../../../configURL.js";
 //FIREBASE
 import { auth } from "../../components/firebase/firebase";
 
@@ -34,13 +35,8 @@ const FormSesion = (props) => {
         e.preventDefault();
         try {
             await callLoginGoogle();
-            if (typeSession === "Deportistas") {
-                await axios.post("http://localhost:3001/fitevolution/trainers", {email:form.email,description:"dsdsd",image:"dsd.jpg",forename:"cesar"})
-                navigate('/homeusuario')}
-            if (typeSession === "Entrenadores") {
-                await axios.post("http://localhost:3001/fitevolution/trainers", {email:form.email,description:"dsdsd",image:"dsd.jpg",forename:"cesar"})
-                navigate('/dashboardtr')
-            }
+            if (typeSession === "Deportistas") navigate('/homeusuario')
+            if (typeSession === "Entrenadores") navigate('/dashboardtr')
         } catch (error) {
             console.log(error.message)
         }
