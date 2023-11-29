@@ -48,7 +48,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="card card-body">
+    <form onSubmit={handleSubmit} className="card card-body p-0 w-100">
       <h3 className="text-center my-2">Price: 100$</h3>
 
       <div className="form-group">
@@ -71,9 +71,9 @@ const CheckoutForm = () => {
 function Pagos() {
   return (
     <Elements stripe={stripePromise}>
-      <div className="container p-4">
-        <div className="row">
-          <div className="col-md-4 offset-md-4">
+      <div className="container p-4 ">
+        <div className="row w-100 ">
+          <div className=" flex justify-center p-8">
             <CheckoutForm />
           </div>
         </div>

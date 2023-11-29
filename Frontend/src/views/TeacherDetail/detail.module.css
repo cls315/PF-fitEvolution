@@ -22,7 +22,8 @@
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: 
+  #fff !important; 
   text-align: left;
 }
 
