@@ -1,4 +1,5 @@
 const { Client } = require("../../db");
+const {sendWelcomeEmail} = require("../../../configNodemailer/nodemailer")
 
 const postClient = async (req, res) => {
   console.log('Datos recibidos:', req.body);
@@ -20,7 +21,8 @@ const postClient = async (req, res) => {
       role
     });
     
-    await
+   // Envío el correo de bienvenida
+   await sendWelcomeEmail(email, forename, surname);
 
 
     res.status (201).json(createClient)
