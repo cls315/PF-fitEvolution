@@ -33,7 +33,8 @@ const FormSesion = (props) => {
         e.preventDefault();
         try {
             await callLoginGoogle();
-            if (typeSession === "Deportistas") navigate('/homeusuario')
+            if (typeSession === "Deportistas") {
+                navigate('/homeusuario')}
             if (typeSession === "Entrenadores") navigate('/dashboardtr')
         } catch (error) {
             console.log(error.message)

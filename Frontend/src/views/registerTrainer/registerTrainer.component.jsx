@@ -9,6 +9,7 @@ import axios from "axios";
 //import firebase
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../components/firebase/firebase';
+import { URLSERVER } from '../../../configURL';
 
 
 function RegisterTrainer() {
