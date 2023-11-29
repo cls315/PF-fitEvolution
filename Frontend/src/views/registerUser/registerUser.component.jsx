@@ -9,6 +9,7 @@ import axios from "axios";
 //import firebase
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../components/firebase/firebase';
+import { URLSERVER } from '../../../configURL';
 
 
 function RegisterUser() {
@@ -63,12 +64,12 @@ function RegisterUser() {
             console.log(userCredentials)
             if (userCredentials.operationType) {
                 window.alert("Usuario registrado con exito")
-                navigate('/login')
+                navigate('/login/Deportistas')
             } else { throw Error("Error al registrar el usuario") }
             //----------------------------
 
             //envio de formulario al servidor
-            // await axios.post("http://localhost:3001/fitevolution/trainers", form)
+            await axios.post(`${URLSERVER}/fitevolution/trainers`, form)
             //-------------------------------
         } catch (error) {
             //window.alert(error.code)    //error.name "firebase error(tipo de error)", error.code "nombre del error", error.message "descripcion del error"
