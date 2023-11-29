@@ -1,12 +1,11 @@
 import carritoimg from "../SVG/carrito.svg";
 import styles from "./carrito.module.css";
 import { useState } from "react";
-import {useSelector,useDispatch} from "react-redux"
+
 import { clearCart, deleteCarrito } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from "../redux/actions/actions";
 import Pagos from "../Pagos/Pagos";
-//import { Link } from "react-router-dom";
+
 
 const Carrito = () => {
   const dispatch = useDispatch();
@@ -63,7 +62,7 @@ const Carrito = () => {
                   <h2>{pack.enfoque}</h2>
                   <h3>{pack.totalDuration}</h3>
                   <h4>${pack.precio}</h4>
-                  <h5>X</h5>
+                  <h5 onClick={()=>{borarCarrito(pack.id)}}>X</h5>
                 </div>
               ))}
               <div className={styles.total}>
