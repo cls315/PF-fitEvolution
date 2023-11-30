@@ -1,4 +1,3 @@
-import "bootswatch/dist/lux/bootstrap.min.css";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -7,13 +6,14 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+// import {URLSERVER} from "../../../configURL"
 import axios from "axios";
 
 const stripePromise = loadStripe(
   "pk_test_51OFhTFEPwEDVOkZIc5g7SBFDDufIoqCMOUPZk9tye7BBDjxK1wO76eUPLurnxieWliXSClaW2eq8DJmbBuoP9rY500PekWUykm"
 );
 
-const CheckoutForm = () => {
+const CheckoutForm = ({total}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ const CheckoutForm = () => {
           "http://localhost:3001/api/checkout",
           {
             id,
-            amount: 10000,
+            amount: {total},
           }
         );
         console.log(data);

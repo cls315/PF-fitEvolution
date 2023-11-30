@@ -74,7 +74,7 @@ const Carrito = () => {
         <button onClick={()=>{pagos()}} className={styles.btnvaciar}>Pagar</button>
         {verpagos ?
          (
-          <Pagos/> 
+          <Pagos total={total}/> 
          )
          : ""} 
             </div>

@@ -16,6 +16,9 @@ const NavUsuario = ({setCurrentPage})=>{
     const filtrados = useSelector((state)=> state.filterTrainers)
     const status = useSelector((state)=> state.status)
 
+    var select1 = document.getElementById("focus");
+    var select2 = document.getElementById("score");    
+
     let focus = trainers.map((trainer) => trainer.focusTr)
     focus = focus.filter((item, index) => {
         return focus.indexOf(item) === index;
@@ -31,13 +34,16 @@ const NavUsuario = ({setCurrentPage})=>{
         const option = e.target.value
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        select2.value = "todos"
         } 
         else if(filtrados.lenght !== 0 && status === "focus") {
             dispatch(filterFocus(option))
+        select2.value = "todos"
         } else if(filtrados.lenght !== 0 && status === "score"){
             dispatch(sobreScore(option))
         } else {
             dispatch(filterFocus(option))
+        select2.value = "todos"
         }
     }
 
@@ -46,18 +52,19 @@ const NavUsuario = ({setCurrentPage})=>{
         setCurrentPage(0)
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        select1.value = "todos"
         } else if (filtrados.lenght !== 0 && status === "score"){
             dispatch(filterScore(option))
+        select1.value = "todos"
         } else if (filtrados.lenght !== 0 && status === "focus"){
             dispatch(sobreFocus(option))
         } else {
             dispatch(filterScore(option))
+        select1.value = "todos"
         }
     }
 
     const deleteFilters = ()=>{
-        var select1 = document.getElementById("focus");
-        var select2 = document.getElementById("score");    
         dispatch(quitarFiltros())
         select1.value = "todos"
         select2.value = "todos"
