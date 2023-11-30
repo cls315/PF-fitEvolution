@@ -55,11 +55,20 @@ const NavUsuario = ({setCurrentPage})=>{
         }
     }
 
+    const deleteFilters = ()=>{
+        var select1 = document.getElementById("focus");
+        var select2 = document.getElementById("score");    
+        dispatch(quitarFiltros())
+        select1.value = "todos"
+        select2.value = "todos"
+    }
+
 
     return(
         <div className={styles.nav}>
             <img src={imageLogo} className={styles.logo}/>
             <div className={styles.ubibtn}>
+            <button className={styles.btn1} onClick={()=>(deleteFilters())}>Quitar filtros</button>
             <select name="focus" id="focus" defaultValue={"defaultoption"} onChange={(e)=>{filterByFocus(e)}}>
                 <option value="defaultoption" disabled>Elije un enfoque</option>
                 <option value="todos">Todos los enfoques</option>
@@ -75,7 +84,7 @@ const NavUsuario = ({setCurrentPage})=>{
                 ))}
             </select>
             <Link to="/">
-            <button className={styles.btn}>Cerrar sesion</button>
+            <button className={styles.btn2}>Cerrar sesion</button>
             </Link>
             </div>
         </div>

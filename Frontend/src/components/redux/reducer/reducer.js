@@ -44,7 +44,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
             }
         case QUITAR_FILTROS:
             return {
-                ...state, filterTrainers: []
+                ...state, filterTrainers: [], status: ""
             }
         case AGREGAR_CARRITO:
             return{
