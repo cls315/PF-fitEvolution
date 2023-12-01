@@ -9,7 +9,7 @@ const stripe = new Stripe(
   "sk_test_51OFhTFEPwEDVOkZID6pJaLBw622WXm02CYoaaVqITgtL5iV1am5OoVrzUL2ycG0W1XTHT9LfHQsigxBu8IJ2yJl400RVo9vsDM"
 );
 
-app.use(cors({ WEB_APP_URL }));
+app.use(cors("http://localhost:5173"));
 app.use(express.json());
 
 app.post("/api/checkout", async (req, res) => {
@@ -18,12 +18,13 @@ app.post("/api/checkout", async (req, res) => {
 
     const payment = await stripe.paymentIntents.create({
       amount,
-      currency: "ARS",
+      currency: "USD",
       payment_method: id,
       confirm: true,
       return_url: "http://localhost:3000/success",
     });
-    res.send({ client_secret: payment.client_secret });
+    console.log(payment);
+    res.send({ message: "Succesfull payment" });
   } catch (error) {
     console.log(error);
     res.json({ message: error.raw.message });

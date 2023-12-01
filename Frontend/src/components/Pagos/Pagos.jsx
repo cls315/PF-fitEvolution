@@ -13,10 +13,12 @@ const stripePromise = loadStripe(
   "pk_test_51OFhTFEPwEDVOkZIc5g7SBFDDufIoqCMOUPZk9tye7BBDjxK1wO76eUPLurnxieWliXSClaW2eq8DJmbBuoP9rY500PekWUykm"
 );
 
+console.log(stripePromise);
+
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,10 +32,9 @@ const CheckoutForm = () => {
         const { id } = paymentMethod;
 
         const { data } = await axios.post(
-          "http://localhost:3001/api/checkout",
+          "https://pf-fit-evolution.vercel.app/api/checkout",
           {
             id,
-            amount: 10000,
           }
         );
         console.log(data);
@@ -42,8 +43,6 @@ const CheckoutForm = () => {
       } catch (error) {
         console.log(error);
       }
-
-      setLoading(false);
     }
   };
 
@@ -55,15 +54,7 @@ const CheckoutForm = () => {
         <CardElement className="form-control" />
       </div>
 
-      <button className="btn btn-success">
-        {loading ? (
-          <div className="spinner-border text-light" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        ) : (
-          "Buy"
-        )}
-      </button>
+      <button className="btn btn-success">Buy</button>
     </form>
   );
 };
