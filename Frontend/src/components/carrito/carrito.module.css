@@ -27,9 +27,10 @@
     top: 40px;
     right: 20px;
     background-color: #333;
-    width: 1500px;
+    width: 600px;
     border: 2px solid #ffd300;
     border-radius: 10px;
+    font-size: 14px;
   }
 
   .header{
@@ -51,6 +52,11 @@
 
   .packinfo h2, h3, h4{
     font-size: 14px;
+  }
+
+  .packinfo h5{
+    font-size: 14px;
+    color: rgb(254, 100, 100);
   }
 
   .total{

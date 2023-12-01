@@ -16,6 +16,9 @@ const NavUsuario = ({setCurrentPage})=>{
     const filtrados = useSelector((state)=> state.filterTrainers)
     const status = useSelector((state)=> state.status)
 
+    var select1 = document.getElementById("focus");
+    var select2 = document.getElementById("score");    
+
     let focus = trainers.map((trainer) => trainer.focusTr)
     focus = focus.filter((item, index) => {
         return focus.indexOf(item) === index;
@@ -31,13 +34,16 @@ const NavUsuario = ({setCurrentPage})=>{
         const option = e.target.value
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        select2.value = "todos"
         } 
         else if(filtrados.lenght !== 0 && status === "focus") {
             dispatch(filterFocus(option))
+        select2.value = "todos"
         } else if(filtrados.lenght !== 0 && status === "score"){
             dispatch(sobreScore(option))
         } else {
             dispatch(filterFocus(option))
+        select2.value = "todos"
         }
     }
 
@@ -46,13 +52,22 @@ const NavUsuario = ({setCurrentPage})=>{
         setCurrentPage(0)
         if(filtrados.lenght !== 0 && option === "todos"){
             dispatch(quitarFiltros())
+        select1.value = "todos"
         } else if (filtrados.lenght !== 0 && status === "score"){
             dispatch(filterScore(option))
+        select1.value = "todos"
         } else if (filtrados.lenght !== 0 && status === "focus"){
             dispatch(sobreFocus(option))
         } else {
             dispatch(filterScore(option))
+        select1.value = "todos"
         }
+    }
+
+    const deleteFilters = ()=>{
+        dispatch(quitarFiltros())
+        select1.value = "todos"
+        select2.value = "todos"
     }
 
 
@@ -60,6 +75,7 @@ const NavUsuario = ({setCurrentPage})=>{
         <div className={styles.nav}>
             <img src={imageLogo} className={styles.logo}/>
             <div className={styles.ubibtn}>
+            <button className={styles.btn1} onClick={()=>(deleteFilters())}>Quitar filtros</button>
             <select name="focus" id="focus" defaultValue={"defaultoption"} onChange={(e)=>{filterByFocus(e)}}>
                 <option value="defaultoption" disabled>Elije un enfoque</option>
                 <option value="todos">Todos los enfoques</option>
@@ -75,7 +91,7 @@ const NavUsuario = ({setCurrentPage})=>{
                 ))}
             </select>
             <Link to="/">
-            <button className={styles.btn}>Cerrar sesion</button>
+            <button className={styles.btn2}>Cerrar sesion</button>
             </Link>
             </div>
         </div>

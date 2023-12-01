@@ -1,4 +1,4 @@
-import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE,GET_ROUTINES, SOBRE_FOCUS, AGREGAR_CARRITO, CLEAR_CART } from "./types";
+import { ejemplo, GET_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE,GET_ROUTINES, SOBRE_FOCUS, AGREGAR_CARRITO, CLEAR_CART, DELETE_CART } from "./types";
 import axios from 'axios';
 import { URLSERVER } from '../../../../configURL';
 import { MENU_TRAINERS } from '../actions/types'
@@ -115,5 +115,14 @@ export const getRoutines = ()=>{
     } catch (error) {
       throw new Error(error.message)
     }
+  }
+}
+
+export const deleteCarrito = (option)=>{
+  return function(dispatch){
+    return dispatch({
+      type: DELETE_CART,
+      payload: option
+    })
   }
 }

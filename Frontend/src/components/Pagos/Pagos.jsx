@@ -1,4 +1,3 @@
-import "bootswatch/dist/lux/bootstrap.min.css";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -7,15 +6,20 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+// import {URLSERVER} from "../../../configURL"
 import axios from "axios";
 
 const stripePromise = loadStripe(
   "pk_test_51OFhTFEPwEDVOkZIc5g7SBFDDufIoqCMOUPZk9tye7BBDjxK1wO76eUPLurnxieWliXSClaW2eq8DJmbBuoP9rY500PekWUykm"
 );
 
+<<<<<<< HEAD
 console.log(stripePromise);
 
 const CheckoutForm = () => {
+=======
+const CheckoutForm = ({total}) => {
+>>>>>>> 8d7419f56b1776867a6295c29da3073a6a18c06b
   const stripe = useStripe();
   const elements = useElements();
   //const [loading, setLoading] = useState(false);
@@ -35,6 +39,10 @@ const CheckoutForm = () => {
           "https://pf-fit-evolution.vercel.app/api/checkout",
           {
             id,
+<<<<<<< HEAD
+=======
+            amount: {total},
+>>>>>>> 8d7419f56b1776867a6295c29da3073a6a18c06b
           }
         );
         console.log(data);
@@ -47,7 +55,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="card card-body">
+    <form onSubmit={handleSubmit} className="card card-body p-0 w-100">
       <h3 className="text-center my-2">Price: 100$</h3>
 
       <div className="form-group">
@@ -62,9 +70,9 @@ const CheckoutForm = () => {
 function Pagos() {
   return (
     <Elements stripe={stripePromise}>
-      <div className="container p-4">
-        <div className="row">
-          <div className="col-md-4 offset-md-4">
+      <div className="container p-4 ">
+        <div className="row w-100 ">
+          <div className=" flex justify-center p-8">
             <CheckoutForm />
           </div>
         </div>
