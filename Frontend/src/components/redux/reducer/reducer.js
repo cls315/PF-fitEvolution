@@ -1,4 +1,4 @@
-import { ejemplo , GET_TRAINERS,MENU_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE, SOBRE_FOCUS,CLEAR_CART, AGREGAR_CARRITO, GET_ROUTINES, DELETE_CART} from "../actions/types"
+import { ejemplo , GET_TRAINERS,MENU_TRAINERS, FILTER_FOCUS, FILTER_SCORE, QUITAR_FILTROS, SOBRE_SCORE, SOBRE_FOCUS,CLEAR_CART, AGREGAR_CARRITO, GET_ROUTINES, DELETE_CART, SET_USER} from "../actions/types"
 
 const initialState = {
     allTrainers: [],
@@ -6,7 +6,8 @@ const initialState = {
     filterTrainers: [],
     status: "",
     carrito: [],
-    routines: []
+    routines: [],
+    userStatus: "",
 }
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -62,6 +63,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
             const newArr = state.carrito.filter((item) => item.id !== payload)
             return {
                 ...state, carrito: newArr
+            }
+        case SET_USER:
+            return{
+                ...state, userStatus: payload
             }
         default:
             return { ...state }

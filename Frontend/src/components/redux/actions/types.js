@@ -10,5 +10,6 @@ export const AGREGAR_CARRITO = "AGREGAR_CARRITO"
 export const CLEAR_CART = "CLEAR_CART"
 export const GET_ROUTINES = "GET_ROUTINES"
 export const DELETE_CART = "DELETE_CART"
+export const SET_USER = "SET_USER"
 
 
