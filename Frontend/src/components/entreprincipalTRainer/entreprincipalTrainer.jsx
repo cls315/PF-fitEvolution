@@ -5,6 +5,7 @@ import { getEntreno, search } from "../redux/actions/actions";
 
 
 export default function EntrePrincipalTrainer (){
+  
   const[input, setInput] = useState("")
   const entreno= useSelector((state)=>state.rutinas)
 console.log(entreno)
