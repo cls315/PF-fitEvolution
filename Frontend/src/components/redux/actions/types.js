@@ -9,5 +9,6 @@ export const SOBRE_FOCUS = "SOBRE_FOCUS"
 export const AGREGAR_CARRITO = "AGREGAR_CARRITO"
 export const CLEAR_CART = "CLEAR_CART"
 export const GET_ROUTINES = "GET_ROUTINES"
-
+export const RUTINAS = "RUTINAS"
+export const SEARCH= "SEARCH"
 
