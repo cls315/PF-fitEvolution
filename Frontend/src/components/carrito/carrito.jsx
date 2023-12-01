@@ -16,6 +16,7 @@ const Carrito = () => {
 
 
   const carrito = useSelector((state) => state.carrito);
+  const userstatus = useSelector((state) => state.userStatus)
 
   let total = 0;
 
@@ -28,7 +29,12 @@ const Carrito = () => {
   };
 
   const pagos = ()=>{
-    setVerPagos(!verpagos)
+    if(userstatus === "invitado"){
+      alert("Debes iniciar sesion");
+      return;
+    } else{
+      setVerPagos(!verpagos)
+    }
   }
 
   const vaciarCarrito = ()=>{

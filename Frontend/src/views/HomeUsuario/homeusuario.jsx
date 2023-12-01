@@ -16,14 +16,18 @@ const Homeusuario = () => {
   const dispatch = useDispatch()
   const allTrainers = useSelector((state) => state.allTrainers);
   const filterTrainer = useSelector((state) => state.filterTrainers)
+  const userstatus = useSelector((state) => state.userStatus)
 
   //firebase
   const [userSession, setUserSession] = useState(false)
   //modo escucha de firebase
   useEffect(()=>{
-  onAuthStateChanged(auth, async (user) => {    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion, user contiene la informacion del usuario.
-    if (user) {
-      console.log(user)
+    console.log(userstatus);
+    onAuthStateChanged(auth, async (user) => {    //esta funcion es de firebase se queda en modo escucha cada vez que se carga la aplicacion, user contiene la informacion del usuario.
+      if(userstatus === "invitado"){
+        setUserSession(true)
+      } else if (user) {
+        console.log(user)
       setUserSession(true)
     } else {
       setUserSession(false)
@@ -37,7 +41,7 @@ const Homeusuario = () => {
   useEffect(() => {
     dispatch(getTrainers());
   }, [dispatch])
-
+  
 
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -47,7 +51,7 @@ const Homeusuario = () => {
   return (<>
     {userSession ?
       <div>
-        <NavUsuario setCurrentPage={setCurrentPage}/>
+        <NavUsuario setCurrentPage={setCurrentPage} setUserSession={setUserSession}/>
         <div className={styles.conteiner}>
           <div className={styles.cardsconteiner}>
             <Cards profes={profes} currentPage={currentPage} setCurrentPage={setCurrentPage}/>

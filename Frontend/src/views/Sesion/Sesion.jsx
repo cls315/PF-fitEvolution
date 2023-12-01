@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { getTrainers } from "../../components/redux/actions/actions.js";
+import { getTrainers, setusuario } from "../../components/redux/actions/actions.js";
 import validate from "./validate.js";
 import { callLoginGoogle, callLoginFacebook } from "../../utils/authFunctions";
 import axios from "axios";
@@ -37,7 +37,7 @@ const FormSesion = (props) => {
             const response=await callLoginGoogle();
             if (typeSession === "Deportistas") {
                 console.log(response)
-                await axios.post(`${URLSERVER}/fitevolution/clients`, {email:response})
+                // await axios.post(`${URLSERVER}/fitevolution/clients`, {email:response})
                 navigate('/homeusuario')}
             if (typeSession === "Entrenadores") navigate('/dashboardtr')
         } catch (error) {
@@ -109,6 +109,11 @@ const FormSesion = (props) => {
         navigate('/')
     }
 
+    const invitado = (option)=>{
+        dispatch(setusuario(option))
+        navigate("/homeusuario")
+    }
+
     const typeAccount = () => {
         if (typeSession === "Deportistas") navigate(`/registeruser/`)
         if (typeSession === "Entrenadores") navigate(`/registertrainer/`)
@@ -121,6 +126,7 @@ const FormSesion = (props) => {
             <form className={style.Form} onSubmit={handleSubmit}>
                 <div className={style.btconteiner}>
                     <button onClick={volverinicio} className={style.btLogin}>{'< volver al inicio'}</button>
+                    <button onClick={()=>invitado("invitado")} className={style.btLogin}>{'ingresar como invitado >'}</button>
                 </div>
                 <h1>{typeSession}</h1>
 
