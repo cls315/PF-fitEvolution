@@ -1,7 +1,10 @@
+const { Trainer } = require("../../db");
+
 const postTrainerPuntuacion = require("../../controllers/Trainers/postTrainerPuntuacion");
 
 const postPuntuacionHandler = async (req, res) => {
   const entrenadorId = req.params.id;
+  console.log(entrenadorId);
   const nuevaPuntuacion = req.body.puntuaciones;
 
   try {
